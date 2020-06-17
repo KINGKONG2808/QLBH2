@@ -20,6 +20,13 @@ namespace QL_BanHang.BLL
             dt = data.GetTable(sql);
             return dt;
         }
+        public DataTable ShowNhaCungCaptk(string tk)
+        {
+            string sql = "select * from NhaCungCap2 where MaNCC ='" + tk + "'";
+            DataTable dt = new DataTable();
+            dt = data.GetTable(sql);
+            return dt;
+        }
 
         public void InsertNhaCungCap(NhaCungCapObj ncc)
         {

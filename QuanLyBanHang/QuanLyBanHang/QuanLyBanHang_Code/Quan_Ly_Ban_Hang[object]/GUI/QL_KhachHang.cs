@@ -251,5 +251,22 @@ namespace QL_BanHang
             dtKhachHang = khbll.ShowKhachHang();
             dgvHienThiKH.DataSource = dtKhachHang;
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            KhachHangBLL kh = new KhachHangBLL();
+            if(rbKhachHang.Checked == true)
+            {
+                DataTable dt = new DataTable();
+                dt = kh.ShowKhachHangtk(txtMaKHearch.Text);
+                dgvHienThiKH.DataSource = dt;
+            }
+            if(rbAll.Checked == true)
+            {
+                DataTable dt = new DataTable();
+                dt = kh.ShowKhachHang();
+                dgvHienThiKH.DataSource = dt;
+            }
+        }
     }
 }

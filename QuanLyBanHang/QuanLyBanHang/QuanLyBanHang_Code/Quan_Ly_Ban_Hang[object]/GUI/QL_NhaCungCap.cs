@@ -179,5 +179,23 @@ namespace QL_BanHang
             dtNhaCungCap = nccbll.ShowNhaCungCap();
             dgvHienThi.DataSource = dtNhaCungCap;
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            NhaCungCapBLL a = new NhaCungCapBLL();
+            if(rbMaNcc.Checked == true)
+            {
+                DataTable dt3 = new DataTable();
+                dt3 = a.ShowNhaCungCaptk(txtMaNCCSearch.Text);
+                dgvHienThi.DataSource = dt3;
+            }
+            if(rbAll.Checked==true)
+            {
+                DataTable dt3 = new DataTable();
+                dt3 = a.ShowNhaCungCap();
+                dgvHienThi.DataSource = dt3;
+            }
+               
+        }
     }
         }

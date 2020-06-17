@@ -20,7 +20,13 @@ namespace QL_BanHang.BLL
             dt = data.GetTable(sql);
             return dt;
         }
-
+        public DataTable ShowKhachHangtk(string tk)
+        {
+            string sql = "select * from KhachHang2 where MaKH ='" + tk + "'";
+            DataTable dt = new DataTable();
+            dt = data.GetTable(sql);
+            return dt;
+        }
         public void InsertKhachHang(KhachHangObj kh)
         {
             String gt;
