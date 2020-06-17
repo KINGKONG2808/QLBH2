@@ -9,19 +9,19 @@ using QL_BanHang.Object;
 
 namespace QL_BanHang.BLL
 {
-    class NhanVienBLL
+    class NhanVienBUS
     {
         DataConnect data = new DataConnect();
 
         public DataTable ShowNhanVien()
         {
-            string sql = "select * from NhanVien";
+            string sql = "select * from NhanVien2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
         }
 
-        public void InsertNhanVien(NhanVienObj nv)
+        public void InsertNhanVien(NhanVienDTO nv)
         {
             String gt;
             if (nv.GioiTinh.Equals("Nam"))
@@ -44,7 +44,7 @@ namespace QL_BanHang.BLL
             data.ExcuteNonQuery(sql);
         }
 
-        public void UpdateNhanVien(NhanVienObj nv)
+        public void UpdateNhanVien(NhanVienDTO nv)
         {
             String gt;
             if (nv.GioiTinh.Equals("Nam"))
@@ -71,6 +71,14 @@ namespace QL_BanHang.BLL
         {
             string sql = "Delete NhanVien where MaNV = '" + manv + "'";
             data.ExcuteNonQuery(sql);
+        }
+
+        public DataTable ShowNhanVientk(string tk)
+        {
+            string sql = "select * from NhanVien2 where MaNV = '" + tk + "'";
+            DataTable dt = new DataTable();
+            dt = data.GetTable(sql);
+            return dt;
         }
     }
 }

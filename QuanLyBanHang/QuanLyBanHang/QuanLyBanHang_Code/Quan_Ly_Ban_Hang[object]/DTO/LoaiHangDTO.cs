@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QL_BanHang.Object
 {
-    class LoaiHangObj
+    class LoaiHangDTO
     {
         private String maLoai;
         private String tenLoai;
@@ -16,9 +16,9 @@ namespace QL_BanHang.Object
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
 
-        public LoaiHangObj() { }
+        public LoaiHangDTO() { }
 
-        public LoaiHangObj(String maLoai, String tenLoai, String ghiChu)
+        public LoaiHangDTO(String maLoai, String tenLoai, String ghiChu)
         {
             this.maLoai = maLoai;
             this.tenLoai = tenLoai;

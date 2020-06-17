@@ -9,21 +9,21 @@ using QL_BanHang.Object;
 
 namespace QL_BanHang.BLL
 {
-    class KhoHangBLL
+    class KhoHangBUS
     {
         DataConnect data = new DataConnect();
 
         public DataTable ShowHangBan()
         {
-            string sql = "select * from HangBan";
+            string sql = "select * from Hang2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
         }
 
-        public DataTable ShowTonKho()
+        public DataTable ShowHangTon()
         {
-            string sql = "select * from HangTon";
+            string sql = "select * from HangTon2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

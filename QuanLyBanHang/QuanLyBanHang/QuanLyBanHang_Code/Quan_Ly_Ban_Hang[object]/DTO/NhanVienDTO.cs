@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QL_BanHang.Object
 {
-    class NhanVienObj
+    class NhanVienDTO
     {
         private string maNV;
         private string tenNV;
@@ -65,8 +65,8 @@ namespace QL_BanHang.Object
             set { matKhau = value; }
         }
 
-        public NhanVienObj() { }
-        public NhanVienObj(String manv,String tennv,String gioiTinh,String diaChi,String sdt,String rank,String taikhoan,String matkhau)
+        public NhanVienDTO() { }
+        public NhanVienDTO(String manv,String tennv,String gioiTinh,String diaChi,String sdt,String rank,String taikhoan,String matkhau)
         {
             this.MaNV = manv;
             this.TenNV = tennv;
@@ -78,7 +78,7 @@ namespace QL_BanHang.Object
             this.MatKhau = matkhau;
         }
 
-        public NhanVienObj(String taikhoan, String matkhau)
+        public NhanVienDTO(String taikhoan, String matkhau)
         {
             this.TaiKhoan = taikhoan;
             this.MatKhau = matkhau;

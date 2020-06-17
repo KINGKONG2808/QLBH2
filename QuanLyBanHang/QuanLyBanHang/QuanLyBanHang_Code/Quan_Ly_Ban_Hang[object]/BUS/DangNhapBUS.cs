@@ -22,7 +22,7 @@ namespace QL_BanHang.BLL
             return false;
         }
 
-        public bool getTKNhanVien(NhanVienObj nv)
+        public bool getTKNhanVien(NhanVienDTO nv)
         {
             String sql = "select * from NhanVien2 where TaiKhoan = '" + nv.TaiKhoan + "' and MatKhau = '" + nv.MatKhau + "' ";
             if (da.GetTaiKhoan(sql) == true)

@@ -126,10 +126,11 @@ namespace QL_BanHang
 
         private void loạiHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QL_LoaiHang fnv = new QL_LoaiHang();
+            QL_LoaiHangGUI fnv = new QL_LoaiHangGUI();
             fnv.FormClosed += new FormClosedEventHandler(fnv_FormClosed);
             fnv.Show();
             this.Hide();
+            
         }
     }
 }

@@ -27,7 +27,7 @@ namespace QL_BanHang
             try
             {
                 AdminObj ad = new AdminObj(txtTaiKhoan.Text, txtMatKhau.Text);
-                NhanVienObj nv = new NhanVienObj(txtTaiKhoan.Text, txtMatKhau.Text);
+                NhanVienDTO nv = new NhanVienDTO(txtTaiKhoan.Text, txtMatKhau.Text);
                 if (dn.getTKAdmin(ad)==true)
                 {
                     TrangChu tr = new TrangChu();

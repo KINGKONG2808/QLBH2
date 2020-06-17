@@ -20,8 +20,8 @@ namespace QL_BanHang
         HoaDonObj hd = new HoaDonObj();
         ChiTietHoaDonObj ct = new ChiTietHoaDonObj();
         HoaDonBLL hdbll = new HoaDonBLL();
-        HangHoaBLL hhbll = new HangHoaBLL();
-        NhanVienBLL nvbll = new NhanVienBLL();
+        HangBUS hhbll = new HangBUS();
+        NhanVienBUS nvbll = new NhanVienBUS();
         KhachHangBLL khbll = new KhachHangBLL();
         ChiTietHoaDonBLL ctbll = new ChiTietHoaDonBLL();
         DataConnect data = new DataConnect();
@@ -97,7 +97,7 @@ namespace QL_BanHang
                 dgvHienThiChiTietHD.DataSource = dtChiTietHD;
 
                 DataTable dtMaHH = new DataTable();
-                dtMaHH = hhbll.ShowHangHoa();
+                dtMaHH = hhbll.ShowHang();
                 cboMaHH.DataSource = dtMaHH;
 
 
