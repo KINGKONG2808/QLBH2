@@ -1,0 +1,4 @@
+- Việc đầu tiên, yêu cầu anh em sửa màu nền theo phần trang chủ tôi đã sửa
+- Viêc thứ 2, mỗi người đã được chia màn hình của mình thì ai có màn hình nào sửa lại toàn bộ giao diện của màn hình đấy như các button chỉnh lại cho cân đối
+- Việc thứ 3, chỉnh lại hết text thành tiếng việt
+- Việc thứ 4, khi commit file data connect bắt buộc phải đưa về null (tránh conflict khi merge code vào master)
