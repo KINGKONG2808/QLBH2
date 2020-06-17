@@ -98,6 +98,7 @@
             this.dgvBanTC.Name = "dgvBanTC";
             this.dgvBanTC.Size = new System.Drawing.Size(400, 198);
             this.dgvBanTC.TabIndex = 0;
+            this.dgvBanTC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBanTC_CellContentClick);
             // 
             // groupBox1
             // 

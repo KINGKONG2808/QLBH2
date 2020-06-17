@@ -49,5 +49,10 @@ namespace QL_BanHang
                 return;
             }
         }
+
+        private void dgvBanTC_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
