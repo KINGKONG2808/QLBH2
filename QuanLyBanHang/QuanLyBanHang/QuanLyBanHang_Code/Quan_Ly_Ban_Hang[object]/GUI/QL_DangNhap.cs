@@ -24,46 +24,47 @@ namespace QL_BanHang
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
-                AdminObj ad = new AdminObj(txtTaiKhoan.Text, txtMatKhau.Text);
-                NhanVienObj nv = new NhanVienObj(txtTaiKhoan.Text, txtMatKhau.Text);
-                if (dn.getTKAdmin(ad)==true)
-                {
-                    TrangChu tr = new TrangChu();
-                    tr.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    if (dn.getTKNhanVien(nv)==true)
-                    {
-                        TrangChu tr1 = new TrangChu();
-                        tr1.toolTripNhaCC.Enabled = false;
-                        tr1.toolTripNhanVien.Enabled = false;
-                        tr1.toolTripTaiChinh.Enabled = false;
-                        tr1.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        DialogResult dr = MessageBox.Show("Bạn đã nhập sai tài khoản hoặc mật khẩu vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                        if (dr == DialogResult.OK)
-                        {
-                            txtTaiKhoan.Clear();
-                            txtMatKhau.Clear();
-                            txtTaiKhoan.Focus();
-                        }
-                        else
-                        {
-                            this.Close();
-                        }
-                    }
-                }
+                
             }
             catch (Exception)
             {
                 MessageBox.Show("Lỗi không thể kết nối đến cơ sở dữ liệu vui lòng xem lại đường dẫn đến cơ sở dũ liệu.", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }*/
+            AdminObj ad = new AdminObj(txtTaiKhoan.Text, txtMatKhau.Text);
+            NhanVienObj nv = new NhanVienObj(txtTaiKhoan.Text, txtMatKhau.Text);
+            if (dn.getTKAdmin(ad) == true)
+            {
+                TrangChu tr = new TrangChu();
+                tr.Show();
+                this.Hide();
+            }
+            else
+            {
+                if (dn.getTKNhanVien(nv) == true)
+                {
+                    TrangChu tr1 = new TrangChu();
+                    tr1.toolTripNhaCC.Enabled = false;
+                    tr1.toolTripNhanVien.Enabled = false;
+                    tr1.toolTripTaiChinh.Enabled = false;
+                    tr1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Bạn đã nhập sai tài khoản hoặc mật khẩu vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    if (dr == DialogResult.OK)
+                    {
+                        txtTaiKhoan.Clear();
+                        txtMatKhau.Clear();
+                        txtTaiKhoan.Focus();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
             }
         }
 

@@ -218,7 +218,11 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+<<<<<<< HEAD
 create view [dbo].[hangton2]
+=======
+create view [dbo].[HangTon2]
+>>>>>>> a4bc4da740345377952cb926c2215ac748bf1135
 as
 select Hang2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,Hang2.DonGia,Hang2.SoLuong
 from Hang2 inner join NhaCungCap2 on Hang2.MaNCC = NhaCungCap2.MaNCC
