@@ -31,7 +31,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowBangLuong()
         {
-            string sql = "select * from BangLuong";
+            string sql = "select * from BangLuong2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

@@ -1,9 +1,9 @@
 ﻿-- create database for group 2
-CREATE DATABASE QL_BANHANG
+CREATE DATABASE QL_BANHANG2
 GO
 
 -- using this database
-USE [QL_BanHang]
+USE [QL_BanHang2]
 GO
 
 SET ANSI_NULLS ON
@@ -218,7 +218,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create view [dbo].[hangton2]
+alter view [dbo].[HangTon2]
 as
 select Hang2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,Hang2.DonGia,Hang2.SoLuong
 from Hang2 inner join NhaCungCap2 on Hang2.MaNCC = NhaCungCap2.MaNCC
@@ -310,7 +310,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create view [dbo].[hangban2]
+create view [dbo].[HangBan2]
 as
 select ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang, KhachHang2.TenKH , ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
 from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH

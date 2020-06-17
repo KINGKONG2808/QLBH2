@@ -16,7 +16,7 @@ namespace QL_BanHang.BLL
         //Lấy thông tin
         public DataTable ShowHoaDon()
         {
-            string sql = "select * from HoaDon";
+            string sql = "select * from HoaDon2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

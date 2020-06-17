@@ -15,7 +15,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowNhanVien()
         {
-            string sql = "select * from NhanVien";
+            string sql = "select * from NhanVien2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

@@ -15,7 +15,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowDoanhThu()
         {
-            string sql = "select * from DoanhThu";
+            string sql = "select * from DoanhThu2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
