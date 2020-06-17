@@ -15,7 +15,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowHangBan()
         {
-            string sql = "select * from HangBan";
+            string sql = "select * from HangBan2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -23,7 +23,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowTonKho()
         {
-            string sql = "select * from HangTon";
+            string sql = "select * from HangTon2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

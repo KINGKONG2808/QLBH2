@@ -13,9 +13,9 @@ namespace QL_BanHang.DAL
         public SqlConnection getConnect()
         {
             //(TUNG) Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_BanHang;Integrated Security=True
-            //(HUNG) Data Source=VUHUNGA49E;Initial Catalog=QL_BanHang;Integrated Security=True
+            //(HUNG) Data Source=VUHUNGA49E;Initial Catalog=QL_BANHANG2;Integrated Security=True
             //(HIEU) Data Source=DESKTOP-MVH8GU2;Initial Catalog=QL_BANHANG;Integrated Security=True
-            return new SqlConnection(@"Data Source=DESKTOP-MVH8GU2;Initial Catalog=QL_BANHANG;Integrated Security=True");
+            return new SqlConnection(@"Data Source=VUHUNGA49E;Initial Catalog=QL_BANHANG2;Integrated Security=True");
         }
 
         public DataTable GetTable(string sql)
