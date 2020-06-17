@@ -15,7 +15,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowKhachHang()
         {
-            string sql = "select * from KhachHang";
+            string sql = "select * from KhachHang2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -29,7 +29,7 @@ namespace QL_BanHang.BLL
             else
                 gt = "False";
             kh.GioiTinh = gt;
-            string sql = "Insert into KhachHang values('" + kh.MaKH + "',N'" + kh.TenKH + "','" + kh.SDT + "','" + kh.GioiTinh + "',N'" + kh.DiaChi + "','" + kh.MaNV + "','" + kh.SoDiem + "')";
+            string sql = "Insert into KhachHang2 values('" + kh.MaKH + "',N'" + kh.TenKH + "','" + kh.SDT + "','" + kh.GioiTinh + "',N'" + kh.DiaChi + "','" + kh.MaNV + "')";
             data.ExcuteNonQuery(sql);
         }
 
@@ -41,13 +41,13 @@ namespace QL_BanHang.BLL
             else
                 gt = "False";
             kh.GioiTinh = gt;
-            string sql = "Update KhachHang set TenKH=N'" + kh.TenKH + "',SDT='" + kh.SDT + "',GioiTinh='" + kh.GioiTinh + "',DiaChi=N'" + kh.DiaChi + "',MaNV='" + kh.MaNV + "',SoDiem='" + kh.SoDiem + "' where MaKH='" + kh.MaKH + "'";
+            string sql = "Update KhachHang2 set TenKH=N'" + kh.TenKH + "',SDT='" + kh.SDT + "',GioiTinh='" + kh.GioiTinh + "',DiaChi=N'" + kh.DiaChi + "',MaNV='" + kh.MaNV + "' where MaKH='" + kh.MaKH + "'";
             data.ExcuteNonQuery(sql);
         }
 
         public void DeleteKhachHang(string makh)
         {
-            string sql = "Delete KhachHang where MaKH = '" + makh + "'";
+            string sql = "Delete KhachHang2 where MaKH = '" + makh + "'";
             data.ExcuteNonQuery(sql);
         }
     }

@@ -279,6 +279,7 @@
             this.btnShow.TabIndex = 20;
             this.btnShow.Text = "Hiển thị";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // button2
             // 
@@ -388,6 +389,7 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(757, 437);
             this.Name = "QL_KhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách Hàng";
             this.Load += new System.EventHandler(this.QL_KhachHang_Load);
             this.groupBox1.ResumeLayout(false);
