@@ -3,7 +3,12 @@
     "",
     "\\QuanLyBanHang",
     "\\QuanLyBanHang\\QuanLyBanHang",
+    "\\QuanLyBanHang\\QuanLyBanHang\\QuanLyBanHang_Code",
+    "\\QuanLyBanHang\\QuanLyBanHang\\QuanLyBanHang_Code\\Quan_Ly_Ban_Hang[object]",
+    "\\QuanLyBanHang\\QuanLyBanHang\\QuanLyBanHang_Code\\Quan_Ly_Ban_Hang[object]\\BUS",
+    "\\QuanLyBanHang\\QuanLyBanHang\\QuanLyBanHang_Code\\Quan_Ly_Ban_Hang[object]\\GUI",
     "\\QuanLyBanHang\\QuanLyBanHang\\SQL"
   ],
+  "SelectedNode": "\\QuanLyBanHang\\QuanLyBanHang\\QuanLyBanHang_Code\\Quan_Ly_Ban_Hang[object]\\BUS\\HangHoaBUS.cs",
   "PreviewInSolutionExplorer": false
 }
