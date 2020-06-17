@@ -325,7 +325,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[DoanhThu2]
 as
-select ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon.NgayLap
+select ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon2.NgayLap
 from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD
 group by ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
 GO
