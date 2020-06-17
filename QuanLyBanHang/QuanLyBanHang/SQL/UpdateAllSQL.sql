@@ -279,17 +279,17 @@ insert into LichSuGia2 values ('001', '1/6/2020', '6/6/2020', 40000, '7/6/2020')
 insert into LichSuGia2 values ('002', '2/6/2020', '7/6/2020', 50000, '6/6/2020')
 insert into LichSuGia2 values ('003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
 
-/*-- create view BangLuong
+-- create view BangLuong
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[BangLuong2]
 as
-select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh, NhanVien2.DiaChi, CAST(NhanVien.RankNV AS int)as'Luong cung',Sum(HangHoa.HoaHong*ChiTietHoaDon.SoLuong)as'Hoa hong'
-from HangHoa inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join NhanVien on HoaDon.MaNV = NhanVien.MaNV
-group by NhanVien.MaNV,NhanVien.TenNV, NhanVien.GioiTinh,NhanVien.DiaChi,CAST(NhanVien.RankNV AS int)
-GO*/
+select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh, NhanVien2.DiaChi, sum(ChiTietHoaDon2.SoLuong*Hang2.DonGia) as 'Luong'
+from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV
+group by NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi
+GO
 
 
 -- create view InHoaDon
