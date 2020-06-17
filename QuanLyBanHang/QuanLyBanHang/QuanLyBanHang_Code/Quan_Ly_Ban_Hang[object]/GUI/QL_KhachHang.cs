@@ -236,12 +236,20 @@ namespace QL_BanHang
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            Application.Exit();
+            
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            Dis_Enable(false);
+            DataTable dtKhachHang = new DataTable();
+            dtKhachHang = khbll.ShowKhachHang();
+            dgvHienThiKH.DataSource = dtKhachHang;
         }
     }
 }

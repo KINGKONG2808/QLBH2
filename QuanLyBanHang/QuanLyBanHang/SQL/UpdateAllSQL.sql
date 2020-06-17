@@ -1,9 +1,9 @@
 ﻿-- create database for group 2
-CREATE DATABASE QL_BANHANG2
+CREATE DATABASE QL_BANHANG
 GO
 
 -- using this database
-USE [QL_BanHang2]
+USE [QL_BanHang]
 GO
 
 SET ANSI_NULLS ON

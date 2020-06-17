@@ -125,7 +125,7 @@ namespace QL_BanHang
             row = e.RowIndex;
             txtMaNCC.Text = dgvHienThi.Rows[row].Cells[0].Value.ToString();
             txtTenNCC.Text = dgvHienThi.Rows[row].Cells[1].Value.ToString();
-            txtDiaChi.Text = dgvHienThi.Rows[row].Cells[4].Value.ToString();
+            txtDiaChi.Text = dgvHienThi.Rows[row].Cells[3].Value.ToString();
             txtSDT.Text = dgvHienThi.Rows[row].Cells[2].Value.ToString();
         }
 
@@ -169,7 +169,15 @@ namespace QL_BanHang
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            Application.Exit();
+            
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            Dis_Enable(false);
+            DataTable dtNhaCungCap = new DataTable();
+            dtNhaCungCap = nccbll.ShowNhaCungCap();
+            dgvHienThi.DataSource = dtNhaCungCap;
         }
     }
         }

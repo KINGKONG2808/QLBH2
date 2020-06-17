@@ -261,6 +261,7 @@
             this.btnShow.TabIndex = 12;
             this.btnShow.Text = "Hiển thị";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // groupBox3
             // 
@@ -341,6 +342,7 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(767, 431);
             this.Name = "QL_NhaCungCap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà cung cấp";
             this.Load += new System.EventHandler(this.QL_NhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).EndInit();
