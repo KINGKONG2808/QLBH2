@@ -50,9 +50,9 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtMaNCCSearch = new System.Windows.Forms.TextBox();
+            this.txtMaKHearch = new System.Windows.Forms.TextBox();
             this.rbAll = new System.Windows.Forms.RadioButton();
-            this.rbMaNcc = new System.Windows.Forms.RadioButton();
+            this.rbKhachHang = new System.Windows.Forms.RadioButton();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -279,6 +279,7 @@
             this.btnShow.TabIndex = 20;
             this.btnShow.Text = "Hiển thị";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // button2
             // 
@@ -296,9 +297,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtMaNCCSearch);
+            this.groupBox3.Controls.Add(this.txtMaKHearch);
             this.groupBox3.Controls.Add(this.rbAll);
-            this.groupBox3.Controls.Add(this.rbMaNcc);
+            this.groupBox3.Controls.Add(this.rbKhachHang);
             this.groupBox3.Controls.Add(this.btnTim);
             this.groupBox3.Location = new System.Drawing.Point(524, 34);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
@@ -309,13 +310,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm";
             // 
-            // txtMaNCCSearch
+            // txtMaKHearch
             // 
-            this.txtMaNCCSearch.Location = new System.Drawing.Point(133, 38);
-            this.txtMaNCCSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaNCCSearch.Name = "txtMaNCCSearch";
-            this.txtMaNCCSearch.Size = new System.Drawing.Size(134, 20);
-            this.txtMaNCCSearch.TabIndex = 2;
+            this.txtMaKHearch.Location = new System.Drawing.Point(133, 38);
+            this.txtMaKHearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaKHearch.Name = "txtMaKHearch";
+            this.txtMaKHearch.Size = new System.Drawing.Size(134, 20);
+            this.txtMaKHearch.TabIndex = 2;
             // 
             // rbAll
             // 
@@ -330,18 +331,18 @@
             this.rbAll.Text = "Tất Cả";
             this.rbAll.UseVisualStyleBackColor = true;
             // 
-            // rbMaNcc
+            // rbKhachHang
             // 
-            this.rbMaNcc.AutoSize = true;
-            this.rbMaNcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMaNcc.Location = new System.Drawing.Point(4, 38);
-            this.rbMaNcc.Margin = new System.Windows.Forms.Padding(2);
-            this.rbMaNcc.Name = "rbMaNcc";
-            this.rbMaNcc.Size = new System.Drawing.Size(103, 20);
-            this.rbMaNcc.TabIndex = 0;
-            this.rbMaNcc.TabStop = true;
-            this.rbMaNcc.Text = "Mã loại hàng";
-            this.rbMaNcc.UseVisualStyleBackColor = true;
+            this.rbKhachHang.AutoSize = true;
+            this.rbKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbKhachHang.Location = new System.Drawing.Point(4, 38);
+            this.rbKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.rbKhachHang.Name = "rbKhachHang";
+            this.rbKhachHang.Size = new System.Drawing.Size(103, 20);
+            this.rbKhachHang.TabIndex = 0;
+            this.rbKhachHang.TabStop = true;
+            this.rbKhachHang.Text = "Mã loại hàng";
+            this.rbKhachHang.UseVisualStyleBackColor = true;
             // 
             // btnTim
             // 
@@ -355,6 +356,7 @@
             this.btnTim.TabIndex = 9;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnXoa
             // 
@@ -388,6 +390,7 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(757, 437);
             this.Name = "QL_KhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách Hàng";
             this.Load += new System.EventHandler(this.QL_KhachHang_Load);
             this.groupBox1.ResumeLayout(false);
@@ -423,9 +426,9 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtMaNCCSearch;
+        private System.Windows.Forms.TextBox txtMaKHearch;
         private System.Windows.Forms.RadioButton rbAll;
-        private System.Windows.Forms.RadioButton rbMaNcc;
+        private System.Windows.Forms.RadioButton rbKhachHang;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnXoa;
     }

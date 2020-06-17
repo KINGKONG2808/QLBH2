@@ -15,7 +15,14 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowNhaCungCap()
         {
-            string sql = "select * from NhaCungCap";
+            string sql = "select * from NhaCungCap2";
+            DataTable dt = new DataTable();
+            dt = data.GetTable(sql);
+            return dt;
+        }
+        public DataTable ShowNhaCungCaptk(string tk)
+        {
+            string sql = "select * from NhaCungCap2 where MaNCC ='" + tk + "'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -23,19 +30,19 @@ namespace QL_BanHang.BLL
 
         public void InsertNhaCungCap(NhaCungCapObj ncc)
         {
-            string sql = "Insert into NhaCungCap values('" + ncc.MaNCC + "',N'" + ncc.TenNCC + "','" + ncc.SDT + "',N'" + ncc.DiaChi + "')";
+            string sql = "Insert into NhaCungCap2 values('" + ncc.MaNCC + "',N'" + ncc.TenNCC + "','" + ncc.SDT + "',N'" + ncc.DiaChi + "')";
             data.ExcuteNonQuery(sql);
         }
 
         public void UpdateNhaCungCap(NhaCungCapObj ncc)
         {
-            string sql = "Update NhaCungCap set TenNCC=N'" + ncc.TenNCC + "',SDT='" + ncc.SDT + "',DiaChi=N'" + ncc.DiaChi + "' where MaNCC='" + ncc.MaNCC + "'";
+            string sql = "Update NhaCungCap2 set TenNCC=N'" + ncc.TenNCC + "',SDT='" + ncc.SDT + "',DiaChi=N'" + ncc.DiaChi + "' where MaNCC='" + ncc.MaNCC + "'";
             data.ExcuteNonQuery(sql);
         }
 
         public void DeleteNhaCungCap(String mancc)
         {
-            string sql = "Delete NhaCungCap where MaNCC = '" + mancc + "'";
+            string sql = "Delete NhaCungCap2 where MaNCC = '" + mancc + "'";
             data.ExcuteNonQuery(sql);
         }
     }

@@ -60,7 +60,7 @@
     <Compile Include="BUS\NhaCungCapBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
     <Compile Include="DAL\DataConnect.cs" />
-    <Compile Include="DTO\LichSuGia.cs" />
+    <Compile Include="DTO\LichSuGiaDTO.cs" />
     <Compile Include="DTO\TrinhDoDTO.cs" />
     <Compile Include="GUI\QL_KhoHang.cs">
       <SubType>Form</SubType>

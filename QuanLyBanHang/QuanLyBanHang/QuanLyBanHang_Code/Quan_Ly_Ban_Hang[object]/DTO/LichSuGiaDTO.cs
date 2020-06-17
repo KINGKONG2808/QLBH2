@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QL_BanHang.DTO
 {
-    class LichSuGia
+    class LichSuGiaDTO
     {
         private String maHang;
         private String ngayBatDau;
@@ -14,11 +14,11 @@ namespace QL_BanHang.DTO
         private int donGia;
         private String ngayCapNhat;
 
-        public LichSuGia()
+        public LichSuGiaDTO()
         {
         }
 
-        public LichSuGia(string maHang, string ngayBatDau, string ngayKetThuc, int donGia, string ngayCapNhat)
+        public LichSuGiaDTO(string maHang, string ngayBatDau, string ngayKetThuc, int donGia, string ngayCapNhat)
         {
             this.MaHang = maHang;
             this.NgayBatDau = ngayBatDau;
