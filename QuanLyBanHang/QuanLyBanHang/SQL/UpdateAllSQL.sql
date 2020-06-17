@@ -75,10 +75,10 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-insert into NhanVien2 values (N'001', N'vũ văn hùng', N'thái bình', N'0366310685', N'001')
-insert into NhanVien2 values (N'002', N'nguyễn khắc hiếu', N'hà nội', N'0366310685', N'002')
-insert into NhanVien2 values (N'003', N'phạm văn yên', N'quảng ninh', N'0366310685', N'003')
-insert into NhanVien2 values (N'004', N'vũ việt tùng', N'phú thọ', N'0366310685', N'001')
+insert into NhanVien2 values (N'001', N'vũ văn hùng', 0, N'thái bình', N'0366310685', N'001', '1', '1')
+insert into NhanVien2 values (N'002', N'nguyễn khắc hiếu', 0, N'hà nội', N'0366310685', N'002', '1', '1')
+insert into NhanVien2 values (N'003', N'phạm văn yên', 0, N'quảng ninh', N'0366310685', N'003', '1', '1')
+insert into NhanVien2 values (N'004', N'vũ việt tùng', 0, N'phú thọ', N'0366310685', N'001', '1', '1')
 
 -- create table NhaCungCap
 SET ANSI_NULLS ON
@@ -88,10 +88,10 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[NhaCungCap2](
-	[MaNCC] [varchar](10) NOT NULL,
-	[TenNCC] [nvarchar](50) NOT NULL,
+	[MaNCC] [varchar](100) NOT NULL,
+	[TenNCC] [nvarchar](200) NOT NULL,
 	[SDT] [int] NOT NULL,
-	[DiaChi] [nvarchar](50) NOT NULL,
+	[DiaChi] [nvarchar](200) NOT NULL,
  CONSTRAINT [PK_NhaCungCap] PRIMARY KEY CLUSTERED 
 (
 	[MaNCC] ASC
@@ -101,9 +101,9 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-insert into NhaCungCap2 values (N'001', N'trung nguyên', N'tây nguyên', N'0123111')
-insert into NhaCungCap2 values (N'002', N'1994 cooktice', N'đan phượng', N'0999121')
-insert into NhaCungCap2 values (N'003', N'1994 tea', N'hà nội', N'0129988')
+insert into NhaCungCap2 values (N'001', N'trung nguyên', N'0123111', N'tây nguyên')
+insert into NhaCungCap2 values (N'002', N'1994 cooktice', N'0999121', N'đan phượng')
+insert into NhaCungCap2 values (N'003', N'1994 tea', N'0129988', N'hà nội')
 
 -- create table KhachHang
 SET ANSI_NULLS ON
@@ -113,12 +113,12 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[KhachHang2](
-	[MaKH] [varchar](10) NOT NULL,
-	[TenKH] [nvarchar](50) NOT NULL,
+	[MaKH] [varchar](100) NOT NULL,
+	[TenKH] [nvarchar](200) NOT NULL,
 	[SDT] [varchar](20) NOT NULL,
 	[GioiTinh] [bit] NOT NULL,
-	[DiaChi] [nvarchar](150) NOT NULL,
-	[MaNV] [varchar](10) NOT NULL,
+	[DiaChi] [nvarchar](200) NOT NULL,
+	[MaNV] [varchar](100) NOT NULL,
  CONSTRAINT [PK_KhachHang] PRIMARY KEY CLUSTERED 
 (
 	[MaKH] ASC
@@ -129,11 +129,33 @@ SET ANSI_PADDING OFF
 GO
 
 insert into KhachHang2 values (N'001', N'vũ văn hùng', N'0366310685', 0, N'thái bình', N'001')
-insert into KhachHang2 values (N'001', N'nguyễn khắc hiếu', N'0366310685', 0, N'hà nội', N'001')
-insert into KhachHang2 values (N'001', N'phạm văn yên', N'0366310685', 0, N'quảng ninh', N'001')
-insert into KhachHang2 values (N'001', N'vũ việt tùng', N'0366310685', 0, N'sao hỏa', N'001')
-INSERT [dbo].[KhachHang2] ([MaKH], [TenKH], [SDT], [GioiTinh], [DiaChi], [MaNV]) VALUES (N'kh1', N'Vũ Thu Hường', N'654', 0, N'Hưng Yên', N'001')
-INSERT [dbo].[KhachHang2] ([MaKH], [TenKH], [SDT], [GioiTinh], [DiaChi], [MaNV]) VALUES (N'kh2', N'Hà Duy Hưng', N'777', 1, N'Hưng Yên', N'002')
+insert into KhachHang2 values (N'002', N'nguyễn khắc hiếu', N'0366310685', 0, N'hà nội', N'001')
+insert into KhachHang2 values (N'003', N'phạm văn yên', N'0366310685', 0, N'quảng ninh', N'001')
+insert into KhachHang2 values (N'004', N'vũ việt tùng', N'0366310685', 0, N'sao hỏa', N'001')
+
+-- create table LoaiHang
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[LoaiHang2](
+	[MaLoai] [varchar](100) NOT NULL,
+	[TenLoai] [varchar](200) NOT NULL,
+	[GhiChu] [varchar](500) NOT NULL,
+ CONSTRAINT [PK_LoaiHang] PRIMARY KEY CLUSTERED 
+(
+	[MaLoai] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+
+insert into LoaiHang2 values ('001', 'cafe', 'không ngọt')
+insert into LoaiHang2 values ('002', 'nước ép', 'ngon')
+insert into LoaiHang2 values ('003', 'trà', 'chua')
 
 -- create table Hang
 SET ANSI_NULLS ON
@@ -190,9 +212,6 @@ insert into HoaDon2 values ('003', '003', '002', '5/6/2020')
 insert into HoaDon2 values ('004', '004', '001', '6/6/2020')
 insert into HoaDon2 values ('005', '001', '004', '7/6/2020')
 insert into HoaDon2 values ('006', '002', '003', '8/6/2020')
-INSERT [dbo].[HoaDon] ([MaHD], [MaKH], [MaNV], [NgayLap]) VALUES (N'001', N'001', N'001', CAST(0xEB3E0B00 AS Date))
-INSERT [dbo].[HoaDon] ([MaHD], [MaKH], [MaNV], [NgayLap]) VALUES (N'002', N'002', N'002', CAST(0x013F0B00 AS Date))
-INSERT [dbo].[HoaDon] ([MaHD], [MaKH], [MaNV], [NgayLap]) VALUES (N'003', N'003', N'003', CAST(0x013F0B00 AS Date))
 
 -- create view HangTon
 SET ANSI_NULLS ON
@@ -201,11 +220,12 @@ SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[hangton2]
 as
-select HangHoa.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,HangHoa.DonGia,HangHoa.SoLuong
-from HangHoa inner join NhaCungCap on HangHoa.MaNCC = NhaCungCap.MaNCC
-group by HangHoa.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,HangHoa.DonGia,HangHoa.SoLuong
+select Hang2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,Hang2.DonGia,Hang2.SoLuong
+from Hang2 inner join NhaCungCap2 on Hang2.MaNCC = NhaCungCap2.MaNCC
+group by Hang2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,Hang2.DonGia,Hang2.SoLuong
 GO
-/****** Object:  Table [dbo].[ChiTietHoaDon]    Script Date: 12/05/2018 15:09:49 ******/
+
+-- create table ChiTietHoaDon
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,8 +233,8 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[ChiTietHoaDon2](
-	[MaHD] [varchar](10) NOT NULL,
-	[MaHH] [varchar](10) NOT NULL,
+	[MaHD] [varchar](100) NOT NULL,
+	[MaHH] [varchar](100) NOT NULL,
 	[DonGia] [int] NOT NULL,
 	[SoLuong] [int] NOT NULL,
  CONSTRAINT [PK_ChiTietHoaDon] PRIMARY KEY CLUSTERED 
@@ -226,103 +246,160 @@ CREATE TABLE [dbo].[ChiTietHoaDon2](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[ChiTietHoaDon] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'gg', 30000, 2000)
-INSERT [dbo].[ChiTietHoaDon] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'gggg', 35000, 2000)
-INSERT [dbo].[ChiTietHoaDon] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'gg', 32000, 3000)
-INSERT [dbo].[ChiTietHoaDon] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'gggg', 35000, 2000)
-/****** Object:  View [dbo].[BangLuong]    Script Date: 12/05/2018 15:09:50 ******/
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'001', 30000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'002', 35000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'003', 32000, 3000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'004', 35000, 2000)
+
+
+-- create table LichSuGia
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[LichSuGia2](
+	[MaHang] [varchar](10) NOT NULL,
+	[NgayBatDau] [date] NOT NULL,
+	[NgayKetThuc] [date] NOT NULL,
+	[DonGia] [int] NOT NULL,
+	[NgayCapNhat] [date] NOT NULL,
+ CONSTRAINT [PK_LichSuGia] PRIMARY KEY CLUSTERED 
+(
+	[MaHang] ASC,
+	[NgayBatDau] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+
+insert into LichSuGia2 values ('001', '1/6/2020', '6/6/2020', 40000, '7/6/2020')
+insert into LichSuGia2 values ('002', '2/6/2020', '7/6/2020', 50000, '6/6/2020')
+insert into LichSuGia2 values ('003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
+
+/*-- create view BangLuong
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[BangLuong2]
 as
-select NhanVien.MaNV,NhanVien.TenNV, NhanVien.GioiTinh,NhanVien.DiaChi,CAST(NhanVien.RankNV AS int)as'Luong cung',Sum(HangHoa.HoaHong*ChiTietHoaDon.SoLuong)as'Hoa hong'
+select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh, NhanVien2.DiaChi, CAST(NhanVien.RankNV AS int)as'Luong cung',Sum(HangHoa.HoaHong*ChiTietHoaDon.SoLuong)as'Hoa hong'
 from HangHoa inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join NhanVien on HoaDon.MaNV = NhanVien.MaNV
 group by NhanVien.MaNV,NhanVien.TenNV, NhanVien.GioiTinh,NhanVien.DiaChi,CAST(NhanVien.RankNV AS int)
-GO
-/****** Object:  View [dbo].[InHoaDon]    Script Date: 12/05/2018 15:09:50 ******/
+GO*/
+
+
+-- create view InHoaDon
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[InHoaDon]
 as
-select ChiTietHoaDon.MaHD , ChiTietHoaDon.MaHH , HangHoa.TenHang, NhaCungCap.TenNCC , KhachHang.TenKH , KhachHang.GioiTinh , KhachHang.DiaChi ,KhachHang.SDT ,NhanVien.MaNV,NhanVien.TenNV, ChiTietHoaDon.DonGia , ChiTietHoaDon.SoLuong
-from NhaCungCap inner join HangHoa on NhaCungCap.MaNCC = HangHoa.MaNCC inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join NhanVien on KhachHang.MaNV = NhanVien.MaNV
-group by ChiTietHoaDon.MaHD , ChiTietHoaDon.MaHH , HangHoa.TenHang, NhaCungCap.TenNCC , KhachHang.TenKH , KhachHang.GioiTinh , KhachHang.DiaChi ,KhachHang.SDT , ChiTietHoaDon.DonGia , ChiTietHoaDon.SoLuong,NhanVien.MaNV,NhanVien.TenNV
+select ChiTietHoaDon2.MaHD , ChiTietHoaDon2.MaHH , Hang2.TenHang, NhaCungCap2.TenNCC , KhachHang2.TenKH , KhachHang2.GioiTinh , KhachHang2.DiaChi ,KhachHang2.SDT ,NhanVien2.MaNV,NhanVien2.TenNV, ChiTietHoaDon2.DonGia , ChiTietHoaDon2.SoLuong
+from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV
+group by ChiTietHoaDon2.MaHD , ChiTietHoaDon2.MaHH , Hang2.TenHang, NhaCungCap2.TenNCC , KhachHang2.TenKH , KhachHang2.GioiTinh , KhachHang2.DiaChi ,KhachHang2.SDT , ChiTietHoaDon2.DonGia , ChiTietHoaDon2.SoLuong,NhanVien2.MaNV, NhanVien2.TenNV
 GO
-/****** Object:  View [dbo].[hangban]    Script Date: 12/05/2018 15:09:50 ******/
+
+
+-- create view HangBan
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[hangban2]
 as
-select ChiTietHoaDon.MaHD, ChiTietHoaDon.MaHH , HangHoa.TenHang, KhachHang.TenKH , ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong
-from NhaCungCap inner join HangHoa on NhaCungCap.MaNCC = HangHoa.MaNCC inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH
-group by ChiTietHoaDon.MaHD, ChiTietHoaDon.MaHH , HangHoa.TenHang,KhachHang.TenKH,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong
+select ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang, KhachHang2.TenKH , ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
+from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH
+group by ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang,KhachHang2.TenKH,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
 GO
-/****** Object:  View [dbo].[DoanhThu]    Script Date: 12/05/2018 15:09:50 ******/
+
+
+-- create view DoanhThu
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[DoanhThu2]
 as
-select ChiTietHoaDon.MaHH,TenHang,ChiTietHoaDon.DonGia as'dongiaban',ChiTietHoaDon.SoLuong as'Soluongban',HangHoa.SoLuong as'Soluongnhap',HangHoa.DonGia as'dongianhap',HoaDon.NgayLap
-from HangHoa inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD
-group by ChiTietHoaDon.MaHH,TenHang,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HangHoa.SoLuong,HangHoa.DonGia,HoaDon.NgayLap
+select ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon.NgayLap
+from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD
+group by ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
 GO
-/****** Object:  View [dbo].[DanhSachBan]    Script Date: 12/05/2018 15:09:50 ******/
+
+
+-- create view DanhSachBan
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[DanhSachBan2]
 as	
-select ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
-from NhaCungCap inner join HangHoa on NhaCungCap.MaNCC = HangHoa.MaNCC inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join NhanVien on KhachHang.MaNV = NhanVien.MaNV
-group by ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
-GO
-/****** Object:  ForeignKey [FK_ChiTietHoaDon_HangHoa]    Script Date: 12/05/2018 15:09:49 ******/
-ALTER TABLE [dbo].[ChiTietHoaDon]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_HangHoa] FOREIGN KEY([MaHH])
-REFERENCES [dbo].[HangHoa] ([MaHH])
-GO
-ALTER TABLE [dbo].[ChiTietHoaDon] CHECK CONSTRAINT [FK_ChiTietHoaDon_HangHoa]
-GO
-/****** Object:  ForeignKey [FK_ChiTietHoaDon_HoaDon]    Script Date: 12/05/2018 15:09:49 ******/
-ALTER TABLE [dbo].[ChiTietHoaDon]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_HoaDon] FOREIGN KEY([MaHD])
-REFERENCES [dbo].[HoaDon] ([MaHD])
-GO
-ALTER TABLE [dbo].[ChiTietHoaDon] CHECK CONSTRAINT [FK_ChiTietHoaDon_HoaDon]
-GO
-/****** Object:  ForeignKey [FK_HangHoa_NhaCungCap]    Script Date: 12/05/2018 15:09:49 ******/
-ALTER TABLE [dbo].[HangHoa]  WITH CHECK ADD  CONSTRAINT [FK_HangHoa_NhaCungCap] FOREIGN KEY([MaNCC])
-REFERENCES [dbo].[NhaCungCap] ([MaNCC])
-GO
-ALTER TABLE [dbo].[HangHoa] CHECK CONSTRAINT [FK_HangHoa_NhaCungCap]
-GO
-/****** Object:  ForeignKey [FK_HoaDon_KhachHang]    Script Date: 12/05/2018 15:09:49 ******/
-ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_KhachHang] FOREIGN KEY([MaKH])
-REFERENCES [dbo].[KhachHang] ([MaKH])
-GO
-ALTER TABLE [dbo].[HoaDon] CHECK CONSTRAINT [FK_HoaDon_KhachHang]
-GO
-/****** Object:  ForeignKey [FK_HoaDon_NhanVien1]    Script Date: 12/05/2018 15:09:49 ******/
-ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_NhanVien1] FOREIGN KEY([MaNV])
-REFERENCES [dbo].[NhanVien] ([MaNV])
-GO
-ALTER TABLE [dbo].[HoaDon] CHECK CONSTRAINT [FK_HoaDon_NhanVien1]
-GO
-/****** Object:  ForeignKey [FK_KhachHang_NhanVien]    Script Date: 12/05/2018 15:09:49 ******/
-ALTER TABLE [dbo].[KhachHang]  WITH CHECK ADD  CONSTRAINT [FK_KhachHang_NhanVien] FOREIGN KEY([MaNV])
-REFERENCES [dbo].[NhanVien] ([MaNV])
-GO
-ALTER TABLE [dbo].[KhachHang] CHECK CONSTRAINT [FK_KhachHang_NhanVien]
+select ChiTietHoaDon2.MaHD,KhachHang2.TenKH,ChiTietHoaDon2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,HoaDon2.MaNV,NhanVien2.TenNV,HoaDon2.NgayLap
+from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV
+group by ChiTietHoaDon2.MaHD,KhachHang2.TenKH,ChiTietHoaDon2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,HoaDon2.MaNV,NhanVien2.TenNV,HoaDon2.NgayLap
 GO
 
--- uc2
+/*-- add fk for table ChiTietHoaDon
+ALTER TABLE [dbo].[ChiTietHoaDon2]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_HangHoa] FOREIGN KEY([MaHH])
+REFERENCES [dbo].[Hang2] ([MaHH])
+GO
+ALTER TABLE [dbo].[ChiTietHoaDon2] CHECK CONSTRAINT [FK_ChiTietHoaDon_HangHoa]
+GO
+
+ALTER TABLE [dbo].[ChiTietHoaDon2]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_HoaDon] FOREIGN KEY([MaHD])
+REFERENCES [dbo].[HoaDon2] ([MaHD])
+GO
+ALTER TABLE [dbo].[ChiTietHoaDon2] CHECK CONSTRAINT [FK_ChiTietHoaDon_HoaDon]
+GO
+
+
+-- add fk for table HangHoa
+ALTER TABLE [dbo].[Hang2]  WITH CHECK ADD  CONSTRAINT [FK_HangHoa_MaLoai] FOREIGN KEY([MaLoai])
+REFERENCES [dbo].[LoaiHang2] ([MaLoai])
+GO
+ALTER TABLE [dbo].[Hang2] CHECK CONSTRAINT [FK_HangHoa_MaLoai]
+GO
+
+ALTER TABLE [dbo].[HangHoa2]  WITH CHECK ADD  CONSTRAINT [FK_HangHoa_NhaCungCap] FOREIGN KEY([MaNCC])
+REFERENCES [dbo].[NhaCungCap2] ([MaNCC])
+GO
+ALTER TABLE [dbo].[HangHoa2] CHECK CONSTRAINT [FK_HangHoa_NhaCungCap]
+GO
+
+
+-- add fk for table HoaDon
+ALTER TABLE [dbo].[HoaDon2]  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_KhachHang] FOREIGN KEY([MaKH])
+REFERENCES [dbo].[KhachHang2] ([MaKH])
+GO
+ALTER TABLE [dbo].[HoaDon2] CHECK CONSTRAINT [FK_HoaDon_KhachHang]
+GO
+
+ALTER TABLE [dbo].[HoaDon2]  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_NhanVien1] FOREIGN KEY([MaNV])
+REFERENCES [dbo].[NhanVien2] ([MaNV])
+GO
+ALTER TABLE [dbo].[HoaDon2] CHECK CONSTRAINT [FK_HoaDon_NhanVien1]
+GO
+
+
+-- add fk for table KhachHang
+ALTER TABLE [dbo].[KhachHang2]  WITH CHECK ADD  CONSTRAINT [FK_KhachHang_NhanVien] FOREIGN KEY([MaNV])
+REFERENCES [dbo].[NhanVien2] ([MaNV])
+GO
+ALTER TABLE [dbo].[KhachHang2] CHECK CONSTRAINT [FK_KhachHang_NhanVien]
+GO
+
+-- add fk for table NhanVien
+ALTER TABLE [dbo].[NhanVien2]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_TrinhDo] FOREIGN KEY([MaTrinhDo])
+REFERENCES [dbo].[TrinhDo2] ([MaTrinhDo])
+GO
+ALTER TABLE [dbo].[NhanVien2] CHECK CONSTRAINT [FK_NhanVien_TrinhDo]
+GO*/
+
+/*-- uc2
 create view ThongTinHoaDon2
 as
 	select	hd.ma_hoa_don as 'ma_hoa_don',
@@ -380,4 +457,4 @@ as
 			h.ma_hang, h.ten_hang, h.don_vi_tinh, hdct.ma_hoa_don, hdct.so_luong, h.don_gia
 
 	-- test
-	select * from BaoCaoBanHangNgayVaHangTon2
+	select * from BaoCaoBanHangNgayVaHangTon2*/

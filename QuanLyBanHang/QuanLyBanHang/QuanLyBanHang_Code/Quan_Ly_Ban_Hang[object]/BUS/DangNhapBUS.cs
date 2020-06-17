@@ -16,7 +16,7 @@ namespace QL_BanHang.BLL
 
         public bool getTKAdmin(AdminObj ad)
         {
-            String sql = "select * from Admin where TaiKhoan = '" + ad.TaiKhoan + "' and MatKhau = '" + ad.MatKhau + "' ";
+            String sql = "select * from Admin2 where TaiKhoan = '" + ad.TaiKhoan + "' and MatKhau = '" + ad.MatKhau + "' ";
             if (da.GetTaiKhoan(sql) == true)
                 return true;
             return false;
@@ -24,7 +24,7 @@ namespace QL_BanHang.BLL
 
         public bool getTKNhanVien(NhanVienObj nv)
         {
-            String sql = "select * from NhanVien where TaiKhoan = '" + nv.TaiKhoan + "' and MatKhau = '" + nv.MatKhau + "' ";
+            String sql = "select * from NhanVien2 where TaiKhoan = '" + nv.TaiKhoan + "' and MatKhau = '" + nv.MatKhau + "' ";
             if (da.GetTaiKhoan(sql) == true)
                 return true;
             return false;

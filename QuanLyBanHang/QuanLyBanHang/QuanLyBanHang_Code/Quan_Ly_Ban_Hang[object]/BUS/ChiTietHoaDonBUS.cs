@@ -16,7 +16,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowChiTietHD()
         {
-            string sql = "select * from ChiTietHoaDon";
+            string sql = "select * from ChiTietHoaDon2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -24,26 +24,26 @@ namespace QL_BanHang.BLL
 
         public void InsertChiTietHD(ChiTietHoaDonObj ct)
         {
-            string sql = "Insert into ChiTietHoaDon values('" + ct.MaHD + "','" + ct.MaHH + "','" + ct.DonGia + "','" + ct.SoLuong + "')";
+            string sql = "Insert into ChiTietHoaDon2 values('" + ct.MaHD + "','" + ct.MaHH + "','" + ct.DonGia + "','" + ct.SoLuong + "')";
             data.ExcuteNonQuery(sql);
         }
 
         public void UpdateChiTietHD(ChiTietHoaDonObj ct)
         {
-            string sql = "Update ChiTietHoaDon set MaHH='" + ct.MaHH + "',DonGia='" + ct.DonGia + "',SoLuong='" + ct.SoLuong + "' where MaHD='" + ct.MaHD + "'";
+            string sql = "Update ChiTietHoaDon2 set MaHH='" + ct.MaHH + "',DonGia='" + ct.DonGia + "',SoLuong='" + ct.SoLuong + "' where MaHD='" + ct.MaHD + "'";
             data.ExcuteNonQuery(sql);
         }
 
         public void DeleteChiTietHD(string mahd)
         {
-            string sql = "Delete ChiTietHoaDon where MaHD = '" + mahd + "'";
+            string sql = "Delete ChiTietHoaDon2 where MaHD = '" + mahd + "'";
             data.ExcuteNonQuery(sql);
         }
 
         public int SoLuongNhap()
         {
             int x;
-            string sql = "select SoLuong From HangHoa where MaHH = '" +QL_HoaDon.fmHD.cboMaHH.Text + "'";
+            string sql = "select SoLuong From Hang2 where MaHH = '" +QL_HoaDon.fmHD.cboMaHH.Text + "'";
             x = data.ExecuteScalar(sql);
             return x;
         }
@@ -51,7 +51,7 @@ namespace QL_BanHang.BLL
         public int GiaNhap()
         {
             int x;
-            string sql = "select DonGia From HangHoa where MaHH = '" +QL_HoaDon.fmHD.cboMaHH.Text + "'";
+            string sql = "select DonGia From Hang2 where MaHH = '" +QL_HoaDon.fmHD.cboMaHH.Text + "'";
             x = data.ExecuteScalar(sql);
             return x;
         }
