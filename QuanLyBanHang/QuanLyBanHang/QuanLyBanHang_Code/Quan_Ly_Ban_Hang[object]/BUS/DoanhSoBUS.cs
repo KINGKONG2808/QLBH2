@@ -23,7 +23,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowTheoNgay(DateTime ngay)
         {
-            string sql = "select * from DanhSachBan where NgayLap = '"+ngay+"'";
+            string sql = "select * from DanhSachBan2 where NgayLap = '"+ngay+"'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -33,7 +33,7 @@ namespace QL_BanHang.BLL
         {
             int x = ngay.Month;
             int y = ngay.Year;
-            string sql = "select * from DanhSachBan where Month(NgayLap) = '" + x + "' and Year(NgayLap) = '" + y + "'";
+            string sql = "select * from DanhSachBan2 where Month(NgayLap) = '" + x + "' and Year(NgayLap) = '" + y + "'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -42,7 +42,7 @@ namespace QL_BanHang.BLL
         public DataTable ShowTheoNam(DateTime ngay)
         {
             int x = ngay.Year;
-            string sql = "select * from DanhSachBan where Year(NgayLap) = '" + x + "'";
+            string sql = "select * from DanhSachBan2 where Year(NgayLap) = '" + x + "'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -52,7 +52,7 @@ namespace QL_BanHang.BLL
         {
             int x;
             DateTime ngay = Convert.ToDateTime(QL_DoanhThu.fmDT.txtNgay.Text);
-            string sql = "select sum(SoLuongBan*DonGiaBan) from DoanhThu where NgayLap = '" +ngay+ "' group by NgayLap";
+            string sql = "select sum(SoLuongBan*DonGiaBan) from DoanhThu2 where NgayLap = '" +ngay+ "' group by NgayLap";
             x = data.ExecuteScalar(sql);
             return x;
         }
@@ -81,7 +81,7 @@ namespace QL_BanHang.BLL
         {
             int x;
             int nam = Convert.ToInt32(QL_DoanhThu.fmDT.txtNam.Text);
-            string sql = "select SUM(SoLuongBan*DonGiaBan) from DoanhThu where YEAR(NgayLap) = '" + nam + "'";
+            string sql = "select SUM(SoLuongBan*DonGiaBan) from DoanhThu2 where YEAR(NgayLap) = '" + nam + "'";
             x = data.ExecuteScalar(sql);
             return x;
         }
