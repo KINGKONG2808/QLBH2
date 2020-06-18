@@ -119,3 +119,24 @@ C:\Users\hoang\OneDrive\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_
 C:\Users\hoang\OneDrive\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.exe
 C:\Users\hoang\OneDrive\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.pdb
 >>>>>>> 93a047537a59c7399d2b55583496fa8edee35346
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.exe.config
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.exe
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.pdb
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.csprojAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_KhoHang.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.GUI.QL_LichSuGiaGUI.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.GUI.QL_LoaiHangGUI.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_LuongVaThuong.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_DoanhThu.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_DangNhap.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_NhaCungCap.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_HangHoa.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_HoaDon.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_KhachHang.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.QL_NhanVien.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.GUI.QL_TrinhDoGUI.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.TrangChu.resources
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.csproj.GenerateResource.cache
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.exe
+\\Mac\Home\Documents\GitHub\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.pdb
