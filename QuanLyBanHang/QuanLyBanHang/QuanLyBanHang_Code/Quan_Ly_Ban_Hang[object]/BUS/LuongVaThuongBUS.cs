@@ -15,7 +15,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowTiepThi()
         {
-            string sql = "select KhachHang.MaNV , NhanVien.TenNV , COUNT(*)as'TiepThi' from KhachHang inner join NhanVien on KhachHang.MaNV = NhanVien.MaNV GROUP BY KhachHang.MaNV , NhanVien.TenNV";
+            string sql = "select KhachHang2.MaNV , NhanVien2.TenNV , COUNT(*)as'TiepThi' from KhachHang2 inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV GROUP BY KhachHang2.MaNV , NhanVien2.TenNV";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -23,7 +23,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowLapHD()
         {
-            string sql = "select NhanVien.MaNV ,NhanVien.TenNV , COUNT(*)as'So luot lap hoa don' from ChiTietHoaDon inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join NhanVien on HoaDon.MaNV = NhanVien.MaNV group by NhanVien.MaNV ,NhanVien.TenNV";
+            string sql = "select NhanVien2.MaNV ,NhanVien2.TenNV , COUNT(*)as'So luot lap hoa don' from ChiTietHoaDon2 inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV group by NhanVien2.MaNV ,NhanVien2.TenNV";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -31,7 +31,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowBangLuong()
         {
-            string sql = "select * from BangLuong";
+            string sql = "select * from BangLuong2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -39,7 +39,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowTongLuong()
         {
-            string sql = "select (BangLuong.[Luong cung]+BangLuong.[Hoa hong])as 'Tong luong' from BangLuong";
+            string sql = "select BangLuong2.[Luong cung] as 'Tong luong' from BangLuong2";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

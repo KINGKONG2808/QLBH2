@@ -56,7 +56,7 @@ namespace QL_BanHang
 
         private void cmbHinhThuc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbHinhThuc.SelectedItem == "Theo ngày")
+            if (cmbHinhThuc.SelectedItem.ToString() == "Theo ngày")
             {
                 grbNgay.Enabled = true;
                 grbNam.Enabled = false;
@@ -66,7 +66,7 @@ namespace QL_BanHang
                 txtTienThang.Clear();
                 txtTienNam.Clear();
             }
-            if (cmbHinhThuc.SelectedItem == "Theo tháng")
+            if (cmbHinhThuc.SelectedItem.ToString() == "Theo tháng")
             {
                 grbNgay.Enabled = false;
                 grbNam.Enabled = false;
@@ -77,7 +77,7 @@ namespace QL_BanHang
                 txtTienNam.Clear();
             }
 
-            if (cmbHinhThuc.SelectedItem == "Theo năm")
+            if (cmbHinhThuc.SelectedItem.ToString() == "Theo năm")
             {
                 grbNgay.Enabled = false;
                 grbNam.Enabled = true;
@@ -94,16 +94,16 @@ namespace QL_BanHang
             row = e.RowIndex;
             DateTime dt = new DateTime();
             dt = Convert.ToDateTime(dgvLoiNhuan.Rows[row].Cells[6].Value);
-            if (cmbHinhThuc.SelectedItem == "Theo ngày")
+            if (cmbHinhThuc.SelectedItem.ToString() == "Theo ngày")
             {
                 txtNgay.Text = dt.ToString("MM/dd/yyyy");
 
             }
-            if (cmbHinhThuc.SelectedItem == "Theo tháng")
+            if (cmbHinhThuc.SelectedItem.ToString() == "Theo tháng")
             {
                 txtThang.Text = dt.Month.ToString() + "/" + dt.Year.ToString();
             }
-            if (cmbHinhThuc.SelectedItem == "Theo năm")
+            if (cmbHinhThuc.SelectedItem.ToString() == "Theo năm")
             {
                 txtNam.Text = dt.Year.ToString();
             }
