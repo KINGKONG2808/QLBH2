@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using QL_BanHang.DAL;
 using System.Data;
-using QL_BanHang.Object;
+using QL_BanHang.DTO;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
     class NhanVienBUS
     {
@@ -23,13 +23,13 @@ namespace QL_BanHang.BLL
 
         public void InsertNhanVien(NhanVienDTO nv)
         {
-            String gt;
+            string gt;
             if (nv.GioiTinh.Equals("Nam"))
                 gt = "True";
             else
                 gt = "False";
             nv.GioiTinh = gt;
-            String luong;
+            string luong;
             if (nv.Rank.Equals("Rank A"))
                 luong = "8000000";
             else
@@ -46,13 +46,13 @@ namespace QL_BanHang.BLL
 
         public void UpdateNhanVien(NhanVienDTO nv)
         {
-            String gt;
+            string gt;
             if (nv.GioiTinh.Equals("Nam"))
                 gt = "True";
             else
                 gt = "False";
             nv.GioiTinh = gt;
-            String luong;
+            string luong;
             if (nv.Rank.Equals("Rank A"))
                 luong = "8000000";
             else
@@ -67,7 +67,7 @@ namespace QL_BanHang.BLL
             data.ExcuteNonQuery(sql);
         }
 
-        public void DeleteNhanVien(String manv)
+        public void DeleteNhanVien(string manv)
         {
             string sql = "Delete NhanVien where MaNV = '" + manv + "'";
             data.ExcuteNonQuery(sql);

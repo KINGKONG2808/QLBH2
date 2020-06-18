@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using QL_BanHang.DAL;
 using System.Data;
-using QL_BanHang.Object;
+using QL_BanHang.DTO;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
-    class KhachHangBLL
+    class KhachHangBUS
     {
         DataConnect data = new DataConnect();
 
@@ -27,9 +27,9 @@ namespace QL_BanHang.BLL
             dt = data.GetTable(sql);
             return dt;
         }
-        public void InsertKhachHang(KhachHangObj kh)
+        public void InsertKhachHang(KhachHangDTO kh)
         {
-            String gt;
+            string gt;
             if (kh.GioiTinh.Equals("Nam"))
                 gt = "True";
             else
@@ -39,9 +39,9 @@ namespace QL_BanHang.BLL
             data.ExcuteNonQuery(sql);
         }
 
-        public void UpdateKhachHang(KhachHangObj kh)
+        public void UpdateKhachHang(KhachHangDTO kh)
         {
-            String gt;
+            string gt;
             if (kh.GioiTinh.Equals("Nam"))
                 gt = "True";
             else

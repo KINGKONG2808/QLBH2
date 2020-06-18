@@ -8,22 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.Object;
-using QL_BanHang.BLL;
+using QL_BanHang.BUS;
 using QL_BanHang.DAL;
+using QL_BanHang.DTO;
 
 namespace QL_BanHang
 {
     public partial class QL_HoaDon : Form
     {
         public static QL_HoaDon fmHD;
-        HoaDonObj hd = new HoaDonObj();
-        ChiTietHoaDonObj ct = new ChiTietHoaDonObj();
-        HoaDonBLL hdbll = new HoaDonBLL();
+        HoaDonDTO hd = new HoaDonDTO();
+        ChiTietHoaDonDTO ct = new ChiTietHoaDonDTO();
+        HoaDonBUS hdbll = new HoaDonBUS();
         HangBUS hhbll = new HangBUS();
         NhanVienBUS nvbll = new NhanVienBUS();
-        KhachHangBLL khbll = new KhachHangBLL();
-        ChiTietHoaDonBLL ctbll = new ChiTietHoaDonBLL();
+        KhachHangBUS khbll = new KhachHangBUS();
+        ChiTietHoaDonBUS ctbll = new ChiTietHoaDonBUS();
         DataConnect data = new DataConnect();
         int Flag = 0;
         public QL_HoaDon()
@@ -72,7 +72,7 @@ namespace QL_BanHang
             txtDonGia.Text = "";
         }
 
-        private void ganDuLieu(HoaDonObj hd)
+        private void ganDuLieu(HoaDonDTO hd)
         {
             hd.MaHD = txtMaHD.Text;
             hd.MaKH = cboMaKH.Text;
@@ -80,7 +80,7 @@ namespace QL_BanHang
             hd.NgayLap = dateNgayLap.Value.ToString("yyyy-MM-dd");
         }
 
-        private void ganDuLieu1(ChiTietHoaDonObj ct)
+        private void ganDuLieu1(ChiTietHoaDonDTO ct)
         {
             ct.MaHD = cboMaHD.Text;
             ct.MaHH = cboMaHH.Text;

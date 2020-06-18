@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
     class NhanVienDTO
     {
@@ -16,72 +16,72 @@ namespace QL_BanHang.Object
         private string rank;
         private string taiKhoan;
         private string matKhau;
-        
-        public String MaNV
+
+        public string MaNV
         {
             get { return maNV; }
             set { maNV = value; }
         }
 
-        public String TenNV
+        public string TenNV
         {
             get { return tenNV; }
             set { tenNV = value; }
         }
 
-        public String GioiTinh
+        public string GioiTinh
         {
             get { return gioiTinh; }
             set { gioiTinh = value; }
         }
 
-        public String DiaChi
+        public string DiaChi
         {
             get { return diaChi; }
             set { diaChi = value; }
         }
 
-        public String SDT
+        public string SDT
         {
             get { return sdt; }
             set { sdt = value; }
         }
 
-        public String Rank
+        public string Rank
         {
             get { return rank; }
             set { rank = value; }
         }
 
-        public String TaiKhoan
+        public string TaiKhoan
         {
             get { return taiKhoan; }
             set { taiKhoan = value; }
         }
 
-        public String MatKhau
+        public string MatKhau
         {
             get { return matKhau; }
             set { matKhau = value; }
         }
 
         public NhanVienDTO() { }
-        public NhanVienDTO(String manv,String tennv,String gioiTinh,String diaChi,String sdt,String rank,String taikhoan,String matkhau)
+        public NhanVienDTO(string manv, string tennv, string gioiTinh, string diaChi, string sdt, string rank, string taikhoan, string matkhau)
         {
-            this.MaNV = manv;
-            this.TenNV = tennv;
-            this.GioiTinh = gioiTinh;
-            this.SDT = sdt;
-            this.DiaChi = diaChi;
-            this.Rank = rank;
-            this.TaiKhoan = taikhoan;
-            this.MatKhau = matkhau;
+            MaNV = manv;
+            TenNV = tennv;
+            GioiTinh = gioiTinh;
+            SDT = sdt;
+            DiaChi = diaChi;
+            Rank = rank;
+            TaiKhoan = taikhoan;
+            MatKhau = matkhau;
         }
 
-        public NhanVienDTO(String taikhoan, String matkhau)
+        public NhanVienDTO(string taikhoan, string matkhau)
         {
-            this.TaiKhoan = taikhoan;
-            this.MatKhau = matkhau;
+            TaiKhoan = taikhoan;
+            MatKhau = matkhau;
         }
     }
 }

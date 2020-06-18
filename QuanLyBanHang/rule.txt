@@ -1,4 +1,45 @@
+* Phân chia công việc đợt 1:
 - Việc đầu tiên, yêu cầu anh em sửa màu nền theo phần trang chủ tôi đã sửa
 - Viêc thứ 2, mỗi người đã được chia màn hình của mình thì ai có màn hình nào sửa lại toàn bộ giao diện của màn hình đấy như các button chỉnh lại cho cân đối
 - Việc thứ 3, chỉnh lại hết text thành tiếng việt
 - Việc thứ 4, khi commit file data connect bắt buộc phải đưa về null (tránh conflict khi merge code vào master)
+
+* Phân chia công việc đợt 2:
+- Phân chia công việc C#:
+	+ Hùng: đăng nhập/ đăng xuất, trang chủ - phân quyền, quản lý hoá đơn - hoá đơn chi tiết
+	+ Hiếu: khách hàng, nhà cung cấp, loại hàng + add dữ liệu đúng vào bảng
+	+ Tùng: quản lý [nhập hàng], [kho hàng], nhân viên, lịch sử giá
+	+ Yên: tài chính [doanh thu], [bảng lương nhân viên], trình độ + sửa lại sql view cho phù hợp với yêu cầu của project
+
+- nguyên tắc code:
+	+ phần tìm kiếm cần cho ra 1 class riêng và dùng cung cho tất cả màn hình. không được mỗi màn 1 class tìm kiếm riêng rác code (cái này tôi sẽ xây dựng base) 
+	+ trình bày code các button cần cho vào try catch tránh chết chương trình giữa chừng
+	+ kiểm tra chính xác câu query insert, update, delete khoá chính khoá phụ kết nối
+
+- các yêu cầu cho thuộc tính trên màn hình:
+	+ hiển thị thông tin theo các trường trong db, một số màn hình có bảng phụ thì cần hiển thị combobox cho phép chọn giá trị
+
+- các case nomarl cần đạt được trong mỗi màn hình:
+	+ chức năng “thêm”: xoá trắng các trường textbox
+	+ chức năng “sửa”: cho phép người dùng sửa thông tin được chọn trừ khoá chính
+	+ chức năng “xoá”: cho phép xoá bản ghi theo khoá chính nhập vào (lưu ý có những bảng có 2 pk)
+	+ chức năng “lưu”: cho phép lưu lại bản ghi vừa nhập
+	+ chức năng “tìm kiếm”: theo trường chỉ định và theo tất cả
+	+ chức năng “thoát”: đóng màn hình hiện tại và quay về trang chủ
+	+ thao tác click trên datagridview: click vào bản ghi bất kỳ cho phép show lên các ô textbox
+	+ yêu cầu hiển thị trên datagridview: hiển thị trường tên đầy đủ của bảng phụ chứ không hiển thị khoá chính của bảng phụ. ví dụ thay vì hiển thị mã trình độ trên view là 001 thì phải show ra được tên trình độ ứng với mã 001 đấy. tương tự với các màn khác
+
+- nguyên tắc sử dụng github:
+	+ luôn luôn pull code mới nhất về trước khi bắt đầu code. sử dụng “git pull”
+	+ cách đẩy code tránh conflict:
+		- git pull
+		- git status (nếu pull lỗi, pull dc rồi thì bỏ qua)
+		- git add .
+		- git commit -m “nội dung commit”
+		- git push -u origin master
+	+ lưu ý cứ gặp lỗi thì dùng “git status” để check lỗi
+	+ luôn luôn để chuỗi data connect về null trước khi commit
+	+ xoá hết các thư mục .vs trong project trước khi commit (thằng nào đẩy lên có .vs bố m đấm)
+
+- yêu cầu test hết các case normal trước khi confirm hoàn thành màn hình.
+- việc cuối cùng là hoàn thành cho nhanh để còn sửa báo cáo.

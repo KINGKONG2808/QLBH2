@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
     class LoaiHangDTO
     {
-        private String maLoai;
-        private String tenLoai;
-        private String ghiChu;
+        private string maLoai;
+        private string tenLoai;
+        private string ghiChu;
 
         public string MaLoai { get => maLoai; set => maLoai = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
@@ -18,7 +18,7 @@ namespace QL_BanHang.Object
 
         public LoaiHangDTO() { }
 
-        public LoaiHangDTO(String maLoai, String tenLoai, String ghiChu)
+        public LoaiHangDTO(string maLoai, string tenLoai, string ghiChu)
         {
             this.maLoai = maLoai;
             this.tenLoai = tenLoai;

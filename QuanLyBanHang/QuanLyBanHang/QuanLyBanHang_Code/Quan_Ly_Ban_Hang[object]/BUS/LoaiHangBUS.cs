@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 using QL_BanHang.DAL;
 using System.Data;
-using QL_BanHang.Object;
+using QL_BanHang.DTO;
+
 namespace QL_BanHang.BUS
 {
     class LoaiHangBUS

@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QL_BanHang.DAL;
-using QL_BanHang.Object;
+using QL_BanHang.DTO;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
-    class HoaDonBLL
+    class HoaDonBUS
     {
         DataConnect data = new DataConnect();
 
@@ -22,13 +22,13 @@ namespace QL_BanHang.BLL
             return dt;
         }
 
-        public void InsertHoaDon(HoaDonObj hd)
+        public void InsertHoaDon(HoaDonDTO hd)
         {
             string sql = "Insert into HoaDon values('" + hd.MaHD + "','" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgayLap + "')";
             data.ExcuteNonQuery(sql);
         }
 
-        public void UpdateHoaDon(HoaDonObj hd)
+        public void UpdateHoaDon(HoaDonDTO hd)
         {
             string sql = "Update HoaDon set MaKH='" + hd.MaKH + "',MaNV='" + hd.MaNV + "',NgayLap='" + hd.NgayLap + "' where MaHD='" + hd.MaHD + "'";
             data.ExcuteNonQuery(sql);

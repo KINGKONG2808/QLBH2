@@ -9,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.BLL;
-using QL_BanHang.DAL;
+using QL_BanHang.BUS;
 
 namespace QL_BanHang
 {
     public partial class QL_LuongVaThuong : Form
     {
         DataConnect data = new DataConnect();
-        LuongVaThuongBLL ltbll = new LuongVaThuongBLL();
+        LuongVaThuongBUS ltbll = new LuongVaThuongBUS();
         public QL_LuongVaThuong()
         {
             InitializeComponent();

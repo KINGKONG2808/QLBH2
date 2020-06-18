@@ -4,46 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
-    class HoaDonObj
+    class HoaDonDTO
     {
-        private String maHD;
-        private String maKH;
-        private String maNV;
-        private String ngayLap;
+        private string maHD;
+        private string maKH;
+        private string maNV;
+        private string ngayLap;
 
-        public String MaHD
+        public string MaHD
         {
             get { return maHD; }
             set { maHD = value; }
         }
 
-        public String MaKH
+        public string MaKH
         {
             get { return maKH; }
             set { maKH = value; }
         }
 
-        public String MaNV
+        public string MaNV
         {
             get { return maNV; }
             set { maNV = value; }
         }
 
-        public String NgayLap
+        public string NgayLap
         {
             get { return ngayLap; }
             set { ngayLap = value; }
         }
 
-        public HoaDonObj() { }
-        public HoaDonObj(String mahd,String makh,String manv,String ngaylap)
+        public HoaDonDTO() { }
+        public HoaDonDTO(string mahd, string makh, string manv, string ngaylap)
         {
-            this.MaHD = mahd;
-            this.MaKH = makh;
-            this.MaNV = manv;
-            this.NgayLap = ngaylap;
+            MaHD = mahd;
+            MaKH = makh;
+            MaNV = manv;
+            NgayLap = ngaylap;
         }
     }
 }

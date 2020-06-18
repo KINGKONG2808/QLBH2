@@ -4,46 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
-    class NhaCungCapObj
+    class NhaCungCapDTO
     {
-        private String maNCC;
-        private String tenNCC;
-        private String sdt;
-        private String diaChi;
+        private string maNCC;
+        private string tenNCC;
+        private string sdt;
+        private string diaChi;
 
-        public String MaNCC
+        public string MaNCC
         {
             get { return maNCC; }
             set { maNCC = value; }
         }
 
-        public String TenNCC
+        public string TenNCC
         {
             get { return tenNCC; }
             set { tenNCC = value; }
         }
 
-        public String SDT
+        public string SDT
         {
             get { return sdt; }
             set { sdt = value; }
         }
 
-        public String DiaChi
+        public string DiaChi
         {
             get { return diaChi; }
             set { diaChi = value; }
         }
 
-        public NhaCungCapObj() { }
-        public NhaCungCapObj(String mancc,String tenncc,String sdt,String diachi)
+        public NhaCungCapDTO() { }
+        public NhaCungCapDTO(string mancc, string tenncc, string sdt, string diachi)
         {
-            this.MaNCC = mancc;
-            this.TenNCC = tenncc;
-            this.SDT = sdt;
-            this.DiaChi = diachi;
+            MaNCC = mancc;
+            TenNCC = tenncc;
+            SDT = sdt;
+            DiaChi = diachi;
         }
     }
 }

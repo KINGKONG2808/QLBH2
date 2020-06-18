@@ -4,46 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
-    class ChiTietHoaDonObj
+    class ChiTietHoaDonDTO
     {
-        private String maHD;
-        private String maHH;
-        private String donGia;
-        private String soLuong;
+        private string maHD;
+        private string maHH;
+        private string donGia;
+        private string soLuong;
 
-        public String MaHD
+        public string MaHD
         {
             get { return maHD; }
             set { maHD = value; }
         }
 
-        public String MaHH
+        public string MaHH
         {
             get { return maHH; }
             set { maHH = value; }
         }
 
-        public String DonGia
+        public string DonGia
         {
             get { return donGia; }
             set { donGia = value; }
         }
 
-        public String SoLuong
+        public string SoLuong
         {
             get { return soLuong; }
             set { soLuong = value; }
         }
 
-        public ChiTietHoaDonObj() { }
-        public ChiTietHoaDonObj(String mahd,String mahh,String dongia,String soluong)
+        public ChiTietHoaDonDTO() { }
+        public ChiTietHoaDonDTO(string mahd, string mahh, string dongia, string soluong)
         {
-            this.MaHD = mahd;
-            this.maHH = mahh;
-            this.DonGia = dongia;
-            this.SoLuong = soluong;
+            MaHD = mahd;
+            maHH = mahh;
+            DonGia = dongia;
+            SoLuong = soluong;
         }
     }
 }

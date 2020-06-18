@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
     class HangDTO
     {
@@ -24,13 +24,13 @@ namespace QL_BanHang.Object
         public HangDTO() { }
         public HangDTO(string mh, string th, string ml, string mncc, string dvt, int dg, int slc)
         {
-            this.Mahang = mh;
-            this.Tenhang = th;
-            this.Maloai = ml;
-            this.Nhacungcap = mncc;
-            this.Donvitinh = dvt;
-            this.Dongia = dg;
-            this.soluongco = slc;
+            Mahang = mh;
+            Tenhang = th;
+            Maloai = ml;
+            Nhacungcap = mncc;
+            Donvitinh = dvt;
+            Dongia = dg;
+            soluongco = slc;
         }
     }
 }

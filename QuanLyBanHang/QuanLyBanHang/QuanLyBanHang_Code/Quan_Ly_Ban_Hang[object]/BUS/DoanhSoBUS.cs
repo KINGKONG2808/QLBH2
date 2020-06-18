@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using QL_BanHang.DAL;
 using System.Data;
-using QL_BanHang.Object;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
-    class DoanhSoBLL
+    class DoanhSoBUS
     {
         DataConnect data = new DataConnect();
 
@@ -23,7 +22,7 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowTheoNgay(DateTime ngay)
         {
-            string sql = "select * from DanhSachBan2 where NgayLap = '"+ngay+"'";
+            string sql = "select * from DanhSachBan2 where NgayLap = '" + ngay + "'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -52,7 +51,7 @@ namespace QL_BanHang.BLL
         {
             int x;
             DateTime ngay = Convert.ToDateTime(QL_DoanhThu.fmDT.txtNgay.Text);
-            string sql = "select sum(SoLuongBan*DonGiaBan) from DoanhThu2 where NgayLap = '" +ngay+ "' group by NgayLap";
+            string sql = "select sum(SoLuongBan*DonGiaBan) from DoanhThu2 where NgayLap = '" + ngay + "' group by NgayLap";
             x = data.ExecuteScalar(sql);
             return x;
         }
@@ -67,7 +66,7 @@ namespace QL_BanHang.BLL
             return x;
         }*/
 
-        public int DoanhThuThang(String theoThang)
+        public int DoanhThuThang(string theoThang)
         {
             int x;
             DateTime y = Convert.ToDateTime(theoThang);

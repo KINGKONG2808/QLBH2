@@ -5,9 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QL_BanHang.Object;
+using QL_BanHang.DTO;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
     class HangBUS
     {
@@ -21,7 +21,7 @@ namespace QL_BanHang.BLL
             return dt;
         }
 
-      
+
 
         public DataTable ShowHangloaihang()
         {
@@ -41,7 +41,7 @@ namespace QL_BanHang.BLL
 
         public void InsertHangHoa(HangDTO h)
         {
-            string sql = "Insert into Hang2 values('" + h.Mahang + "',N'" + h.Tenhang + "','" + h.Donvitinh + "','" + h.Dongia   + "','" + h.Maloai + "','" + h.Nhacungcap + "','" + h.Soluongco + "')";
+            string sql = "Insert into Hang2 values('" + h.Mahang + "',N'" + h.Tenhang + "','" + h.Donvitinh + "','" + h.Dongia + "','" + h.Maloai + "','" + h.Nhacungcap + "','" + h.Soluongco + "')";
             data.ExcuteNonQuery(sql);
         }
 

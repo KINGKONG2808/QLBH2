@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using QL_BanHang.DAL;
 using System.Data;
-using QL_BanHang.Object;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
-    class LuongVaThuongBLL
+    class LuongVaThuongBUS
     {
         DataConnect data = new DataConnect();
 

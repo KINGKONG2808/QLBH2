@@ -8,15 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.BLL;
+using QL_BanHang.BUS;
 using QL_BanHang.DAL;
 
 namespace QL_BanHang
 {
     public partial class QL_KhoHang : Form
     {
-        String s = @"Data Source=DESKTOP-B13DRT8\SQLEXPRESS;Initial Catalog=QL_BanHang;Integrated Security=True";
-        SqlConnection conn;
         KhoHangBUS khbus = new KhoHangBUS();
         public QL_KhoHang()
         {

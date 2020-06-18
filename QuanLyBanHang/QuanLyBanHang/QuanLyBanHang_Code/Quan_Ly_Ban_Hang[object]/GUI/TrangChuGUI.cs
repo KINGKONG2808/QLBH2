@@ -130,7 +130,22 @@ namespace QL_BanHang
             fnv.FormClosed += new FormClosedEventHandler(fnv_FormClosed);
             fnv.Show();
             this.Hide();
-            
+        }
+
+        private void lịchSửGiáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QL_LichSuGiaGUI fnv = new QL_LichSuGiaGUI();
+            fnv.FormClosed += new FormClosedEventHandler(fnv_FormClosed);
+            fnv.Show();
+            this.Hide();
+        }
+
+        private void thôngTinTrìnhĐộToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QL_TrinhDoGUI fnv = new QL_TrinhDoGUI();
+            fnv.FormClosed += new FormClosedEventHandler(fnv_FormClosed);
+            fnv.Show();
+            this.Hide();
         }
     }
 }

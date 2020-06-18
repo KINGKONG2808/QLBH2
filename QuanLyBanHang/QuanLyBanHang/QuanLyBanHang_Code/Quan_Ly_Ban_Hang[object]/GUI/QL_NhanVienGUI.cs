@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using QL_BanHang.Object;
-using QL_BanHang.BLL;
+using QL_BanHang.DTO;
+using QL_BanHang.BUS;
 
 namespace QL_BanHang
 {

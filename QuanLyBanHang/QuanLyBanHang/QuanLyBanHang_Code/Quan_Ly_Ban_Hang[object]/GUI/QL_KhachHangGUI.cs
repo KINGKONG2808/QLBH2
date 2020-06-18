@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using QL_BanHang.Object;
-using QL_BanHang.BLL;
 using QL_BanHang.DAL;
+using QL_BanHang.DTO;
+using QL_BanHang.BUS;
 
 namespace QL_BanHang
 {
     public partial class QL_KhachHang : Form
     {
-        KhachHangObj kh = new KhachHangObj();
-        KhachHangBLL khbll = new KhachHangBLL();
+        KhachHangDTO kh = new KhachHangDTO();
+        KhachHangBUS khbll = new KhachHangBUS();
         DataConnect data = new DataConnect();
         int Flag = 0;
         public QL_KhachHang()
@@ -69,7 +69,7 @@ namespace QL_BanHang
             }
         }
 
-        private void ganDuLieu(KhachHangObj kh)
+        private void ganDuLieu(KhachHangDTO kh)
         {
             kh.MaKH = txtMaKH.Text;
             kh.TenKH = txtTenKH.Text;
@@ -254,7 +254,7 @@ namespace QL_BanHang
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            KhachHangBLL kh = new KhachHangBLL();
+            KhachHangBUS kh = new KhachHangBUS();
             if(rbKhachHang.Checked == true)
             {
                 DataTable dt = new DataTable();

@@ -7,12 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using QL_BanHang.Object;
-using QL_BanHang.BLL;
 using QL_BanHang.DAL;
 using System.Data.SqlClient;
 using QL_BanHang.BUS;
+using QL_BanHang.DTO;
 
 namespace QL_BanHang.GUI
 {

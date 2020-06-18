@@ -10,11 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Drawing.Imaging;
-
-
-using QL_BanHang.Object;
-using QL_BanHang.BLL;
 using QL_BanHang.DAL;
+using QL_BanHang.DTO;
+using QL_BanHang.BUS;
 
 namespace QL_BanHang
 {

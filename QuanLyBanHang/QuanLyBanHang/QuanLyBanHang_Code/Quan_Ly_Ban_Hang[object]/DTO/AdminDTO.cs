@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
-    class AdminObj
+    class AdminDTO
     {
-        private String taiKhoan;
-        private String matKhau;
+        private string taiKhoan;
+        private string matKhau;
 
-        public String TaiKhoan
+        public string TaiKhoan
         {
             get { return taiKhoan; }
             set { taiKhoan = value; }
         }
 
-        public String MatKhau
+        public string MatKhau
         {
             get { return matKhau; }
             set { matKhau = value; }
         }
 
-        public AdminObj() { }
-        public AdminObj(String taikhoan,String matkhau)
+        public AdminDTO() { }
+        public AdminDTO(string taikhoan, string matkhau)
         {
-            this.TaiKhoan = taikhoan;
-            this.MatKhau = matkhau;
+            TaiKhoan = taikhoan;
+            MatKhau = matkhau;
         }
     }
 }

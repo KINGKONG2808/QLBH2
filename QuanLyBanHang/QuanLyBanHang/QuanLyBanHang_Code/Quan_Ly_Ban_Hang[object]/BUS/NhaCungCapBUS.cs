@@ -5,11 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QL_BanHang.Object;
+using QL_BanHang.DTO;
 
-namespace QL_BanHang.BLL
+namespace QL_BanHang.BUS
 {
-    class NhaCungCapBLL
+    class NhaCungCapBUS
     {
         DataConnect data = new DataConnect();
 
@@ -28,19 +28,19 @@ namespace QL_BanHang.BLL
             return dt;
         }
 
-        public void InsertNhaCungCap(NhaCungCapObj ncc)
+        public void InsertNhaCungCap(NhaCungCapDTO ncc)
         {
             string sql = "Insert into NhaCungCap2 values('" + ncc.MaNCC + "',N'" + ncc.TenNCC + "','" + ncc.SDT + "',N'" + ncc.DiaChi + "')";
             data.ExcuteNonQuery(sql);
         }
 
-        public void UpdateNhaCungCap(NhaCungCapObj ncc)
+        public void UpdateNhaCungCap(NhaCungCapDTO ncc)
         {
             string sql = "Update NhaCungCap2 set TenNCC=N'" + ncc.TenNCC + "',SDT='" + ncc.SDT + "',DiaChi=N'" + ncc.DiaChi + "' where MaNCC='" + ncc.MaNCC + "'";
             data.ExcuteNonQuery(sql);
         }
 
-        public void DeleteNhaCungCap(String mancc)
+        public void DeleteNhaCungCap(string mancc)
         {
             string sql = "Delete NhaCungCap2 where MaNCC = '" + mancc + "'";
             data.ExcuteNonQuery(sql);

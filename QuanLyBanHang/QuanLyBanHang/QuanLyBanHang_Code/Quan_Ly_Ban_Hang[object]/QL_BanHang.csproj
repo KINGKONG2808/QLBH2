@@ -81,17 +81,17 @@
     <Compile Include="GUI\QL_LoaiHangGUI.Designer.cs">
       <DependentUpon>QL_LoaiHangGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QL_LuongVaThuong.cs">
+    <Compile Include="GUI\QL_LuongVaThuongGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QL_LuongVaThuong.Designer.cs">
-      <DependentUpon>QL_LuongVaThuong.cs</DependentUpon>
+    <Compile Include="GUI\QL_LuongVaThuongGUI.Designer.cs">
+      <DependentUpon>QL_LuongVaThuongGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QL_DoanhThu.cs">
+    <Compile Include="GUI\QL_DoanhThuGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QL_DoanhThu.Designer.cs">
-      <DependentUpon>QL_DoanhThu.cs</DependentUpon>
+    <Compile Include="GUI\QL_DoanhThuGUI.Designer.cs">
+      <DependentUpon>QL_DoanhThuGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
     <Compile Include="DTO\AdminDTO.cs" />
@@ -101,23 +101,23 @@
     <Compile Include="DTO\LoaiHangDTO.cs" />
     <Compile Include="DTO\NhaCungCapDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
-    <Compile Include="GUI\QL_DangNhap.cs">
+    <Compile Include="GUI\QL_DangNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QL_DangNhap.Designer.cs">
-      <DependentUpon>QL_DangNhap.cs</DependentUpon>
+    <Compile Include="GUI\QL_DangNhapGUI.Designer.cs">
+      <DependentUpon>QL_DangNhapGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QL_NhaCungCap.cs">
+    <Compile Include="GUI\QL_NhaCungCapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QL_NhaCungCap.Designer.cs">
-      <DependentUpon>QL_NhaCungCap.cs</DependentUpon>
+    <Compile Include="GUI\QL_NhaCungCapGUI.Designer.cs">
+      <DependentUpon>QL_NhaCungCapGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QL_HoaDon.cs">
+    <Compile Include="GUI\QL_HoaDonGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QL_HoaDon.Designer.cs">
-      <DependentUpon>QL_HoaDon.cs</DependentUpon>
+    <Compile Include="GUI\QL_HoaDonGUI.Designer.cs">
+      <DependentUpon>QL_HoaDonGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QL_HangGUI.cs">
       <SubType>Form</SubType>
@@ -125,11 +125,11 @@
     <Compile Include="GUI\QL_HangGUI.Designer.cs">
       <DependentUpon>QL_HangGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QL_KhachHang.cs">
+    <Compile Include="GUI\QL_KhachHangGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QL_KhachHang.Designer.cs">
-      <DependentUpon>QL_KhachHang.cs</DependentUpon>
+    <Compile Include="GUI\QL_KhachHangGUI.Designer.cs">
+      <DependentUpon>QL_KhachHangGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QL_NhanVienGUI.cs">
       <SubType>Form</SubType>
@@ -145,11 +145,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\TrangChu.cs">
+    <Compile Include="GUI\TrangChuGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\TrangChu.Designer.cs">
-      <DependentUpon>TrangChu.cs</DependentUpon>
+    <Compile Include="GUI\TrangChuGUI.Designer.cs">
+      <DependentUpon>TrangChuGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="QLHANGDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -165,26 +165,26 @@
     <EmbeddedResource Include="GUI\QL_LoaiHangGUI.resx">
       <DependentUpon>QL_LoaiHangGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_LuongVaThuong.resx">
-      <DependentUpon>QL_LuongVaThuong.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QL_LuongVaThuongGUI.resx">
+      <DependentUpon>QL_LuongVaThuongGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_DoanhThu.resx">
-      <DependentUpon>QL_DoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QL_DoanhThuGUI.resx">
+      <DependentUpon>QL_DoanhThuGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_DangNhap.resx">
-      <DependentUpon>QL_DangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QL_DangNhapGUI.resx">
+      <DependentUpon>QL_DangNhapGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_NhaCungCap.resx">
-      <DependentUpon>QL_NhaCungCap.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QL_NhaCungCapGUI.resx">
+      <DependentUpon>QL_NhaCungCapGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QL_HangGUI.resx">
       <DependentUpon>QL_HangGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_HoaDon.resx">
-      <DependentUpon>QL_HoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QL_HoaDonGUI.resx">
+      <DependentUpon>QL_HoaDonGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_KhachHang.resx">
-      <DependentUpon>QL_KhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QL_KhachHangGUI.resx">
+      <DependentUpon>QL_KhachHangGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QL_NhanVienGUI.resx">
       <DependentUpon>QL_NhanVienGUI.cs</DependentUpon>
@@ -202,8 +202,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="GUI\TrangChu.resx">
-      <DependentUpon>TrangChu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\TrangChuGUI.resx">
+      <DependentUpon>TrangChuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

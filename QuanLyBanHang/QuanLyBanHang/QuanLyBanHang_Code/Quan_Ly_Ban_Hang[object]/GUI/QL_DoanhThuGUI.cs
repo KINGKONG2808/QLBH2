@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.BLL;
+using QL_BanHang.BUS;
 
 namespace QL_BanHang
 {
@@ -17,7 +17,7 @@ namespace QL_BanHang
     {
         public static QL_DoanhThu fmDT;
         DataConnect data = new DataConnect();
-        DoanhSoBLL dtbll = new DoanhSoBLL();
+        DoanhSoBUS dtbll = new DoanhSoBUS();
         public QL_DoanhThu()
         {
             InitializeComponent();

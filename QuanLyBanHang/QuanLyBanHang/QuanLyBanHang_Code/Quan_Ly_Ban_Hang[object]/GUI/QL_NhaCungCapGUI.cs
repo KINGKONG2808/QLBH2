@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.Object;
 using System.Data.SqlClient;
-using QL_BanHang.BLL;
+using QL_BanHang.DTO;
+using QL_BanHang.BUS;
 
 namespace QL_BanHang
 {
     public partial class QL_NhaCungCap : Form
     {
-        NhaCungCapObj ncc = new NhaCungCapObj();
+        NhaCungCapDTO ncc = new NhaCungCapDTO();
         int Flag = 0;
-        NhaCungCapBLL nccbll = new NhaCungCapBLL();
+        NhaCungCapBUS nccbll = new NhaCungCapBUS();
         public QL_NhaCungCap()
         {
             InitializeComponent();
@@ -59,7 +59,7 @@ namespace QL_BanHang
             setTXT();
         }
 
-        private void ganDuLieu(NhaCungCapObj ncc)
+        private void ganDuLieu(NhaCungCapDTO ncc)
         {
             ncc.MaNCC = txtMaNCC.Text;
             ncc.TenNCC = txtTenNCC.Text;
@@ -182,7 +182,7 @@ namespace QL_BanHang
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            NhaCungCapBLL a = new NhaCungCapBLL();
+            NhaCungCapBUS a = new NhaCungCapBUS();
             if(rbMaNcc.Checked == true)
             {
                 DataTable dt3 = new DataTable();

@@ -4,49 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QL_BanHang.Object
+namespace QL_BanHang.DTO
 {
-    class KhachHangObj
+    class KhachHangDTO
     {
-        private String maKH;
-        private String tenKH;
-        private String sdt;
-        private String gioiTinh;
-        private String diaChi;
+        private string maKH;
+        private string tenKH;
+        private string sdt;
+        private string gioiTinh;
+        private string diaChi;
         private int soDiem;
-        private String maNV;
+        private string maNV;
 
-        public String MaKH
+        public string MaKH
         {
             get { return maKH; }
             set { maKH = value; }
         }
 
-        public String TenKH
+        public string TenKH
         {
             get { return tenKH; }
             set { tenKH = value; }
         }
 
-        public String SDT
+        public string SDT
         {
             get { return sdt; }
             set { sdt = value; }
         }
 
-        public String GioiTinh
+        public string GioiTinh
         {
             get { return gioiTinh; }
             set { gioiTinh = value; }
         }
 
-        public String DiaChi
+        public string DiaChi
         {
             get { return diaChi; }
             set { diaChi = value; }
         }
 
-        public String MaNV
+        public string MaNV
         {
             get { return maNV; }
             set { maNV = value; }
@@ -58,17 +58,17 @@ namespace QL_BanHang.Object
             set { soDiem = value; }
         }
 
-        public KhachHangObj() { }
-        public KhachHangObj(String makh,String tenkh,String sdt,String gioitinh,String diachi,String manv,int sodiem)
+        public KhachHangDTO() { }
+        public KhachHangDTO(string makh, string tenkh, string sdt, string gioitinh, string diachi, string manv, int sodiem)
         {
             sodiem = 5;
-            this.MaKH = makh;
-            this.TenKH = tenkh;
-            this.SDT = sdt;
-            this.GioiTinh = gioitinh;
-            this.DiaChi = diachi;
-            this.MaNV = manv;
-            this.SoDiem = sodiem;
+            MaKH = makh;
+            TenKH = tenkh;
+            SDT = sdt;
+            GioiTinh = gioitinh;
+            DiaChi = diachi;
+            MaNV = manv;
+            SoDiem = sodiem;
         }
     }
 }
