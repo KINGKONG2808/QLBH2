@@ -109,6 +109,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(766, 430);
             this.Name = "QL_KhoHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kho hàng";
             this.Load += new System.EventHandler(this.KhoHang_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
