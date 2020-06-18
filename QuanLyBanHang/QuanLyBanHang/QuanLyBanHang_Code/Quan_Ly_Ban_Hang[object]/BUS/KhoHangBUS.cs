@@ -15,7 +15,11 @@ namespace QL_BanHang.BLL
 
         public DataTable ShowHangBan()
         {
+<<<<<<< HEAD
             string sql = "select * from Hang2";
+=======
+            string sql = "select * from HangBan2";
+>>>>>>> bf1d8d3475cb48832f4be5f09d1baa34d5fb0852
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
