@@ -46,9 +46,10 @@ SET ANSI_PADDING OFF
 GO
 
 -- insert data to table TrinhDo
-insert into TrinhDo2 values (N'001', N'đại học')
-insert into TrinhDo2 values (N'002', N'cao đẳng')
-insert into TrinhDo2 values (N'003', N'cấp 3')
+insert into TrinhDo2 values (N'TĐ1', N'Quản lý')
+insert into TrinhDo2 values (N'TĐ2', N'Nhân viên chạy bàn')
+insert into TrinhDo2 values (N'TĐ3', N'Nhan viên pha chế')
+insert into TrinhDo2 values (N'TĐ4', N'Bảo vệ')
 
 -- create table NhanVien
 SET ANSI_NULLS ON
@@ -75,11 +76,13 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-insert into NhanVien2 values (N'001', N'vũ văn hùng', 0, N'thái bình', N'0366310685', N'001', '1', '1')
-insert into NhanVien2 values (N'002', N'nguyễn khắc hiếu', 0, N'hà nội', N'0366310685', N'002', '1', '1')
-insert into NhanVien2 values (N'003', N'phạm văn yên', 0, N'quảng ninh', N'0366310685', N'003', '1', '1')
-insert into NhanVien2 values (N'004', N'vũ việt tùng', 0, N'phú thọ', N'0366310685', N'001', '1', '1')
-
+insert into NhanVien2 values (N'NV1', N'vũ văn hùng', 0, N'thái bình', N'0366310685', N'TĐ1', '1', '1')
+insert into NhanVien2 values (N'NV2', N'nguyễn khắc hiếu', 0, N'hà nội', N'0366310685', N'TĐ2', '1', '1')
+insert into NhanVien2 values (N'NV3', N'phạm văn yên', 0, N'quảng ninh', N'0366310685', N'TĐ3', '1', '1')
+insert into NhanVien2 values (N'NV4', N'vũ việt tùng', 0, N'phú thọ', N'0366310685', N'TĐ1', '1', '1')
+insert into NhanVien2 values (N'NV5', N'vũ trường giang', 0, N'bắc giang', N'0366310685', N'TĐ4', '1', '1')
+insert into NhanVien2 values (N'NV6', N'phan hải', 0, N'phú thọ', N'0366310685', N'TĐ2', '1', '1')
+insert into NhanVien2 values (N'NV7', N'văn đức', 0, N'phú thọ', N'0366310685', N'TĐ2', '1', '1')
 -- create table NhaCungCap
 SET ANSI_NULLS ON
 GO
@@ -102,8 +105,11 @@ SET ANSI_PADDING OFF
 GO
 
 insert into NhaCungCap2 values (N'001', N'trung nguyên', N'0123111', N'tây nguyên')
-insert into NhaCungCap2 values (N'002', N'1994 cooktice', N'0999121', N'đan phượng')
-insert into NhaCungCap2 values (N'003', N'1994 tea', N'0129988', N'hà nội')
+insert into NhaCungCap2 values (N'002', N'phúc long', N'0999121', N'đan phượng')
+insert into NhaCungCap2 values (N'003', N'Monin', N'0129988', N'hà nội')
+insert into NhaCungCap2 values (N'004', N'Cty Ocean', N'0123111', N'Mê linh')
+insert into NhaCungCap2 values (N'005', N'Cty tnhh Swing', N'0999121', N'đan phượng')
+insert into NhaCungCap2 values (N'006', N'Ozy', N'0129988', N'hà nội')
 
 -- create table KhachHang
 SET ANSI_NULLS ON
@@ -129,9 +135,16 @@ SET ANSI_PADDING OFF
 GO
 
 insert into KhachHang2 values (N'001', N'vũ văn hùng', N'0366310685', 0, N'thái bình', N'001')
-insert into KhachHang2 values (N'002', N'nguyễn khắc hiếu', N'0366310685', 0, N'hà nội', N'001')
-insert into KhachHang2 values (N'003', N'phạm văn yên', N'0366310685', 0, N'quảng ninh', N'001')
-insert into KhachHang2 values (N'004', N'vũ việt tùng', N'0366310685', 0, N'sao hỏa', N'001')
+insert into KhachHang2 values (N'002', N'nguyễn khắc hiếu', N'0366310685', 0, N'hà nội', N'003')
+insert into KhachHang2 values (N'003', N'phạm văn yên', N'0366310685', 0, N'quảng ninh', N'004')
+insert into KhachHang2 values (N'004', N'vũ việt tùng', N'0366310685', 0, N'sao hỏa', N'002')
+insert into KhachHang2 values (N'005', N'Nguyễn văn tiến', N'0366310685', 0, N'thái bình', N'006')
+insert into KhachHang2 values (N'006', N'Trần văn hiếu', N'0366310685', 0, N'hà nội', N'001')
+insert into KhachHang2 values (N'007', N'Nguyễn đình trọng', N'0366310685', 0, N'quảng ninh', N'005')
+insert into KhachHang2 values (N'008', N'Văn biên', N'0366310685', 0, N'thái bình', N'002')
+insert into KhachHang2 values (N'009', N'Peter', N'0366310685', 0, N'hà nội', N'003')
+insert into KhachHang2 values (N'010', N'Phạm thị thanh', N'0366310685', 0, N'quảng ninh', N'001')
+insert into KhachHang2 values (N'011', N'Trần văn phú', N'0366310685', 0, N'sao hỏa', N'001')
 
 -- create table LoaiHang
 SET ANSI_NULLS ON
@@ -153,9 +166,20 @@ GO
 SET ANSI_PADDING OFF
 GO
 
+<<<<<<< HEAD
+insert into LoaiHang2 values ('001', N'cafe', N'cafe phin')
+insert into LoaiHang2 values ('002', N'cafe', N'nâu, sữa')
+insert into LoaiHang2 values ('003', N'trà', N'nóng')
+insert into LoaiHang2 values ('004', N'trà', N'lạnh')
+insert into LoaiHang2 values ('005', N'cafe', N'không ngọt')
+insert into LoaiHang2 values ('006', N'nước ép', N'Tươi mát')
+insert into LoaiHang2 values ('007', N'trà', N'trà chanh')
+
+=======
 insert into LoaiHang2 values ('001', 'cafe', 'không ngọt')
 insert into LoaiHang2 values ('002', 'nước ép', 'ngon')
 insert into LoaiHang2 values ('003', 'trà', 'chua')
+>>>>>>> 7f7e334e7d803d0ad12d33c3e4f67c4cf7128c6d
 
 -- create table Hang
 SET ANSI_NULLS ON
@@ -181,9 +205,18 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-insert into Hang2 values (N'001', N'cafe đá', N'ml', 50000, N'001', N'001', 100)
-insert into Hang2 values (N'002', N'nước cam', N'l', 60000, N'002', N'002', 200)
-insert into Hang2 values (N'003', N'trà chanh', N'ml', 30000, N'003', N'003', 300)
+insert into Hang2 values (N'hang1', N'cafe đá', N'nvđ', 20000, N'001', N'001', 100)
+insert into Hang2 values (N'hang2', N'cafe nâu', N'nvđ', 20000, N'003', N'005', 200)
+insert into Hang2 values (N'hang3', N'trà chanh', N'vnđ', 15000, N'003', N'003', 300)
+insert into Hang2 values (N'hang4', N'sinh tố xoài', N'vnđ', 30000, N'005', N'001', 100)
+insert into Hang2 values (N'hang5', N'nước cam', N'vnđ', 30000, N'006', N'006', 200)
+insert into Hang2 values (N'hang6', N'ép dưa hấu', N'vnđ', 25000, N'002', N'003', 300)
+insert into Hang2 values (N'hang7', N'cafe cốt dừa', N'vnđ', 35000, N'005', N'001', 100)
+insert into Hang2 values (N'hang8', N'nước ép dứa', N'vnđ', 30000, N'004', N'005', 200)
+insert into Hang2 values (N'hang9', N'trà đào cam xả', N'vnđ', 35000, N'004', N'003', 300)
+insert into Hang2 values (N'hang10', N'Bạc sỉu', N'vnđ', 25000, N'001', N'001', 100)
+insert into Hang2 values (N'hang11', N'trà sữa', N'vnđ', 30000, N'002', N'002', 200)
+insert into Hang2 values (N'hang12', N'trà bưởi nhài', N'vnđ', 30000, N'003', N'003', 300)
 
 -- create table HoaDon
 SET ANSI_NULLS ON
@@ -206,12 +239,18 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-insert into HoaDon2 values ('001', '001', '004', '3/6/2020')
-insert into HoaDon2 values ('002', '002', '003', '4/6/2020')
-insert into HoaDon2 values ('003', '003', '002', '5/6/2020')
-insert into HoaDon2 values ('004', '004', '001', '6/6/2020')
-insert into HoaDon2 values ('005', '001', '004', '7/6/2020')
-insert into HoaDon2 values ('006', '002', '003', '8/6/2020')
+insert into HoaDon2 values ('hd1', '001', '004', '3/6/2020')
+insert into HoaDon2 values ('hd2', '002', '003', '4/6/2020')
+insert into HoaDon2 values ('hd3', '003', '002', '5/6/2020')
+insert into HoaDon2 values ('hd4', '004', '001', '6/6/2020')
+insert into HoaDon2 values ('005', '005', '004', '7/6/2020')
+insert into HoaDon2 values ('hd6', '006', '003', '8/6/2020')
+insert into HoaDon2 values ('hd7', '001', '004', '3/6/2020')
+insert into HoaDon2 values ('hd8', '007', '003', '4/6/2020')
+insert into HoaDon2 values ('hd9', '003', '002', '5/6/2020')
+insert into HoaDon2 values ('hd10', '0010', '001', '6/6/2020')
+insert into HoaDon2 values ('hd11', '001', '004', '7/6/2020')
+insert into HoaDon2 values ('hd12', '002', '003', '8/6/2020')
 
 -- create view HangTon
 SET ANSI_NULLS ON
@@ -250,10 +289,14 @@ CREATE TABLE [dbo].[ChiTietHoaDon2](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'001', 30000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'002', 35000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'003', 32000, 3000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'004', 35000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'hang1', 130000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd3', N'hang2', 70000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'hang3', 65000, 3000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd4', N'hang4', 35000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd6', N'hang1', 124000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd7', N'hang2', 115000, 2000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd8', N'hang3', 80000, 3000)
+INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd9', N'hang4', 12000, 2000)
 
 
 -- create table LichSuGia
@@ -279,8 +322,16 @@ GO
 SET ANSI_PADDING OFF
 GO
 
+<<<<<<< HEAD
+insert into LichSuGia2 values ('001', '1/6/2020', '6/6/2020', 150000, '7/6/2020')
+insert into LichSuGia2 values ('002', '2/6/2020', '7/6/2020',60000, '6/6/2020')
+insert into LichSuGia2 values ('004', '3/6/2020', '8/6/2020', 120000, '4/6/2020')
+insert into LichSuGia2 values ('005', '1/6/2020', '6/6/2020', 35000, '7/6/2020')
+insert into LichSuGia2 values ('003', '2/6/2020', '7/6/2020', 20000, '6/6/2020')
+=======
 insert into LichSuGia2 values ('001', '1/6/2020', '6/6/2020', 40000, '7/6/2020')
 insert into LichSuGia2 values ('002', '2/6/2020', '7/6/2020', 50000, '6/6/2020')
+>>>>>>> 7f7e334e7d803d0ad12d33c3e4f67c4cf7128c6d
 insert into LichSuGia2 values ('003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
 
 /*-- create view BangLuong
