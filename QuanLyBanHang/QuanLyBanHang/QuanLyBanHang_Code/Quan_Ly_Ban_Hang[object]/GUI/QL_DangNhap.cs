@@ -28,7 +28,6 @@ namespace QL_BanHang
             {
 <<<<<<< HEAD
                 AdminObj ad = new AdminObj(txtTaiKhoan.Text, txtMatKhau.Text);
-<<<<<<< HEAD
                 NhanVienDTO nv = new NhanVienDTO(txtTaiKhoan.Text, txtMatKhau.Text);
                 if (dn.getTKAdmin(ad)==true)
 =======
@@ -51,10 +50,6 @@ namespace QL_BanHang
             {
                 if (dn.getTKNhanVien(nv) == true)
                 //>>>>>>> 2abf28d9e15d55e860106dcc306c6fafd1a90e46
-=======
-                NhanVienObj nv = new NhanVienObj(txtTaiKhoan.Text, txtMatKhau.Text);
-                if (dn.getTKAdmin(ad) == true)
->>>>>>> bf1d8d3475cb48832f4be5f09d1baa34d5fb0852
                 {
                     TrangChu tr1 = new TrangChu();
                     tr1.toolTripNhaCC.Enabled = false;
@@ -65,12 +60,8 @@ namespace QL_BanHang
                 }
                 else
                 {
-<<<<<<< HEAD
                     DialogResult dr = MessageBox.Show("Bạn đã nhập sai tài khoản hoặc mật khẩu vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     if (dr == DialogResult.OK)
-=======
-                    if (dn.getTKNhanVien(nv) == true)
->>>>>>> bf1d8d3475cb48832f4be5f09d1baa34d5fb0852
                     {
                         txtTaiKhoan.Clear();
                         txtMatKhau.Clear();

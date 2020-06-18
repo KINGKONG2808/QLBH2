@@ -12,7 +12,6 @@ namespace QL_BanHang.DAL
     {
         public SqlConnection getConnect()
         {
-<<<<<<< HEAD
            
             //(HUNG) Data Source=VUHUNGA49E;Initial Catalog=QL_BANHANG2;Integrated Security=True
             //(HIEU) Data Source=DESKTOP-MVH8GU2;Initial Catalog=QL_BanHang;Integrated Security=True
@@ -20,13 +19,6 @@ namespace QL_BanHang.DAL
             // (Tùng) Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_BANHANG2;Integrated Security=True
             return new SqlConnection(@"null");
 
-=======
-            //(TUNG) Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_BanHang;Integrated Security=True
-            //(HUNG) Data Source=VUHUNGA49E;Initial Catalog=QL_BANHANG2;Integrated Security=True
-            //(HIEU) Data Source=DESKTOP-MVH8GU2;Initial Catalog=QL_BanHang;Integrated Security=True
-            //(YEN) Data Source=ADMIN;Initial Catalog=QL_BANHANG2;Integrated Security=True
-            return new SqlConnection(@"Data Source=ADMIN;Initial Catalog=QL_BANHANG2;Integrated Security=True");
->>>>>>> bf1d8d3475cb48832f4be5f09d1baa34d5fb0852
         }
 
         public DataTable GetTable(string sql)

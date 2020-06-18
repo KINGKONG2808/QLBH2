@@ -74,11 +74,8 @@
 \\Mac\Home\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.exe
 \\Mac\Home\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.pdb
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 >>>>>>> 2abf28d9e15d55e860106dcc306c6fafd1a90e46
-=======
->>>>>>> bf1d8d3475cb48832f4be5f09d1baa34d5fb0852
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.exe.config
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.exe
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.pdb
@@ -96,19 +93,12 @@ C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.Properties.Resources.resources
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.TrangChu.resources
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.csproj.GenerateResource.cache
-<<<<<<< HEAD
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.exe
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.pdb
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.GUI.QL_LichSuGiaGUI.resources
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.GUI.QL_TrinhDoGUI.resources
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.GUI.QL_LoaiHangGUI.resources
 C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.csproj.CoreCompileInputs.cache
-=======
-C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\QL_BanHang.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.exe
-C:\Users\Admin\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\obj\Debug\s.pdb
-=======
->>>>>>> bf1d8d3475cb48832f4be5f09d1baa34d5fb0852
 C:\Users\hoang\OneDrive\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.exe.config
 C:\Users\hoang\OneDrive\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.exe
 C:\Users\hoang\OneDrive\Desktop\QLBH2\QuanLyBanHang\QuanLyBanHang\QuanLyBanHang_Code\Quan_Ly_Ban_Hang[object]\bin\Debug\s.pdb
