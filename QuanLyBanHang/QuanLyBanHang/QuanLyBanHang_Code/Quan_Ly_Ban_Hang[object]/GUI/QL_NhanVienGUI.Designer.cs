@@ -455,7 +455,6 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(767, 432);
             this.Name = "QL_NhanVien";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);

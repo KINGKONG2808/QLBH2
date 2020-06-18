@@ -17,7 +17,7 @@ namespace QL_BanHang.DAL
             //(HIEU) Data Source=DESKTOP-MVH8GU2;Initial Catalog=QL_BanHang;Integrated Security=True
             //(YEN) Data Source=ADMIN;Initial Catalog=QL_BANHANG2;Integrated Security=True
             
-            return new SqlConnection(@"null");
+            return new SqlConnection(@"Data Source=VUHUNGA49E;Initial Catalog=QL_BANHANG2;Integrated Security=True");
 
         }
 

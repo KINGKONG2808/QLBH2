@@ -165,7 +165,6 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.MinimumSize = new System.Drawing.Size(846, 498);
             this.Name = "QL_LuongVaThuong";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lương và thưởng nhân viên";
             this.Load += new System.EventHandler(this.QL_LuongVaThuong_Load);
             this.tableLayoutPanel2.ResumeLayout(false);

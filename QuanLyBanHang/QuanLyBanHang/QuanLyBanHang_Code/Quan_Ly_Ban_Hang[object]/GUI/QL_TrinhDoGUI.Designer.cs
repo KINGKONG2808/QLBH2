@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QL_TrinhDoGUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txttentrinhdo = new System.Windows.Forms.TextBox();
             this.txtmatrinhdo = new System.Windows.Forms.TextBox();
@@ -36,12 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvtd = new System.Windows.Forms.DataGridView();
-            this.btnShow = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txttimkiem = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.v = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtd)).BeginInit();
@@ -95,9 +96,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvtd);
-            this.groupBox2.Location = new System.Drawing.Point(393, 12);
+            this.groupBox2.Location = new System.Drawing.Point(23, 189);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(441, 244);
+            this.groupBox2.Size = new System.Drawing.Size(345, 249);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -105,111 +106,104 @@
             // dgvtd
             // 
             this.dgvtd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtd.Location = new System.Drawing.Point(23, 19);
+            this.dgvtd.Location = new System.Drawing.Point(7, 19);
             this.dgvtd.Name = "dgvtd";
-            this.dgvtd.Size = new System.Drawing.Size(390, 197);
+            this.dgvtd.Size = new System.Drawing.Size(316, 224);
             this.dgvtd.TabIndex = 0;
             // 
-            // btnShow
+            // button6
             // 
-            this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
-            this.btnShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShow.Location = new System.Drawing.Point(797, 379);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(100, 39);
-            this.btnShow.TabIndex = 28;
-            this.btnShow.Text = "Hiển thị";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(713, 409);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "Thoát";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // btnLuu
+            // button5
             // 
-            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(211, 258);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(100, 38);
-            this.btnLuu.TabIndex = 23;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(374, 409);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Hiển thị dữ liệu";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // btnSua
+            // txttimkiem
             // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(211, 181);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 38);
-            this.btnSua.TabIndex = 24;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.txttimkiem.Location = new System.Drawing.Point(627, 39);
+            this.txttimkiem.Name = "txttimkiem";
+            this.txttimkiem.Size = new System.Drawing.Size(161, 20);
+            this.txttimkiem.TabIndex = 13;
             // 
-            // btnThoat
+            // button4
             // 
-            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(23, 379);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(100, 39);
-            this.btnThoat.TabIndex = 27;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(546, 39);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Tìm Kiếm";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // btnThem
+            // button3
             // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(19, 181);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(104, 38);
-            this.btnThem.TabIndex = 25;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(454, 189);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Xóa";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // btnXoa
+            // v
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(23, 258);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 38);
-            this.btnXoa.TabIndex = 26;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.v.Location = new System.Drawing.Point(454, 84);
+            this.v.Name = "v";
+            this.v.Size = new System.Drawing.Size(75, 23);
+            this.v.TabIndex = 14;
+            this.v.Text = "Thêm ";
+            this.v.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(454, 140);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Sửa";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(454, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Nhập lại";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // QL_TrinhDoGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(920, 421);
-            this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.btnXoa);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.txttimkiem);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.v);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "QL_TrinhDoGUI";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QL_TrinhDoGUI";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvtd)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,11 +216,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvtd;
-        private System.Windows.Forms.Button btnShow;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txttimkiem;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button v;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

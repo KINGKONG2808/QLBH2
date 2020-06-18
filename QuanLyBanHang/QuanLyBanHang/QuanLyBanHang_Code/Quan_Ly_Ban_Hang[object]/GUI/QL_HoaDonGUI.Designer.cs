@@ -587,7 +587,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(974, 470);
             this.Name = "QL_HoaDon";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
             this.Load += new System.EventHandler(this.QL_HoaDon_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

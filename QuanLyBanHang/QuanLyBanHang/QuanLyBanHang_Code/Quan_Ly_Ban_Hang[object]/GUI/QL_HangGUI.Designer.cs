@@ -499,7 +499,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "QL_HangHoa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hàng Hóa";
             this.Load += new System.EventHandler(this.QL_HangHoa_Load);
             this.groupBox2.ResumeLayout(false);

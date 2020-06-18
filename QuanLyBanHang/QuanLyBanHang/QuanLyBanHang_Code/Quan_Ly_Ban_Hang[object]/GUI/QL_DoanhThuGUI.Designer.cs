@@ -387,7 +387,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(1151, 718);
             this.Name = "QL_DoanhThu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doanh thu";
             this.Load += new System.EventHandler(this.QL_DoanhThu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

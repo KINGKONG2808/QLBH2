@@ -308,7 +308,6 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Name = "QL_LoaiHangGUI";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QL_LoaiHangGUI";
             this.Load += new System.EventHandler(this.QL_LoaiHangGUI_Load);
             this.groupBox3.ResumeLayout(false);
