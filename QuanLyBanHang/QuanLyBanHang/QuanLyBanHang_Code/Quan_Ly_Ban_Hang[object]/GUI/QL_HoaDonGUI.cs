@@ -104,10 +104,14 @@ namespace QL_BanHang
                 DataTable dtMaNV = new DataTable();
                 dtMaNV = nvbll.ShowNhanVien();
                 cboMaNV.DataSource = dtMaNV;
+                cboMaNV.DisplayMember = "TenNV";
+                cboMaNV.ValueMember = "MaNV";
 
                 DataTable dtMaKH = new DataTable();
                 dtMaKH = khbll.ShowKhachHang();
                 cboMaKH.DataSource = dtMaKH;
+                cboMaKH.DisplayMember = "TenKH";
+                cboMaKH.ValueMember = "MaKH";
 
                 DataTable dtHoaDon = new DataTable();
                 dtHoaDon = hdbll.ShowHoaDon();
@@ -419,6 +423,36 @@ namespace QL_BanHang
             cboMaHH.Text = dgvHienThiChiTietHD.Rows[row].Cells[1].Value.ToString();
             txtDonGia.Text = dgvHienThiChiTietHD.Rows[row].Cells[2].Value.ToString();
             txtSoLuong.Text = dgvHienThiChiTietHD.Rows[row].Cells[3].Value.ToString();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateNgayLap_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMaKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
