@@ -28,7 +28,7 @@ namespace QL_BanHang
             {
                 AdminObj ad = new AdminObj(txtTaiKhoan.Text, txtMatKhau.Text);
                 NhanVienObj nv = new NhanVienObj(txtTaiKhoan.Text, txtMatKhau.Text);
-                if (dn.getTKAdmin(ad)==true)
+                if (dn.getTKAdmin(ad) == true)
                 {
                     TrangChu tr = new TrangChu();
                     tr.Show();
@@ -36,7 +36,7 @@ namespace QL_BanHang
                 }
                 else
                 {
-                    if (dn.getTKNhanVien(nv)==true)
+                    if (dn.getTKNhanVien(nv) == true)
                     {
                         TrangChu tr1 = new TrangChu();
                         tr1.toolTripNhaCC.Enabled = false;
