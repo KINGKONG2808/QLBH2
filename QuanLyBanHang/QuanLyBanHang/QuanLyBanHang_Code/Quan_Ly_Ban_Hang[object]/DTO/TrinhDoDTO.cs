@@ -10,18 +10,21 @@ namespace QL_BanHang.DTO
     {
         private String maTrinhDo;
         private String tenTrinhDo;
+        private long luongCung;
 
         public string MaTrinhDo { get => maTrinhDo; set => maTrinhDo = value; }
         public string TenTrinhDo { get => tenTrinhDo; set => tenTrinhDo = value; }
+        public long LuongCung { get => luongCung; set => luongCung = value; }
+
+        public TrinhDoDTO(string maTrinhDo, string tenTrinhDo, long luongCung)
+        {
+            MaTrinhDo = maTrinhDo;
+            TenTrinhDo = tenTrinhDo;
+            LuongCung = luongCung;
+        }
 
         public TrinhDoDTO()
         {
-        }
-
-        public TrinhDoDTO(string maTrinhDo, string tenTrinhDo)
-        {
-            this.maTrinhDo = maTrinhDo;
-            this.tenTrinhDo = tenTrinhDo;
         }
     }
 }

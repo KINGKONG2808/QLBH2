@@ -22,7 +22,8 @@ namespace QL_BanHang.BUS
 
         public DataTable ShowTheoNgay(DateTime ngay)
         {
-            string sql = "select * from DanhSachBan2 where NgayLap = '" + ngay + "'";
+            
+            string sql = "select * from DanhSachBan2 where Day(NgayLap) = '" + ngay.Day + "' and Month(NgayLap) = '" + ngay.Month + "' and Year(NgayLap) = '" + ngay.Year + "'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -47,10 +48,10 @@ namespace QL_BanHang.BUS
             return dt;
         }
 
-        public int DoanhThuNgay()
+        public int DoanhThuNgay(String theoNgay)
         {
             int x;
-            DateTime ngay = Convert.ToDateTime(QL_DoanhThu.fmDT.txtNgay.Text);
+            DateTime ngay = Convert.ToDateTime(theoNgay);
             string sql = "select sum(SoLuongBan*DonGiaBan) from DoanhThu2 where NgayLap = '" + ngay + "' group by NgayLap";
             x = data.ExecuteScalar(sql);
             return x;
@@ -71,7 +72,7 @@ namespace QL_BanHang.BUS
             int x;
             DateTime y = Convert.ToDateTime(theoThang);
             int thang = y.Month;
-            string sql = "select SUM(SoLuongBan*DonGiaBan) from DoanhThu where MONTH(NgayLap) = '" + thang + "'";
+            string sql = "select SUM(SoLuongBan*DonGiaBan) from DoanhThu2 where MONTH(NgayLap) = '" + thang + "'";
             x = data.ExecuteScalar(sql);
             return x;
         }

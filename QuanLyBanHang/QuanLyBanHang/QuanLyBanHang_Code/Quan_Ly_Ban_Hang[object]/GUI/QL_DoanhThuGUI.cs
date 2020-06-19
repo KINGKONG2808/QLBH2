@@ -94,18 +94,21 @@ namespace QL_BanHang
             row = e.RowIndex;
             DateTime dt = new DateTime();
             dt = Convert.ToDateTime(dgvLoiNhuan.Rows[row].Cells[6].Value);
-            if (cmbHinhThuc.SelectedItem.ToString() == "Theo ngày")
+            if (cmbHinhThuc.SelectedItem != null)
             {
-                txtNgay.Text = dt.ToString("MM/dd/yyyy");
+                if (cmbHinhThuc.SelectedItem.ToString() == "Theo ngày")
+                {
+                    txtNgay.Text = dt.ToString("MM/dd/yyyy");
 
-            }
-            if (cmbHinhThuc.SelectedItem.ToString() == "Theo tháng")
-            {
-                txtThang.Text = dt.Month.ToString() + "/" + dt.Year.ToString();
-            }
-            if (cmbHinhThuc.SelectedItem.ToString() == "Theo năm")
-            {
-                txtNam.Text = dt.Year.ToString();
+                }
+                if (cmbHinhThuc.SelectedItem.ToString() == "Theo tháng")
+                {
+                    txtThang.Text = dt.Month.ToString() + "/" + dt.Year.ToString();
+                }
+                if (cmbHinhThuc.SelectedItem.ToString() == "Theo năm")
+                {
+                    txtNam.Text = dt.Year.ToString();
+                }
             }
         }
 
@@ -113,7 +116,8 @@ namespace QL_BanHang
         {
             try
             {
-                int dtNgay = dtbll.DoanhThuNgay();
+                String theoNgay = txtNgay.Text;
+                int dtNgay = dtbll.DoanhThuNgay(theoNgay);
                 txtTienNgay.Text = dtNgay + "";
                 DateTime ngay = Convert.ToDateTime(dgvLoiNhuan.Rows[row].Cells[6].Value);
                 DataTable dtDSBan = new DataTable();

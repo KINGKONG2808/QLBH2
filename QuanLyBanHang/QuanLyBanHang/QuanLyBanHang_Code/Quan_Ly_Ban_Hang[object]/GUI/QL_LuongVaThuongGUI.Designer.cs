@@ -37,6 +37,9 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBangLuong = new System.Windows.Forms.DataGridView();
             this.dgvTongLuong = new System.Windows.Forms.DataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiepThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -115,6 +118,10 @@
             // 
             this.dgvTiepThi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTiepThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTiepThi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNV,
+            this.TenNV,
+            this.TiepThi});
             this.dgvTiepThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTiepThi.Location = new System.Drawing.Point(3, 16);
             this.dgvTiepThi.Name = "dgvTiepThi";
@@ -156,6 +163,24 @@
             this.dgvTongLuong.Size = new System.Drawing.Size(135, 218);
             this.dgvTongLuong.TabIndex = 7;
             // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên Nhân Viên";
+            this.TenNV.Name = "TenNV";
+            // 
+            // TiepThi
+            // 
+            this.TiepThi.DataPropertyName = "TiepThi";
+            this.TiepThi.HeaderText = "Số Lượt Tiếp Thị";
+            this.TiepThi.Name = "TiepThi";
+            // 
             // QL_LuongVaThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,5 +215,8 @@
         private System.Windows.Forms.DataGridView dgvBanTC;
         private System.Windows.Forms.DataGridView dgvTongLuong;
         private System.Windows.Forms.DataGridView dgvBangLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TiepThi;
     }
 }

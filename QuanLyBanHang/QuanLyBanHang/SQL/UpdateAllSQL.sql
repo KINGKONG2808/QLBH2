@@ -37,19 +37,22 @@ GO
 CREATE TABLE [dbo].[TrinhDo2](
 	[MaTrinhDo] [varchar](100) NOT NULL,
 	[TenTrinhDo] [nvarchar](200) NOT NULL,
+	[LuongCung] [varchar](200) NOT NULL,
  CONSTRAINT [PK_TrinhDo] PRIMARY KEY CLUSTERED 
 (
 	[MaTrinhDo] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+
+drop table TrinhDo2
 GO
 SET ANSI_PADDING OFF
 GO
 
 -- insert data to table TrinhDo
-insert into TrinhDo2 values (N'001', N'đại học')
-insert into TrinhDo2 values (N'002', N'cao đẳng')
-insert into TrinhDo2 values (N'003', N'cấp 3')
+insert into TrinhDo2 values (N'001', N'đại học','6000000')
+insert into TrinhDo2 values (N'002', N'cao đẳng','5000000')
+insert into TrinhDo2 values (N'003', N'cấp 3','4500000')
 
 -- create table NhanVien
 SET ANSI_NULLS ON
@@ -472,7 +475,6 @@ select ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia as'dongiaban',ChiTietHo
 from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD
 group by ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
 
-select *from DoanhThu2
 go
 SET ANSI_NULLS ON
 GO
@@ -480,13 +482,24 @@ SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[BangLuong2]
 as
+<<<<<<< HEAD
+select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,CAST(TrinhDo2.LuongCung as bigint) as 'Luong Cung'
+from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV inner join TrinhDo2 on TrinhDo2.MaTrinhDo = NhanVien2.MaTrinhDo
+group by NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,TrinhDo2.LuongCung
+=======
 select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,CAST(NhanVien2.MaTrinhDo AS int)as'Luong cung'
 from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV
 group by NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,CAST(NhanVien2.MaTrinhDo AS int)
 
-drop view BangLuong
+use QL_BANHANG2
+go
+drop view BangLuong2
+drop view DoanhThu2
 
+>>>>>>> 3eed25adc376d9501900b633f8586a594143de7d
 
+drop view dbo.BangLuong2
+select * from TrinhDo2
 /*UPDATE 3: INSERT RIGH DATA TO TABLE*/
 -- insert data to table TrinhDo
 insert into TrinhDo2 values (N'TĐ1', N'Quản lý')
@@ -570,3 +583,91 @@ insert into LichSuGia2 values ('004', '3/6/2020', '8/6/2020', 120000, '4/6/2020'
 insert into LichSuGia2 values ('005', '1/6/2020', '6/6/2020', 35000, '7/6/2020')
 insert into LichSuGia2 values ('003', '2/6/2020', '7/6/2020', 20000, '6/6/2020')
 insert into LichSuGia2 values ('003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3eed25adc376d9501900b633f8586a594143de7d
+
+/*UPDATE 4: CREATE VIEW HOA DON*/
+use QL_BANHANG2
+go
+create view HoaDonView
+as
+	select hd.MaHD, hd.NgayLap, nv.TenNV, kh.TenKH from HoaDon2 hd inner join KhachHang2 kh on hd.MaHD = kh.MaKH inner join NhanVien2 nv on hd.MaNV = nv.MaNV
+	group by hd.MaHD, hd.NgayLap, nv.TenNV, kh.TenKH
+
+select * from HoaDonView where HoaDonView.MaHD
+
+-- create trigger for chitiethoadon
+<<<<<<< HEAD
+/*create Trigger cau1
+on ChiTietHoaDon
+for Insert
+as
+	begin
+		declare @soluong int
+		declare @soluongban int
+		select @soluong = HangHoa.SoLuong from HangHoa inner join inserted on HangHoa.MaHH = inserted.MaHH 
+		
+		select @soluongban = inserted.SoLuong from inserted
+		
+		Update HangHoa set HangHoa.SoLuong = HangHoa.SoLuong - @soluongban
+		from HangHoa inner join inserted on HangHoa.MaHH = inserted.MaHH
+	end
+
+
+create trigger cau2
+on ChiTietHoaDon
+for delete
+as
+	begin
+		update HangHoa set HangHoa.SoLuong = HangHoa.SoLuong + deleted.SoLuong
+		from HangHoa inner join deleted
+		on HangHoa.MaHH = deleted.MaHH
+		where HangHoa.MaHH = deleted.MaHH
+	end
+
+create view DanhSachBan
+as	
+select ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
+from NhaCungCap inner join HangHoa on NhaCungCap.MaNCC = HangHoa.MaNCC inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join NhanVien on KhachHang.MaNV = NhanVien.MaNV
+group by ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
+*/
+>>>>>>> 3eed25adc376d9501900b633f8586a594143de7d
+=======
+/*create Trigger cau1
+on ChiTietHoaDon
+for Insert
+as
+	begin
+		declare @soluong int
+		declare @soluongban int
+		select @soluong = HangHoa.SoLuong from HangHoa inner join inserted on HangHoa.MaHH = inserted.MaHH 
+		
+		select @soluongban = inserted.SoLuong from inserted
+		
+		Update HangHoa set HangHoa.SoLuong = HangHoa.SoLuong - @soluongban
+		from HangHoa inner join inserted on HangHoa.MaHH = inserted.MaHH
+	end
+
+
+create trigger cau2
+on ChiTietHoaDon
+for delete
+as
+	begin
+		update HangHoa set HangHoa.SoLuong = HangHoa.SoLuong + deleted.SoLuong
+		from HangHoa inner join deleted
+		on HangHoa.MaHH = deleted.MaHH
+		where HangHoa.MaHH = deleted.MaHH
+	end
+
+create view DanhSachBan
+as	
+select ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
+from NhaCungCap inner join HangHoa on NhaCungCap.MaNCC = HangHoa.MaNCC inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join NhanVien on KhachHang.MaNV = NhanVien.MaNV
+group by ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
+*/
+>>>>>>> 3eed25adc376d9501900b633f8586a594143de7d
