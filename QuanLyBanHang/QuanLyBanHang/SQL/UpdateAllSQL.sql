@@ -489,7 +489,7 @@ drop view BangLuong2
 drop view DoanhThu2
 
 
-/*UPDATE 3: INSERT RIGH DATA TO TABLE*/
+/*UPDATE 3: INSERT RIGH DATA TO TABLE (HIEU)*/
 -- insert data to table TrinhDo
 insert into TrinhDo2 values (N'TĐ1', N'Quản lý')
 insert into TrinhDo2 values (N'TĐ2', N'Nhân viên chạy bàn')
@@ -574,7 +574,7 @@ insert into LichSuGia2 values ('003', '2/6/2020', '7/6/2020', 20000, '6/6/2020')
 insert into LichSuGia2 values ('003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
 
 
-/*UPDATE 4: CREATE VIEW HOA DON*/
+/*UPDATE 4: CREATE VIEW HOA DON + TRIGGER HOA DON CHI TIET (HUNG)*/
 use QL_BANHANG2
 go
 create view HoaDonView
@@ -585,36 +585,33 @@ as
 select * from HoaDonView where HoaDonView.MaHD
 
 -- create trigger for chitiethoadon
-/*create Trigger cau1
-on ChiTietHoaDon
-for Insert
+
+DROP TRIGGER IF EXISTS trigger_ChiTietHoaDon;
+
+
+create trigger trigger_ChiTietHoaDon_insert on ChiTietHoaDon2
+for insert
 as
 	begin
 		declare @soluong int
 		declare @soluongban int
-		select @soluong = HangHoa.SoLuong from HangHoa inner join inserted on HangHoa.MaHH = inserted.MaHH 
+		select @soluong = Hang2.SoLuong from Hang2 inner join inserted on Hang2.MaHH = inserted.MaHH 
 		
 		select @soluongban = inserted.SoLuong from inserted
 		
-		Update HangHoa set HangHoa.SoLuong = HangHoa.SoLuong - @soluongban
-		from HangHoa inner join inserted on HangHoa.MaHH = inserted.MaHH
+		Update Hang2 set Hang2.SoLuong = Hang2.SoLuong - @soluongban
+		from Hang2 inner join inserted on Hang2.MaHH = inserted.MaHH
 	end
 
-
-create trigger cau2
-on ChiTietHoaDon
+use QL_BANHANG2
+go
+create trigger trigger_ChiTietHoaDon_delete
+on ChiTietHoaDon2
 for delete
 as
 	begin
-		update HangHoa set HangHoa.SoLuong = HangHoa.SoLuong + deleted.SoLuong
-		from HangHoa inner join deleted
-		on HangHoa.MaHH = deleted.MaHH
-		where HangHoa.MaHH = deleted.MaHH
+		update Hang2 set Hang2.SoLuong = Hang2.SoLuong + deleted.SoLuong
+		from Hang2 inner join deleted
+		on Hang2.MaHH = deleted.MaHH
+		where Hang2.MaHH = deleted.MaHH
 	end
-
-create view DanhSachBan
-as	
-select ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
-from NhaCungCap inner join HangHoa on NhaCungCap.MaNCC = HangHoa.MaNCC inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join NhanVien on KhachHang.MaNV = NhanVien.MaNV
-group by ChiTietHoaDon.MaHD,KhachHang.TenKH,ChiTietHoaDon.MaHH,HangHoa.TenHang,NhaCungCap.TenNCC,ChiTietHoaDon.DonGia,ChiTietHoaDon.SoLuong,HoaDon.MaNV,NhanVien.TenNV,HoaDon.NgayLap
-*/

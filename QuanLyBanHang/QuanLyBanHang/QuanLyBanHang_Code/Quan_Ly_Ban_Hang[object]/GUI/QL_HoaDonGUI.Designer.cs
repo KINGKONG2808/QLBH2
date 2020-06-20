@@ -783,6 +783,7 @@
             // txtSLCon
             // 
             this.txtSLCon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSLCon.Enabled = false;
             this.txtSLCon.Location = new System.Drawing.Point(164, 202);
             this.txtSLCon.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLCon.Name = "txtSLCon";

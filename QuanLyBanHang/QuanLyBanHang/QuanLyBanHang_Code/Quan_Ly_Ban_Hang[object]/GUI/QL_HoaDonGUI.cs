@@ -104,14 +104,10 @@ namespace QL_BanHang
                 DataTable dtMaNV = new DataTable();
                 dtMaNV = nvbll.ShowNhanVien();
                 cboMaNV.DataSource = dtMaNV;
-                cboMaNV.DisplayMember = "TenNV";
-                cboMaNV.ValueMember = "MaNV";
 
                 DataTable dtMaKH = new DataTable();
                 dtMaKH = khbll.ShowKhachHang();
                 cboMaKH.DataSource = dtMaKH;
-                cboMaKH.DisplayMember = "TenKH";
-                cboMaKH.ValueMember = "MaKH";
 
                 DataTable dtHoaDon = new DataTable();
                 dtHoaDon = hdbll.ShowHoaDon();
@@ -442,7 +438,6 @@ namespace QL_BanHang
 
         private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void label3_Click(object sender, EventArgs e)
