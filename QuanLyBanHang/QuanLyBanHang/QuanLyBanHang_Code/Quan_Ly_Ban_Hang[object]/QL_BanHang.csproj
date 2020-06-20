@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\ChiTietHoaDonBUS.cs" />
+    <Compile Include="BUS\TrinhDoBUS.cs" />
     <Compile Include="BUS\DangNhapBUS.cs" />
     <Compile Include="BUS\DoanhSoBUS.cs" />
     <Compile Include="BUS\HangBUS.cs" />
@@ -139,12 +140,6 @@
     <Compile Include="GUI\QL_NhanVienGUI.Designer.cs">
       <DependentUpon>QL_NhanVienGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QL_TrinhDoGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\QL_TrinhDoGUI.Designer.cs">
-      <DependentUpon>QL_TrinhDoGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\TrangChuGUI.cs">
@@ -191,9 +186,6 @@
     <EmbeddedResource Include="GUI\QL_NhanVienGUI.resx">
       <DependentUpon>QL_NhanVienGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QL_TrinhDoGUI.resx">
-      <DependentUpon>QL_TrinhDoGUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -234,6 +226,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="icon\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\logout.png" />
+    <None Include="icon\Save-icon.png" />
     <None Include="icon\Save-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

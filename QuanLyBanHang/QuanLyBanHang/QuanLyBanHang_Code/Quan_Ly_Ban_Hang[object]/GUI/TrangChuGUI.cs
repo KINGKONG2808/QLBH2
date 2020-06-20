@@ -142,10 +142,10 @@ namespace QL_BanHang
 
         private void thôngTinTrìnhĐộToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QL_TrinhDoGUI fnv = new QL_TrinhDoGUI();
+            /*QL_TrinhDoGUI fnv = new QL_TrinhDoGUI();
             fnv.FormClosed += new FormClosedEventHandler(fnv_FormClosed);
             fnv.Show();
-            this.Hide();
+            this.Hide();*/
         }
     }
 }
