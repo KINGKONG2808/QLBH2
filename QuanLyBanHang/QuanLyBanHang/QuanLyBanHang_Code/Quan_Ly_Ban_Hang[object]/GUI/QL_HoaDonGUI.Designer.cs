@@ -38,15 +38,15 @@
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
-            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.cboMaKH = new System.Windows.Forms.ComboBox();
+            this.cboMaNV = new System.Windows.Forms.ComboBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.txtTenNV = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.rbHoaDonAll = new System.Windows.Forms.RadioButton();
             this.rbMaHoaDon = new System.Windows.Forms.RadioButton();
             this.btnSearchHoaDon = new System.Windows.Forms.Button();
-            this.cboMaKH = new System.Windows.Forms.ComboBox();
-            this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.dateNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -202,12 +202,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtTenKhachHang);
-            this.groupBox1.Controls.Add(this.txtTenNhanVien);
-            this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.btnSearchHoaDon);
             this.groupBox1.Controls.Add(this.cboMaKH);
             this.groupBox1.Controls.Add(this.cboMaNV);
+            this.groupBox1.Controls.Add(this.txtTenKH);
+            this.groupBox1.Controls.Add(this.txtTenNV);
+            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.btnSearchHoaDon);
             this.groupBox1.Controls.Add(this.dateNgayLap);
             this.groupBox1.Controls.Add(this.txtMaHD);
             this.groupBox1.Controls.Add(this.label4);
@@ -224,19 +224,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             // 
-            // txtTenKhachHang
+            // cboMaKH
             // 
-            this.txtTenKhachHang.Location = new System.Drawing.Point(282, 228);
-            this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(193, 22);
-            this.txtTenKhachHang.TabIndex = 9;
+            this.cboMaKH.FormattingEnabled = true;
+            this.cboMaKH.Location = new System.Drawing.Point(170, 228);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(92, 24);
+            this.cboMaKH.TabIndex = 11;
             // 
-            // txtTenNhanVien
+            // cboMaNV
             // 
-            this.txtTenNhanVien.Location = new System.Drawing.Point(282, 166);
-            this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(193, 22);
-            this.txtTenNhanVien.TabIndex = 8;
+            this.cboMaNV.FormattingEnabled = true;
+            this.cboMaNV.Location = new System.Drawing.Point(170, 163);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(92, 24);
+            this.cboMaNV.TabIndex = 10;
+            this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged_1);
+            // 
+            // txtTenKH
+            // 
+            this.txtTenKH.Location = new System.Drawing.Point(268, 228);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(159, 22);
+            this.txtTenKH.TabIndex = 9;
+            // 
+            // txtTenNV
+            // 
+            this.txtTenNV.Location = new System.Drawing.Point(268, 164);
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.Size = new System.Drawing.Size(159, 22);
+            this.txtTenNV.TabIndex = 8;
             // 
             // groupBox6
             // 
@@ -289,32 +306,6 @@
             this.btnSearchHoaDon.TabIndex = 7;
             this.btnSearchHoaDon.Text = "Tìm kiếm";
             this.btnSearchHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // cboMaKH
-            // 
-            this.cboMaKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboMaKH.DisplayMember = "MaKH";
-            this.cboMaKH.FormattingEnabled = true;
-            this.cboMaKH.Location = new System.Drawing.Point(170, 226);
-            this.cboMaKH.Margin = new System.Windows.Forms.Padding(4);
-            this.cboMaKH.Name = "cboMaKH";
-            this.cboMaKH.Size = new System.Drawing.Size(105, 24);
-            this.cboMaKH.TabIndex = 3;
-            this.cboMaKH.ValueMember = "MaKH";
-            this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
-            // 
-            // cboMaNV
-            // 
-            this.cboMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboMaNV.DisplayMember = "MaNV";
-            this.cboMaNV.FormattingEnabled = true;
-            this.cboMaNV.Location = new System.Drawing.Point(170, 164);
-            this.cboMaNV.Margin = new System.Windows.Forms.Padding(4);
-            this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(105, 24);
-            this.cboMaNV.TabIndex = 3;
-            this.cboMaNV.ValueMember = "MaNV";
-            this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged);
             // 
             // dateNgayLap
             // 
@@ -783,7 +774,6 @@
             // txtSLCon
             // 
             this.txtSLCon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSLCon.Enabled = false;
             this.txtSLCon.Location = new System.Drawing.Point(164, 202);
             this.txtSLCon.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLCon.Name = "txtSLCon";
@@ -903,8 +893,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboMaKH;
-        private System.Windows.Forms.ComboBox cboMaNV;
         private System.Windows.Forms.DateTimePicker dateNgayLap;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label4;
@@ -951,8 +939,8 @@
         private System.Windows.Forms.RadioButton rbHoaDonAll;
         private System.Windows.Forms.RadioButton rbMaHoaDon;
         private System.Windows.Forms.Button btnSearchHoaDon;
-        private System.Windows.Forms.TextBox txtTenKhachHang;
-        private System.Windows.Forms.TextBox txtTenNhanVien;
+        private System.Windows.Forms.TextBox txtTenKH;
+        private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
@@ -962,5 +950,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongCon;
+        private System.Windows.Forms.ComboBox cboMaKH;
+        private System.Windows.Forms.ComboBox cboMaNV;
     }
 }

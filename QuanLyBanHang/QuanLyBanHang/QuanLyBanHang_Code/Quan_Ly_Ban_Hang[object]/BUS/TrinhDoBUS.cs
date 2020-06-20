@@ -23,7 +23,7 @@ namespace QL_BanHang.BUS
 
         public void EditTrinhDo(TrinhDoDTO trinhDoDTO)
         {
-            string sql = "Update TrinhDo2 set TenTrinhDo = N'"+trinhDoDTO.TenTrinhDo+ "', LuongCung = '"+ trinhDoDTO.LuongCung+"' where MaTrinhDo = " + trinhDoDTO.MaTrinhDo;
+            string sql = "Update TrinhDo2 set TenTrinhDo = N'" + trinhDoDTO.TenTrinhDo+ "', LuongCung = '"+ trinhDoDTO.LuongCung+"' where MaTrinhDo = " + trinhDoDTO.MaTrinhDo;
             data.ExcuteNonQuery(sql);
         }
         public void AddTrinhDo(TrinhDoDTO trinhDoDTO)

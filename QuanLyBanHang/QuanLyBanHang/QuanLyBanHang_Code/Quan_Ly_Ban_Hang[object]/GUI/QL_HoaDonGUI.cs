@@ -104,10 +104,14 @@ namespace QL_BanHang
                 DataTable dtMaNV = new DataTable();
                 dtMaNV = nvbll.ShowNhanVien();
                 cboMaNV.DataSource = dtMaNV;
+                cboMaNV.DisplayMember = "TenNV";
+                cboMaNV.ValueMember = "MaNV";
 
                 DataTable dtMaKH = new DataTable();
                 dtMaKH = khbll.ShowKhachHang();
                 cboMaKH.DataSource = dtMaKH;
+                cboMaKH.DisplayMember = "TenKH";
+                cboMaKH.ValueMember = "MaKH";
 
                 DataTable dtHoaDon = new DataTable();
                 dtHoaDon = hdbll.ShowHoaDon();
@@ -407,8 +411,8 @@ namespace QL_BanHang
         {
             int row = e.RowIndex;
             txtMaHD.Text = dgvHienThiHDon.Rows[row].Cells[0].Value.ToString();
-            cboMaKH.Text = dgvHienThiHDon.Rows[row].Cells[1].Value.ToString();
-            cboMaNV.Text = dgvHienThiHDon.Rows[row].Cells[2].Value.ToString();
+            /*cboMaKH.Text = dgvHienThiHDon.Rows[row].Cells[1].Value.ToString();
+            cboMaNV.Text = dgvHienThiHDon.Rows[row].Cells[2].Value.ToString();*/
             dateNgayLap.Text = dgvHienThiHDon.Rows[row].Cells[3].Value.ToString();
         }
 
@@ -438,6 +442,7 @@ namespace QL_BanHang
 
         private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -448,6 +453,19 @@ namespace QL_BanHang
         private void cboMaKH_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMaNV_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboMaNV.SelectedValue.ToString().Length != 0)
+            {
+                txtTenNV.Text = null;// query ra ten nv dua vao ma nv ...tuy m..miexn sao lay dk ten nv dua vao ma nv
+            }
         }
     }
 }
