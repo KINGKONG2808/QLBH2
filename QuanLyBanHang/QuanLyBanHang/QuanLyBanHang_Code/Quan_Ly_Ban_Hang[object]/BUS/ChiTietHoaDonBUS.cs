@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QL_BanHang.DTO;
+using System.Data.SqlClient;
 
 namespace QL_BanHang.BUS
 {
@@ -16,7 +17,7 @@ namespace QL_BanHang.BUS
 
         public DataTable ShowChiTietHD()
         {
-            string sql = "select * from ChiTietHoaDon2";
+            string sql = "select * from ChiTietHoaDonView";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
@@ -24,19 +25,19 @@ namespace QL_BanHang.BUS
 
         public void InsertChiTietHD(ChiTietHoaDonDTO ct)
         {
-            string sql = "Insert into ChiTietHoaDon2 values('" + ct.MaHD + "','" + ct.MaHH + "','" + ct.DonGia + "','" + ct.SoLuong + "')";
+            string sql = "Insert into ChiTietHoaDon2 values('" + ct.MaHD + "','" + ct.MaHH + "','" + ct.SoLuong + "')";
             data.ExcuteNonQuery(sql);
         }
 
         public void UpdateChiTietHD(ChiTietHoaDonDTO ct)
         {
-            string sql = "Update ChiTietHoaDon2 set MaHH='" + ct.MaHH + "',DonGia='" + ct.DonGia + "',SoLuong='" + ct.SoLuong + "' where MaHD='" + ct.MaHD + "'";
+            string sql = "Update ChiTietHoaDon2 set MaHH='" + ct.MaHH + "',SoLuong='" + ct.SoLuong + "' where MaHDCT='" + ct.MaHD + "'";
             data.ExcuteNonQuery(sql);
         }
 
         public void DeleteChiTietHD(string mahd)
         {
-            string sql = "Delete ChiTietHoaDon2 where MaHD = '" + mahd + "'";
+            string sql = "Delete from ChiTietHoaDon2 where MaHDCT = '" + mahd + "'";
             data.ExcuteNonQuery(sql);
         }
 
@@ -54,6 +55,26 @@ namespace QL_BanHang.BUS
             string sql = "select DonGia From Hang2 where MaHH = '" + QL_HoaDon.fmHD.cboMaHH.Text + "'";
             x = data.ExecuteScalar(sql);
             return x;
+        }
+
+        public int findPrice(String maHH)
+        {
+            int result = 0;
+            string sqlQuery = "select * from Hang2 h where h.MaHH = '" + maHH + "'";
+
+            SqlConnection con = data.getConnect();
+            con.Open();
+            SqlCommand command = new SqlCommand(sqlQuery, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    result = reader.GetInt32(4);
+                }
+            }
+            con.Close();
+            return result;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace QL_BanHang.DTO
     {
         private string maHD;
         private string maHH;
-        private string donGia;
         private string soLuong;
 
         public string MaHD
@@ -25,12 +24,6 @@ namespace QL_BanHang.DTO
             set { maHH = value; }
         }
 
-        public string DonGia
-        {
-            get { return donGia; }
-            set { donGia = value; }
-        }
-
         public string SoLuong
         {
             get { return soLuong; }
@@ -38,11 +31,10 @@ namespace QL_BanHang.DTO
         }
 
         public ChiTietHoaDonDTO() { }
-        public ChiTietHoaDonDTO(string mahd, string mahh, string dongia, string soluong)
+        public ChiTietHoaDonDTO(string mahd, string mahh, string soluong)
         {
             MaHD = mahd;
             maHH = mahh;
-            DonGia = dongia;
             SoLuong = soluong;
         }
     }

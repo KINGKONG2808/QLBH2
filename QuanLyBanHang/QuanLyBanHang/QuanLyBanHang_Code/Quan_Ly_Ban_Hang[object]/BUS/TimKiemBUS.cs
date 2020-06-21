@@ -14,7 +14,15 @@ namespace QL_BanHang.BUS
 
         public DataTable searchHoaDonById(String maHD)
         {
-            string sql = "select * from HoaDonView hdv where hdv.MaHD = " + maHD;
+            string sql = "select * from HoaDonView hdv where hdv.MaHD like '%" + maHD + "%'";
+            DataTable dt = new DataTable();
+            dt = data.GetTable(sql);
+            return dt;
+        }
+
+        public DataTable searchHoaDonChiTiet(String codeSearch, bool checkType)
+        {
+            string sql = checkType ? "select * from ChiTietHoaDonView cthdv where cthdv.MaHDCT like '%" + codeSearch + "%'" : "select * from ChiTietHoaDonView cthdv where cthdv.MaHH like '%" + codeSearch + "%'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

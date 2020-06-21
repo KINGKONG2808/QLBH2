@@ -218,7 +218,7 @@ namespace QL_BanHang
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult thoat = MessageBox.Show("trở về trang chủ", "thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult thoat = MessageBox.Show("Trở về trang chủ", "thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (thoat == DialogResult.OK)
             {
                 TrangChu a = new TrangChu();

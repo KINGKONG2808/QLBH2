@@ -235,13 +235,12 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[ChiTietHoaDon2](
-	[MaHD] [varchar](100) NOT NULL,
+	[MaHDCT] [varchar](100) NOT NULL,
 	[MaHH] [varchar](100) NOT NULL,
-	[DonGia] [int] NOT NULL,
 	[SoLuong] [int] NOT NULL,
  CONSTRAINT [PK_ChiTietHoaDon] PRIMARY KEY CLUSTERED 
 (
-	[MaHD] ASC,
+	[MaHDCT] ASC,
 	[MaHH] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -249,10 +248,10 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'h001', 30000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'h002', 35000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'h003', 32000, 3000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'h004', 35000, 2000)
+insert into ChiTietHoaDon2 values (N'hd1', N'h001', 2000)
+insert into ChiTietHoaDon2 values (N'hd1', N'h002', 2000)
+insert into ChiTietHoaDon2 values (N'hd2', N'h003', 3000)
+insert into ChiTietHoaDon2 values (N'hd2', N'h004', 2000)
 
 
 -- create table LichSuGia
@@ -433,14 +432,14 @@ insert into HoaDon2 values ('hd10', '0010', '001', '6/6/2020')
 insert into HoaDon2 values ('hd11', '001', '004', '7/6/2020')
 insert into HoaDon2 values ('hd12', '002', '003', '8/6/2020')
 -- insert data to table ChiTietHoaDon
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd1', N'hang1', 130000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd3', N'hang2', 70000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd2', N'hang3', 65000, 3000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd4', N'hang4', 35000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd6', N'hang1', 124000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd7', N'hang2', 115000, 2000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd8', N'hang3', 80000, 3000)
-INSERT [dbo].[ChiTietHoaDon2] ([MaHD], [MaHH], [DonGia], [SoLuong]) VALUES (N'hd9', N'hang4', 12000, 2000)
+insert into ChiTietHoaDon2 values  (N'hd001', N'hang1', 2000)
+insert into ChiTietHoaDon2 values  (N'hd003', N'hang2', 2000)
+insert into ChiTietHoaDon2 values  (N'hd002', N'hang3', 3000)
+insert into ChiTietHoaDon2 values  (N'hd004', N'hang4', 2000)
+insert into ChiTietHoaDon2 values  (N'hd006', N'hang1', 2000)
+insert into ChiTietHoaDon2 values  (N'hd007', N'hang2', 2000)
+insert into ChiTietHoaDon2 values  (N'hd008', N'hang3', 3000)
+insert into ChiTietHoaDon2 values  (N'hd009', N'hang4', 2000)
 -- insert data to table LichSuGia
 insert into LichSuGia2 values ('001', '1/6/2020', '6/6/2020', 150000, '7/6/2020')
 insert into LichSuGia2 values ('002', '2/6/2020', '7/6/2020',60000, '6/6/2020')
@@ -453,12 +452,16 @@ insert into LichSuGia2 values ('003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
 /*UPDATE 4: CREATE VIEW HOA DON*/
 use QL_BANHANG2
 go
-alter view HoaDonView
+create view HoaDonView
 as
-	select hd.MaHD, hd.NgayLap, nv.TenNV, kh.TenKH from HoaDon2 hd 
+	select hd.MaHD, hd.NgayLap, nv.MaNV, nv.TenNV, kh.MaKH, kh.TenKH, sum(cthd.SoLuong * h.DonGia) as 'TongTien' from HoaDon2 hd 
 	inner join KhachHang2 kh on hd.MaKH = kh.MaKH 
 	inner join NhanVien2 nv on hd.MaNV = nv.MaNV
-	group by hd.MaHD, hd.NgayLap, nv.TenNV, kh.TenKH
+	left join ChiTietHoaDon2 cthd on hd.MaHD = cthd.MaHDCT
+	left join Hang2 h on cthd.MaHH = h.MaHH
+	group by hd.MaHD, hd.NgayLap, nv.MaNV, nv.TenNV, kh.MaKH, kh.TenKH
+
+select * from HoaDonView order by HoaDonView.NgayLap desc
 
 -- create trigger for chitiethoadon
 
@@ -487,3 +490,13 @@ as
 		on Hang2.MaHH = deleted.MaHH
 		where Hang2.MaHH = deleted.MaHH
 	end
+
+
+/*UPDATE 5: CREATE VIEW CHITIETHOADON*/
+create view ChiTietHoaDonView
+as
+	select cthd.MaHDCT, cthd.MaHH, h.TenHang, cthd.SoLuong, h.DonGia, cthd.SoLuong * h.DonGia as 'ThanhTien'
+	from ChiTietHoaDon2 cthd inner join Hang2 h on cthd.MaHH = h.MaHH
+	group by cthd.MaHDCT, cthd.MaHH, h.TenHang, cthd.SoLuong, h.DonGia
+
+select * from ChiTietHoaDonView

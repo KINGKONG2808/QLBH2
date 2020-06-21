@@ -24,6 +24,7 @@ namespace QL_BanHang
         NhanVienBUS nvbll = new NhanVienBUS();
         KhachHangBUS khbll = new KhachHangBUS();
         ChiTietHoaDonBUS ctbll = new ChiTietHoaDonBUS();
+        TimKiemBUS search = new TimKiemBUS();
         DataConnect data = new DataConnect();
         int Flag = 0;
         public QL_HoaDon()
@@ -47,7 +48,7 @@ namespace QL_BanHang
         public void Dis_Enable1(bool e)
         {
             cboMaHD.Enabled = e;
-            txtDonGia.Enabled = e;
+            cboMaHH.Enabled = e;
             txtSoLuong.Enabled = e;
             btnThemHD.Enabled = !e;
             btnLuuHD.Enabled = e;
@@ -61,7 +62,8 @@ namespace QL_BanHang
             dateNgayLap.Text = "";
             cboMaKH.Text = "";
             cboMaNV.Text = "";
-
+            txtTenNV.Text = "";
+            txtTenKH.Text = "";
         }
 
         public void setTXT2()
@@ -69,7 +71,7 @@ namespace QL_BanHang
             cboMaHD.Text = "";
             cboMaHH.Text = "";
             txtSoLuong.Text = "";
-            txtDonGia.Text = "";
+            txtSLCon.Text = "";
         }
 
         private void ganDuLieu(HoaDonDTO hd)
@@ -84,48 +86,48 @@ namespace QL_BanHang
         {
             ct.MaHD = cboMaHD.Text;
             ct.MaHH = cboMaHH.Text;
-            ct.DonGia = txtDonGia.Text;
             ct.SoLuong = txtSoLuong.Text;
         }
 
         private void loadControl()
         {
-            try
+            DataTable dtChiTietHD = new DataTable();
+            dtChiTietHD = ctbll.ShowChiTietHD();
+            dgvHienThiChiTietHD.DataSource = dtChiTietHD;
+
+            DataTable dtMaHH = new DataTable();
+            dtMaHH = hhbll.ShowHang();
+            cboMaHH.DataSource = dtMaHH;
+
+
+            DataTable dtMaNV = new DataTable();
+            dtMaNV = nvbll.ShowNhanVien();
+            cboMaNV.DataSource = dtMaNV;
+            cboMaNV.DisplayMember = "MaNV";
+            cboMaNV.ValueMember = "MaNV";
+
+            DataTable dtMaKH = new DataTable();
+            dtMaKH = khbll.ShowKhachHang();
+            cboMaKH.DataSource = dtMaKH;
+            cboMaKH.DisplayMember = "MaKH";
+            cboMaKH.ValueMember = "MaKH";
+
+            DataTable dtHoaDon = new DataTable();
+            dtHoaDon = hdbll.ShowHoaDon();
+            dgvHienThiHDon.DataSource = dtHoaDon;
+
+            DataTable dtMaHD = new DataTable();
+            dtMaHD = hdbll.onLoadHoaDon();
+            cboMaHD.DataSource = dtMaHD;
+            /*try
             {
-                DataTable dtChiTietHD = new DataTable();
-                dtChiTietHD = ctbll.ShowChiTietHD();
-                dgvHienThiChiTietHD.DataSource = dtChiTietHD;
-
-                DataTable dtMaHH = new DataTable();
-                dtMaHH = hhbll.ShowHang();
-                cboMaHH.DataSource = dtMaHH;
-
-
-                DataTable dtMaNV = new DataTable();
-                dtMaNV = nvbll.ShowNhanVien();
-                cboMaNV.DataSource = dtMaNV;
-                cboMaNV.DisplayMember = "TenNV";
-                cboMaNV.ValueMember = "MaNV";
-
-                DataTable dtMaKH = new DataTable();
-                dtMaKH = khbll.ShowKhachHang();
-                cboMaKH.DataSource = dtMaKH;
-                cboMaKH.DisplayMember = "TenKH";
-                cboMaKH.ValueMember = "MaKH";
-
-                DataTable dtHoaDon = new DataTable();
-                dtHoaDon = hdbll.ShowHoaDon();
-                dgvHienThiHDon.DataSource = dtHoaDon;
-
-                DataTable dtMaHD = new DataTable();
-                dtMaHD = hdbll.ShowHoaDon();
-                cboMaHD.DataSource = dtMaHD;
+                
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Lỗi SQL!", "Erorr", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
-            }
+            }*/
         }
 
         private void QL_HoaDon_Load(object sender, EventArgs e)
@@ -148,12 +150,6 @@ namespace QL_BanHang
             else
                 return 0;
             
-        }
-
-        private int giaNhap()
-        {
-            int giaNhap = ctbll.GiaNhap();
-            return giaNhap;
         }
 
         private void btnF5_Click_1(object sender, EventArgs e)
@@ -179,7 +175,7 @@ namespace QL_BanHang
         {
             if (!String.IsNullOrEmpty(txtMaHD.Text))
             {
-                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     try
@@ -275,16 +271,9 @@ namespace QL_BanHang
         private void btnLuuHD_Click(object sender, EventArgs e)
         {
             ganDuLieu1(ct);
-            if (!String.IsNullOrEmpty(cboMaHD.Text) && !String.IsNullOrEmpty(cboMaHH.Text) && !String.IsNullOrEmpty(txtDonGia.Text) 
-                && !String.IsNullOrEmpty(txtSoLuong.Text))
+            if (!String.IsNullOrEmpty(cboMaHD.Text) && !String.IsNullOrEmpty(cboMaHH.Text) && !String.IsNullOrEmpty(txtSoLuong.Text))
             {
-                int val1, val2;
-                Boolean check1 = Int32.TryParse(txtDonGia.Text, out val1);
-                if (!check1)
-                {
-                    MessageBox.Show("Gía trị đơn giá phải là số", "Sai dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    return;
-                }
+                int val2;
                 Boolean check2 = Int32.TryParse(txtSoLuong.Text, out val2);
                 if (!check2)
                 {
@@ -293,10 +282,7 @@ namespace QL_BanHang
                 }
                 try
                 {
-                    String s = txtSoLuong.Text;
-                    string s1 = txtDonGia.Text;
-                    int soLuongBan = Int32.Parse(s);
-                    int giaBan = Int32.Parse(s1);
+                    int soLuongBan = Int32.Parse(txtSoLuong.Text);
                     if (soLuongNhap() > 0)
                     {
                         if (soLuongNhap() < soLuongBan)
@@ -306,50 +292,42 @@ namespace QL_BanHang
                         }
                         else
                         {
-                            if (giaBan > giaNhap())
+                            if (Flag == 3)
                             {
-                                if (Flag == 3)
+                                try
+                                {
+                                    ctbll.InsertChiTietHD(ct);
+                                    {
+                                        MessageBox.Show("Thêm hóa đơn chi tiết thành công", "Thông báo thêm mới hóa đơn chi tiết", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        QL_HoaDon_Load(sender, e);
+                                        setTXT2();
+                                    }
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Mã hóa đơn và mã khách hàng đã tồn tại, kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                if (Flag == 4)
                                 {
                                     try
                                     {
-                                        ctbll.InsertChiTietHD(ct);
+                                        ctbll.UpdateChiTietHD(ct);
                                         {
-                                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("Sửa hóa đơn chi tiết thành công", "Thông báo cập nhật hóa đơn chi tiết", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             QL_HoaDon_Load(sender, e);
                                             setTXT2();
                                         }
                                     }
                                     catch
                                     {
-                                        MessageBox.Show("Mã khách hàng đã tồn tại , kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBox.Show("Sửa hóa đơn chi tiết thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         return;
                                     }
                                 }
-                                else
-                                {
-                                    if (Flag == 4)
-                                    {
-                                        try
-                                        {
-                                            ctbll.UpdateChiTietHD(ct);
-                                            {
-                                                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                QL_HoaDon_Load(sender, e);
-                                                setTXT2();
-                                            }
-                                        }
-                                        catch
-                                        {
-                                            MessageBox.Show("Sửa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                            return;
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Gía bán hàng không thể nhỏ hơn giá nhập hàng , kiểm tra lại!", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
                             }
                         }
                     }
@@ -361,7 +339,7 @@ namespace QL_BanHang
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Đã tồn tại chi tiết hóa đơn như trên , lỗi SQL!", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đã tồn tại chi tiết hóa đơn, lỗi SQL!", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -409,20 +387,24 @@ namespace QL_BanHang
         //Đổ lại dữ liệu từ DataGridView lên các ô textBox,...
         private void dgvHienThiHDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Dis_Enable(false);
             int row = e.RowIndex;
             txtMaHD.Text = dgvHienThiHDon.Rows[row].Cells[0].Value.ToString();
-            /*cboMaKH.Text = dgvHienThiHDon.Rows[row].Cells[1].Value.ToString();
-            cboMaNV.Text = dgvHienThiHDon.Rows[row].Cells[2].Value.ToString();*/
-            dateNgayLap.Text = dgvHienThiHDon.Rows[row].Cells[3].Value.ToString();
+            dateNgayLap.Text = dgvHienThiHDon.Rows[row].Cells[1].Value.ToString();
+            cboMaNV.Text = dgvHienThiHDon.Rows[row].Cells[2].Value.ToString();
+            txtTenNV.Text = dgvHienThiHDon.Rows[row].Cells[3].Value.ToString();
+            cboMaKH.Text = dgvHienThiHDon.Rows[row].Cells[4].Value.ToString();
+            txtTenKH.Text = dgvHienThiHDon.Rows[row].Cells[5].Value.ToString();
         }
 
         private void dgvHienThiChiTietHD_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            Dis_Enable1(false);
             int row = e.RowIndex;
             cboMaHD.Text = dgvHienThiChiTietHD.Rows[row].Cells[0].Value.ToString();
             cboMaHH.Text = dgvHienThiChiTietHD.Rows[row].Cells[1].Value.ToString();
-            txtDonGia.Text = dgvHienThiChiTietHD.Rows[row].Cells[2].Value.ToString();
             txtSoLuong.Text = dgvHienThiChiTietHD.Rows[row].Cells[3].Value.ToString();
+            txtSLCon.Text = (ctbll.SoLuongNhap() - Int32.Parse(txtSoLuong.Text)) < 0 ? "0" : (ctbll.SoLuongNhap() - Int32.Parse(txtSoLuong.Text)).ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -440,31 +422,80 @@ namespace QL_BanHang
 
         }
 
-        private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboMaKH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void cboMaNV_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cboMaNV.SelectedValue.ToString().Length != 0)
+            if(!cboMaNV.SelectedValue.ToString().Equals(null))
             {
-                txtTenNV.Text = null;// query ra ten nv dua vao ma nv ...tuy m..miexn sao lay dk ten nv dua vao ma nv
+                txtTenNV.Text = hdbll.onChangeCboBox(cboMaNV.SelectedValue.ToString(), true);
+            }
+        }
+
+        private void cboMaKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!cboMaKH.SelectedValue.ToString().Equals(null))
+            {
+                txtTenKH.Text = hdbll.onChangeCboBox(cboMaKH.SelectedValue.ToString(), false);
+            }
+        }
+
+        private void btnSearchHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rbMaHoaDon.Checked)
+                {
+                    dgvHienThiHDon.DataSource = search.searchHoaDonById(txtMaHoaDon.Text);
+                } else
+                {
+                    loadControl();
+                    setTXT1();
+                    Dis_Enable(false);
+                }
+            } catch (Exception)
+            {
+                MessageBox.Show("Bạn phải nhập mã hóa đơn cần tìm kiếm");
+            }
+        }
+
+        private void exitHyperLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogResult thoat = MessageBox.Show("Trở về trang chủ", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (thoat == DialogResult.OK)
+            {
+                TrangChu home = new TrangChu();
+                this.Close();
+                home.Show();
+            }
+        }
+
+        private void btnSearchHDCT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!rbHoaDonChiTietAll.Checked)
+                {
+                    if (rbMaHoaDonChiTiet.Checked)
+                    {
+                        dgvHienThiChiTietHD.DataSource = search.searchHoaDonChiTiet(txtMaHoaDonChiTiet.Text, true);
+                    } else
+                    {
+                        dgvHienThiChiTietHD.DataSource = search.searchHoaDonChiTiet(txtMaHangHoa.Text, false);
+                    }
+                } else
+                {
+                    loadControl();
+                    setTXT1();
+                    Dis_Enable(false);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn phải nhập mã hóa đơn hoặc mã hàng hóa cần tìm kiếm");
             }
         }
     }
