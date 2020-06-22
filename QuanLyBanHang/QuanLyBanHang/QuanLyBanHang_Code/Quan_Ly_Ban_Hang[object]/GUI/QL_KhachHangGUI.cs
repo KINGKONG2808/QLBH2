@@ -18,6 +18,8 @@ namespace QL_BanHang
     {
         KhachHangDTO kh = new KhachHangDTO();
         KhachHangBUS khbll = new KhachHangBUS();
+        NhanVienBUS nvbll = new NhanVienBUS();
+        HoaDonBUS hdbll = new HoaDonBUS();
         DataConnect data = new DataConnect();
         int Flag = 0;
         public QL_KhachHang()
@@ -47,6 +49,7 @@ namespace QL_BanHang
             txtDiaChi.Text = "";
             txtSDT.Text = "";
             cboMaNV.Text = "";
+            txtTenNV.Text = "";
         }
 
         private void loadControl()
@@ -56,11 +59,15 @@ namespace QL_BanHang
             cboGioiTinh.Items.Add("Nữ");
             try
             {
-                String sql = "select MaNV from NhanVien ";
-                DataTable dt = new DataTable();
-                dt = data.GetTable(sql);
-                cboMaNV.DataSource = dt;
+                DataTable dtMaNV = new DataTable();
+                dtMaNV = nvbll.ShowNhanVien();
+                cboMaNV.DataSource = dtMaNV;
+                cboMaNV.DisplayMember = "MaNV";
                 cboMaNV.ValueMember = "MaNV";
+
+                DataTable dtKhachHang = new DataTable();
+                dtKhachHang = khbll.ShowKhachHang();
+                dgvHienThiKH.DataSource = dtKhachHang;
             }
             catch (SqlException ex)
             {
@@ -83,15 +90,11 @@ namespace QL_BanHang
         private void QL_KhachHang_Load(object sender, EventArgs e)
         {
             Dis_Enable(false);
-            DataTable dtKhachHang = new DataTable();
-            dtKhachHang = khbll.ShowKhachHang();
-            dgvHienThiKH.DataSource = dtKhachHang;
-
+            loadControl();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            loadControl();
             Flag = 1;
             Dis_Enable(true);
             setTXT();
@@ -211,6 +214,7 @@ namespace QL_BanHang
 
         private void dgvHienThiKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Dis_Enable(false);
             row = e.RowIndex;
             txtMaKH.Text = dgvHienThiKH.Rows[row].Cells[0].Value.ToString();
             txtTenKH.Text = dgvHienThiKH.Rows[row].Cells[1].Value.ToString();
@@ -221,6 +225,7 @@ namespace QL_BanHang
                 cboGioiTinh.Text = "Nữ";
             txtDiaChi.Text = dgvHienThiKH.Rows[row].Cells[4].Value.ToString();
             cboMaNV.Text = dgvHienThiKH.Rows[row].Cells[5].Value.ToString();
+            txtTenNV.Text = hdbll.onChangeCboBox(cboMaNV.SelectedValue.ToString(), true);
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -230,7 +235,10 @@ namespace QL_BanHang
 
         private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (!cboMaNV.SelectedValue.ToString().Equals(null))
+            {
+                txtTenNV.Text = hdbll.onChangeCboBox(cboMaNV.SelectedValue.ToString(), true);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -263,9 +271,9 @@ namespace QL_BanHang
             }
             if(rbAll.Checked == true)
             {
-                DataTable dt = new DataTable();
-                dt = kh.ShowKhachHang();
-                dgvHienThiKH.DataSource = dt;
+                loadControl();
+                setTXT();
+                Dis_Enable(false);
             }
         }
     }
