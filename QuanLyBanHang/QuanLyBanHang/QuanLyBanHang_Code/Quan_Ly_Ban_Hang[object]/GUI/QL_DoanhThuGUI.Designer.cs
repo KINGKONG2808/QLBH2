@@ -401,7 +401,7 @@
             // 
             // MaHD
             // 
-            this.MaHD.DataPropertyName = "MaHD";
+            this.MaHD.DataPropertyName = "MaHDCT";
             this.MaHD.HeaderText = "Mã HD";
             this.MaHD.Name = "MaHD";
             // 
