@@ -22,7 +22,7 @@ namespace QL_BanHang.BUS
 
         public DataTable ShowLapHD()
         {
-            string sql = "select NhanVien2.MaNV ,NhanVien2.TenNV , COUNT(*)as'So luot lap hoa don' from ChiTietHoaDon2 inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV group by NhanVien2.MaNV ,NhanVien2.TenNV";
+            string sql = "select NhanVien2.MaNV ,NhanVien2.TenNV , COUNT(*)as'So luot lap hoa don' from ChiTietHoaDon2 inner join HoaDon2 on ChiTietHoaDon2.MaHDCT = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV group by NhanVien2.MaNV ,NhanVien2.TenNV";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

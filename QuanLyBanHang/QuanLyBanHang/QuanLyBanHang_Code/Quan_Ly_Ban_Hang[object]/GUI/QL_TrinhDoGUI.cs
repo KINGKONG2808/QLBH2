@@ -151,6 +151,26 @@ namespace QL_BanHang.GUI
         {
             this.Close();
         }
+
+        private void btnSearchTD_Click(object sender, EventArgs e)
+        {
+            if (!rbTDAll.Checked)
+            {
+                if (txttimkiem.TextLength == 0)
+                    MessageBox.Show("Bạn chưa nhập từ khóa tìm kiếm ");
+                else
+                    dgvtd.DataSource = trinhDo.searchTrinhDo(txttimkiem.Text);
+            }else
+            {
+                dgvtd.DataSource = trinhDo.ShowTrinhDo();
+            }
+        }
+
+        private void QL_TrinhDoGUI_Load(object sender, EventArgs e)
+        {
+            showDataGridView_Click(sender, e);
+            rbTDAll.Checked = true;
+        }
     }
 }
 
