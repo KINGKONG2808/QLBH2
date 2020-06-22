@@ -23,12 +23,17 @@ namespace QL_BanHang
             InitializeComponent();
         }
 
-        private void QL_NhaCungCap_Load(object sender, EventArgs e)
+        public void loadControl()
         {
-            Dis_Enable(false);
             DataTable dtNhaCungCap = new DataTable();
             dtNhaCungCap = nccbll.ShowNhaCungCap();
             dgvHienThi.DataSource = dtNhaCungCap;
+        }
+
+        private void QL_NhaCungCap_Load(object sender, EventArgs e)
+        {
+            Dis_Enable(false);
+            loadControl();
         }
 
         public void Dis_Enable(bool e)
@@ -49,7 +54,6 @@ namespace QL_BanHang
             txtTenNCC.Text = "";
             txtDiaChi.Text = "";
             txtSDT.Text = "";
-
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -122,6 +126,7 @@ namespace QL_BanHang
         int row;
         private void dgvHienThi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Dis_Enable(false);
             row = e.RowIndex;
             txtMaNCC.Text = dgvHienThi.Rows[row].Cells[0].Value.ToString();
             txtTenNCC.Text = dgvHienThi.Rows[row].Cells[1].Value.ToString();
@@ -191,11 +196,10 @@ namespace QL_BanHang
             }
             if(rbAll.Checked==true)
             {
-                DataTable dt3 = new DataTable();
-                dt3 = a.ShowNhaCungCap();
-                dgvHienThi.DataSource = dt3;
+                Dis_Enable(false);
+                loadControl();
             }
                
         }
     }
-        }
+}

@@ -59,7 +59,7 @@ namespace QL_BanHang.BUS
 
         public DataTable ShowHangtk(string tk)
         {
-            string sql = "select * from Hang2 where MaHH = '" + tk + "'";
+            string sql = "select * from Hang2 where MaHH like '%" + tk + "%'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

@@ -22,7 +22,7 @@ namespace QL_BanHang.BUS
         }
         public DataTable ShowKhachHangtk(string tk)
         {
-            string sql = "select * from KhachHang2 where MaKH ='" + tk + "'";
+            string sql = "select * from KhachHang2 where MaKH like '%" + tk + "%'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;

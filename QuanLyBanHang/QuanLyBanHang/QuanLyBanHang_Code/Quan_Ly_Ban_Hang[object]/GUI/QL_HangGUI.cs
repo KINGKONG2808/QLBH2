@@ -22,8 +22,6 @@ namespace QL_BanHang
 
 
         HangBUS hbus = new HangBUS();
-
-
         
         DataConnect data = new DataConnect();
         public QL_HangHoa()
@@ -31,10 +29,6 @@ namespace QL_BanHang
             InitializeComponent();
             fmHH = this;
         }
-
-    
-
-        
 
         public void setTXT()
         {
@@ -46,14 +40,8 @@ namespace QL_BanHang
             txtDonViTinh.Text = "";
         }
 
-        private void QL_HangHoa_Load(object sender, EventArgs e)
+        public void loadControl()
         {
-            // TODO: This line of code loads data into the 'qLHANGDataSet.LoaiHang' table. You can move, or remove it, as needed.
-            //this.loaiHangTableAdapter.Fill(this.qLHANGDataSet.LoaiHang);
-            // TODO: This line of code loads data into the 'qLHANGDataSet.Hang' table. You can move, or remove it, as needed.
-            //this.hangTableAdapter.Fill(this.qLHANGDataSet.Hang);
-
-            
             DataTable dtHangHoa = new DataTable();
             dtHangHoa = hbus.ShowHang();
             dgvhang.DataSource = dtHangHoa;
@@ -71,35 +59,45 @@ namespace QL_BanHang
             cboMaNCC.DisplayMember = "MaNCC";
             cboMaNCC.ValueMember = "TenNCC";
             cboMaNCC.DataSource = dt2;
+        }
 
+        private void QL_HangHoa_Load(object sender, EventArgs e)
+        {
+            loadControl();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
+        {
+            txtMaHH.Focus();
+            txtMaHH.Text = "";
+            txtTenHH.Text = "";
+            txtSoLuong.Text = "";
+            txtDonGia.Text = "";
+            txtDonViTinh.Text = "";
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             HangDTO h = new HangDTO();
             h.Mahang = txtMaHH.Text;
             h.Tenhang = txtTenHH.Text;
             h.Donvitinh = txtDonViTinh.Text;
-            h.Dongia = Convert.ToInt32(txtDonGia.Text);
-            h.Soluongco = Convert.ToInt32(txtSoLuong.Text);
-            h.Nhacungcap = cboMaNCC.SelectedValue.ToString();
+            h.Dongia = Int32.Parse(txtDonGia.Text);
             h.Maloai = cboMaLoai.SelectedValue.ToString();
-
-
+            h.Nhacungcap = cboMaNCC.SelectedValue.ToString();
+            h.Soluongco = Int32.Parse(txtSoLuong.Text);
 
             if (!string.IsNullOrEmpty(txtMaHH.Text) && !string.IsNullOrEmpty(txtTenHH.Text) && !string.IsNullOrEmpty(txtDonGia.Text) && !string.IsNullOrEmpty(txtSoLuong.Text) && !string.IsNullOrEmpty(txtDonViTinh.Text))
             {
 
                 int val, val1;
-                bool check = Int32.TryParse(txtSoLuong.Text, out val);
-                bool check1 = Int32.TryParse(txtDonGia.Text, out val1);
-                if (!check || !check1)
+                if (!Int32.TryParse(txtSoLuong.Text, out val) || !Int32.TryParse(txtDonGia.Text, out val1))
                 {
                     MessageBox.Show("Gía trị số lượng và đơn giá phải là số", "Sai dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     return;
                 }
-               else
-                { 
+                else
+                {
                     try
                     {
                         hbus.InsertHangHoa(h);
@@ -114,22 +112,15 @@ namespace QL_BanHang
                         MessageBox.Show("Mã hàng hóa đã tồn tại , kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-               
+
                 }
-                
+
             }
             else
             {
                 MessageBox.Show("Chưa điền đủ thông tin!", "Kiểm tra lại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 return;
             }
-
-        }
-
- 
-        //String imgLocation;
-        private void btnLuu_Click(object sender, EventArgs e)
-        {         
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -230,23 +221,7 @@ namespace QL_BanHang
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            DataTable dtHangHoa = new DataTable();
-            dtHangHoa = hbus.ShowHang();
-            dgvhang.DataSource = dtHangHoa;
-
-
-            DataTable dt1 = new DataTable();
-            dt1 = hbus.ShowHangloaihang();
-            cboMaLoai.DisplayMember = "MaLoai";
-            cboMaLoai.ValueMember = "TenLoai";
-            cboMaLoai.DataSource = dt1;
-
-
-            DataTable dt2 = new DataTable();
-            dt2 = hbus.ShowHangnhacungcap();
-            cboMaNCC.DisplayMember = "MaNCC";
-            cboMaNCC.ValueMember = "TenNCC";
-            cboMaNCC.DataSource = dt2;
+            
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -259,20 +234,8 @@ namespace QL_BanHang
             }
             else
             {
-                DataTable dtHangHoa = new DataTable();
-                dtHangHoa = hbus.ShowHang();
-                dgvhang.DataSource = dtHangHoa;
+                loadControl();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtMaHH.Focus();
-            txtMaHH.Text = "";
-            txtTenHH.Text = "";
-            txtSoLuong.Text = "";
-            txtDonGia.Text = "";
-            txtDonViTinh.Text = "";
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -281,6 +244,7 @@ namespace QL_BanHang
             if(thoat == DialogResult.OK)
             {
                 TrangChu a = new TrangChu();
+                this.Close();
                 a.Show();
             }
         }

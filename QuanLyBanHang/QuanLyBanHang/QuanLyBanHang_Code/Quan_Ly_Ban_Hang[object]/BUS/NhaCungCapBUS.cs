@@ -22,7 +22,7 @@ namespace QL_BanHang.BUS
         }
         public DataTable ShowNhaCungCaptk(string tk)
         {
-            string sql = "select * from NhaCungCap2 where MaNCC ='" + tk + "'";
+            string sql = "select * from NhaCungCap2 where MaNCC like '%" + tk + "%'";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
