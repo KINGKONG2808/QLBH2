@@ -321,16 +321,14 @@ GO
 
 
 -- create view DoanhThu
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create view [dbo].[DoanhThu2]
+using QL_BanHang2
+go
+alter view [dbo].[DoanhThu2]
 as
 select ChiTietHoaDon2.MaHH,TenHang,Hang2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon2.NgayLap
 from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHDCT = HoaDon2.MaHD
 group by ChiTietHoaDon2.MaHH,TenHang,Hang2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
-GO
+
 
 
 -- create view DanhSachBan
