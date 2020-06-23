@@ -29,6 +29,7 @@ namespace QL_BanHang.GUI
             DataTable dtLoaiHang = new DataTable();
             dtLoaiHang = lhbus.ShowLoaiHang();
             dgvloaihang.DataSource = dtLoaiHang;
+            rbAll.Checked = true;
         }
 
         private void btnNhapLai_Click(object sender, EventArgs e)
@@ -110,8 +111,8 @@ namespace QL_BanHang.GUI
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult tl;
-            tl = MessageBox.Show("xác nhận", "xóa không", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            if (DialogResult.OK == tl)
+            tl = MessageBox.Show("Xác nhận", "Bạn có chắc chắc muốn xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult.Yes == tl)
             {
                 try
                 {
@@ -156,6 +157,24 @@ namespace QL_BanHang.GUI
                 a.Show();
                 
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvloaihang_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvloaihang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            txtMaLoai.Text = dgvloaihang.Rows[row].Cells[0].Value.ToString();
+            txtTenLoai.Text = dgvloaihang.Rows[row].Cells[1].Value.ToString();
+            txtGhiChu.Text = dgvloaihang.Rows[row].Cells[2].Value.ToString();
+
         }
     }
 }

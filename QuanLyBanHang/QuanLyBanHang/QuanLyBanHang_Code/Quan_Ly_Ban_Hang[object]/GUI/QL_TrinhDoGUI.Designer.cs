@@ -244,18 +244,18 @@
             this.groupBox6.Controls.Add(this.rbTDAll);
             this.groupBox6.Controls.Add(this.rbMaTD);
             this.groupBox6.Location = new System.Drawing.Point(28, 219);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox6.Size = new System.Drawing.Size(260, 110);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(279, 110);
             this.groupBox6.TabIndex = 36;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Tìm kiếm trình độ";
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(110, 31);
-            this.txttimkiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttimkiem.Location = new System.Drawing.Point(126, 31);
+            this.txttimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(138, 20);
             this.txttimkiem.TabIndex = 2;
@@ -264,7 +264,7 @@
             // 
             this.rbTDAll.AutoSize = true;
             this.rbTDAll.Location = new System.Drawing.Point(16, 70);
-            this.rbTDAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbTDAll.Margin = new System.Windows.Forms.Padding(2);
             this.rbTDAll.Name = "rbTDAll";
             this.rbTDAll.Size = new System.Drawing.Size(56, 17);
             this.rbTDAll.TabIndex = 1;
@@ -276,12 +276,12 @@
             // 
             this.rbMaTD.AutoSize = true;
             this.rbMaTD.Location = new System.Drawing.Point(16, 31);
-            this.rbMaTD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMaTD.Margin = new System.Windows.Forms.Padding(2);
             this.rbMaTD.Name = "rbMaTD";
-            this.rbMaTD.Size = new System.Drawing.Size(82, 17);
+            this.rbMaTD.Size = new System.Drawing.Size(106, 17);
             this.rbMaTD.TabIndex = 0;
             this.rbMaTD.TabStop = true;
-            this.rbMaTD.Text = "Mã trình độ:";
+            this.rbMaTD.Text = "Mã/Tên trình độ:";
             this.rbMaTD.UseVisualStyleBackColor = true;
             // 
             // btnSearchTD
@@ -289,7 +289,7 @@
             this.btnSearchTD.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchTD.Image")));
             this.btnSearchTD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchTD.Location = new System.Drawing.Point(45, 346);
-            this.btnSearchTD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchTD.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchTD.Name = "btnSearchTD";
             this.btnSearchTD.Size = new System.Drawing.Size(103, 42);
             this.btnSearchTD.TabIndex = 37;
@@ -312,7 +312,7 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnXoa);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QL_TrinhDoGUI";
             this.Text = "QL_TrinhDoGUI";
             this.Load += new System.EventHandler(this.QL_TrinhDoGUI_Load);

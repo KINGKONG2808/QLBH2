@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\ChiTietHoaDonBUS.cs" />
+    <Compile Include="BUS\LichSuGiaBUS.cs" />
     <Compile Include="BUS\TrinhDoBUS.cs" />
     <Compile Include="BUS\DangNhapBUS.cs" />
     <Compile Include="BUS\DoanhSoBUS.cs" />
@@ -287,6 +288,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\meter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,13 +32,13 @@ namespace QL_BanHang.BUS
         }
         public void addLoaiHang(LoaiHangDTO lh)
         {
-            string sql = "Insert into LoaiHang2 values('" + lh.MaLoai + "','" + lh.TenLoai + "','" + lh.GhiChu + "')";
+            string sql = "Insert into LoaiHang2 values(N'" + lh.MaLoai + "',N'" + lh.TenLoai + "',N'" + lh.GhiChu + "')";
             data.ExcuteNonQuery(sql);
         }
 
         public void UpdateLoaiHang(LoaiHangDTO lh)
         {
-            string sql = "Update LoaiHang2 set TenLoai ='" + lh.TenLoai + "',GhiChu ='" + lh.GhiChu + "' where MaLoai ='" + lh.MaLoai + "'";
+            string sql = "Update LoaiHang2 set TenLoai = N'" + lh.TenLoai + "',GhiChu = N'" + lh.GhiChu + "' where MaLoai ='" + lh.MaLoai + "'";
             data.ExcuteNonQuery(sql);
         }
 

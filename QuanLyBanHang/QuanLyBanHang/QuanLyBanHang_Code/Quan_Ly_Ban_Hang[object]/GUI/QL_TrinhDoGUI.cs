@@ -141,10 +141,8 @@ namespace QL_BanHang.GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txttimkiem.TextLength == 0)
-                MessageBox.Show("Bạn chưa nhập từ khóa tìm kiếm ");
-            else
-                dgvtd.DataSource = trinhDo.searchTrinhDo(txttimkiem.Text);
+          
+          dgvtd.DataSource = trinhDo.searchTrinhDo(txttimkiem.Text);
         }
 
         private void button6_Click(object sender, EventArgs e)

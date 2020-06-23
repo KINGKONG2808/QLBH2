@@ -144,8 +144,8 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[LoaiHang2](
 	[MaLoai] [varchar](100) NOT NULL,
-	[TenLoai] [varchar](200) NOT NULL,
-	[GhiChu] [varchar](500) NOT NULL,
+	[TenLoai] [nvarchar](200) NOT NULL,
+	[GhiChu] [nvarchar](500) NOT NULL,
  CONSTRAINT [PK_LoaiHang] PRIMARY KEY CLUSTERED 
 (
 	[MaLoai] ASC
@@ -155,9 +155,9 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-insert into LoaiHang2 values ('lh001', 'cafe', 'không ngọt')
-insert into LoaiHang2 values ('lh002', 'nước ép', 'ngon')
-insert into LoaiHang2 values ('lh003', 'trà', 'chua')
+insert into LoaiHang2 values ('lh001', N'cafe', N'không ngọt')
+insert into LoaiHang2 values ('lh002', N'nước ép', N'ngon')
+insert into LoaiHang2 values ('lh003', N'trà', N'chua')
 
 -- create table Hang
 SET ANSI_NULLS ON
@@ -327,9 +327,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[DoanhThu2]
 as
-select ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon2.NgayLap
-from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD
-group by ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
+select ChiTietHoaDon2.MaHH,TenHang,Hang2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon2.NgayLap
+from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHDCT = HoaDon2.MaHD
+group by ChiTietHoaDon2.MaHH,TenHang,Hang2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
 GO
 
 
@@ -340,9 +340,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 create view [dbo].[DanhSachBan2]
 as	
-select ChiTietHoaDon2.MaHD,KhachHang2.TenKH,ChiTietHoaDon2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,HoaDon2.MaNV,NhanVien2.TenNV,HoaDon2.NgayLap
-from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV
-group by ChiTietHoaDon2.MaHD,KhachHang2.TenKH,ChiTietHoaDon2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,HoaDon2.MaNV,NhanVien2.TenNV,HoaDon2.NgayLap
+select ChiTietHoaDon2.MaHDCT,KhachHang2.TenKH,ChiTietHoaDon2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,Hang2.DonGia,ChiTietHoaDon2.SoLuong,HoaDon2.MaNV,NhanVien2.TenNV,HoaDon2.NgayLap
+from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHDCT = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV
+group by ChiTietHoaDon2.MaHDCT,KhachHang2.TenKH,ChiTietHoaDon2.MaHH,Hang2.TenHang,NhaCungCap2.TenNCC,Hang2.DonGia,ChiTietHoaDon2.SoLuong,HoaDon2.MaNV,NhanVien2.TenNV,HoaDon2.NgayLap
 GO
 
 /*UPDATE 2: EDIT VIEW (YEN)*/
@@ -353,17 +353,17 @@ drop view DoanhThu2
 
 create view [dbo].[DoanhThu2]
 as
-select ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon2.NgayLap
-from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD
-group by ChiTietHoaDon2.MaHH,TenHang,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
+select ChiTietHoaDon2.MaHH,TenHang,Hang2.DonGia as'dongiaban',ChiTietHoaDon2.SoLuong as'Soluongban',Hang2.SoLuong as'Soluongnhap',Hang2.DonGia as'dongianhap',HoaDon2.NgayLap
+from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHDCT = HoaDon2.MaHD
+group by ChiTietHoaDon2.MaHH,TenHang,Hang2.DonGia,ChiTietHoaDon2.SoLuong,Hang2.SoLuong,Hang2.DonGia,HoaDon2.NgayLap
 
 create view [dbo].[BangLuong2]
 as
-select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,CAST(NhanVien2.MaTrinhDo AS int)as'Luong cung'
-from Hang2 inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join NhanVien2 on HoaDon2.MaNV = NhanVien2.MaNV
-group by NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,CAST(NhanVien2.MaTrinhDo AS int)
+select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,TrinhDo2.LuongCung as'Luong cung'
+from NhanVien2 left join TrinhDo2 on NhanVien2.MaTrinhDo = TrinhDo2.MaTrinhDo
+group by NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh,NhanVien2.DiaChi,TrinhDo2.LuongCung
 
-
+select * from BangLuong2
 /*UPDATE 3: INSERT RIGH DATA TO TABLE*/
 -- insert data to table TrinhDo
 insert into TrinhDo2 values (N'TĐ1', N'Quản lý', '10000')
