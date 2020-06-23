@@ -13,69 +13,29 @@ namespace QL_BanHang.DTO
         private string gioiTinh;
         private string diaChi;
         private string sdt;
-        private string rank;
+        private string maTrinhDo;
         private string taiKhoan;
         private string matKhau;
 
-        public string MaNV
-        {
-            get { return maNV; }
-            set { maNV = value; }
-        }
-
-        public string TenNV
-        {
-            get { return tenNV; }
-            set { tenNV = value; }
-        }
-
-        public string GioiTinh
-        {
-            get { return gioiTinh; }
-            set { gioiTinh = value; }
-        }
-
-        public string DiaChi
-        {
-            get { return diaChi; }
-            set { diaChi = value; }
-        }
-
-        public string SDT
-        {
-            get { return sdt; }
-            set { sdt = value; }
-        }
-
-        public string Rank
-        {
-            get { return rank; }
-            set { rank = value; }
-        }
-
-        public string TaiKhoan
-        {
-            get { return taiKhoan; }
-            set { taiKhoan = value; }
-        }
-
-        public string MatKhau
-        {
-            get { return matKhau; }
-            set { matKhau = value; }
-        }
+        public string MaNV { get => maNV; set => maNV = value; }
+        public string TenNV { get => tenNV; set => tenNV = value; }
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string Sdt { get => sdt; set => sdt = value; }
+        public string MaTrinhDo { get => maTrinhDo; set => maTrinhDo = value; }
+        public string TaiKhoan { get => taiKhoan; set => taiKhoan = value; }
+        public string MatKhau { get => matKhau; set => matKhau = value; }
 
         public NhanVienDTO() { }
-        public NhanVienDTO(string manv, string tennv, string gioiTinh, string diaChi, string sdt, string rank, string taikhoan, string matkhau)
+
+        public NhanVienDTO(string maNV, string tenNV, string gioiTinh, string diaChi, string sdt, string maTrinhDo, string taiKhoan, string matKhau) : this(maNV, tenNV)
         {
-            MaNV = manv;
-            TenNV = tennv;
-            GioiTinh = gioiTinh;
-            SDT = sdt;
-            DiaChi = diaChi;
-            Rank = rank;
-            TaiKhoan = taikhoan;
-            MatKhau = matkhau;
+            this.GioiTinh = gioiTinh;
+            this.DiaChi = diaChi;
+            this.Sdt = sdt;
+            this.MaTrinhDo = maTrinhDo;
+            this.TaiKhoan = taiKhoan;
+            this.MatKhau = matKhau;
         }
 
         public NhanVienDTO(string taikhoan, string matkhau)

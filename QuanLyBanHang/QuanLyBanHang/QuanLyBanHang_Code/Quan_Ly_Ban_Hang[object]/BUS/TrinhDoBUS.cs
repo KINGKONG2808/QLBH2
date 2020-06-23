@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QL_BanHang.DAL;
 using System.Data;
 using QL_BanHang.DTO;
+using System.Data.SqlClient;
 
 namespace QL_BanHang.BUS
 {
@@ -44,6 +45,26 @@ namespace QL_BanHang.BUS
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
+        }
+
+        public string onChangeCboBox(String variable)
+        {
+            string result = "";
+            string sqlQuery = "select * from TrinhDo2 td where td.MaTrinhDo = '" + variable + "'";
+
+            SqlConnection con = data.getConnect();
+            con.Open();
+            SqlCommand command = new SqlCommand(sqlQuery, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    result = reader.GetString(1);
+                }
+            }
+            con.Close();
+            return result;
         }
     }
 }

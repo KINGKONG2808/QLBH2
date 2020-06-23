@@ -120,8 +120,8 @@ namespace QL_BanHang
         {
             QL_DangNhap fdn = new QL_DangNhap();
             fdn.FormClosed += new FormClosedEventHandler(fnv_FormClosed);
-            fdn.Show();
             this.Hide();
+            fdn.Show();
         }
 
         private void loạiHàngToolStripMenuItem_Click(object sender, EventArgs e)

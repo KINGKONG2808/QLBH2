@@ -177,14 +177,6 @@ namespace QL_BanHang
             
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
-        {
-            Dis_Enable(false);
-            DataTable dtNhaCungCap = new DataTable();
-            dtNhaCungCap = nccbll.ShowNhaCungCap();
-            dgvHienThi.DataSource = dtNhaCungCap;
-        }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             NhaCungCapBUS a = new NhaCungCapBUS();

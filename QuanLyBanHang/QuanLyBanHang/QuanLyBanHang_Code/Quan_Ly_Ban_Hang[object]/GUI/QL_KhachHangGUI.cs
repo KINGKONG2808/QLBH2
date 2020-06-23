@@ -252,14 +252,6 @@ namespace QL_BanHang
 
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
-        {
-            Dis_Enable(false);
-            DataTable dtKhachHang = new DataTable();
-            dtKhachHang = khbll.ShowKhachHang();
-            dgvHienThiKH.DataSource = dtKhachHang;
-        }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             KhachHangBUS kh = new KhachHangBUS();

@@ -44,17 +44,18 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(750, 391);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 481);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -62,9 +63,11 @@
             // 
             this.groupBox2.Controls.Add(this.dgvHangTon);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 217);
+            this.groupBox2.Location = new System.Drawing.Point(4, 268);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(744, 171);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(992, 209);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hàng tồn";
@@ -74,18 +77,22 @@
             this.dgvHangTon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHangTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHangTon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHangTon.Location = new System.Drawing.Point(3, 16);
+            this.dgvHangTon.Location = new System.Drawing.Point(4, 19);
+            this.dgvHangTon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvHangTon.Name = "dgvHangTon";
-            this.dgvHangTon.Size = new System.Drawing.Size(738, 152);
+            this.dgvHangTon.RowHeadersWidth = 51;
+            this.dgvHangTon.Size = new System.Drawing.Size(984, 186);
             this.dgvHangTon.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvHangBan);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(744, 169);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(992, 208);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hàng đã bán";
@@ -95,20 +102,24 @@
             this.dgvHangBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHangBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHangBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHangBan.Location = new System.Drawing.Point(3, 16);
+            this.dgvHangBan.Location = new System.Drawing.Point(4, 19);
+            this.dgvHangBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvHangBan.Name = "dgvHangBan";
-            this.dgvHangBan.Size = new System.Drawing.Size(738, 150);
+            this.dgvHangBan.RowHeadersWidth = 51;
+            this.dgvHangBan.Size = new System.Drawing.Size(984, 185);
             this.dgvHangBan.TabIndex = 0;
             // 
             // QL_KhoHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(750, 391);
+            this.ClientSize = new System.Drawing.Size(1000, 481);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(766, 430);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1015, 518);
             this.Name = "QL_KhoHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kho hàng";
             this.Load += new System.EventHandler(this.KhoHang_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

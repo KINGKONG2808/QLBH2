@@ -240,13 +240,9 @@ namespace QL_BanHang
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            DialogResult thoat = MessageBox.Show("trở về trang chủ", "thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(thoat == DialogResult.OK)
-            {
-                TrangChu a = new TrangChu();
-                this.Close();
-                a.Show();
-            }
+            TrangChu a = new TrangChu();
+            this.Close();
+            a.Show();
         }
     }
 }

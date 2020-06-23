@@ -96,43 +96,42 @@ namespace QL_BanHang
 
         private void loadControl()
         {
-            DataTable dtChiTietHD = new DataTable();
-            dtChiTietHD = ctbll.ShowChiTietHD();
-            dgvHienThiChiTietHD.DataSource = dtChiTietHD;
-
-            DataTable dtMaHH = new DataTable();
-            dtMaHH = hhbll.ShowHang();
-            cboMaHH.DataSource = dtMaHH;
-
-
-            DataTable dtMaNV = new DataTable();
-            dtMaNV = nvbll.ShowNhanVien();
-            cboMaNV.DataSource = dtMaNV;
-            cboMaNV.DisplayMember = "MaNV";
-            cboMaNV.ValueMember = "MaNV";
-
-            DataTable dtMaKH = new DataTable();
-            dtMaKH = khbll.ShowKhachHang();
-            cboMaKH.DataSource = dtMaKH;
-            cboMaKH.DisplayMember = "MaKH";
-            cboMaKH.ValueMember = "MaKH";
-
-            DataTable dtHoaDon = new DataTable();
-            dtHoaDon = hdbll.ShowHoaDon();
-            dgvHienThiHDon.DataSource = dtHoaDon;
-
-            DataTable dtMaHD = new DataTable();
-            dtMaHD = hdbll.onLoadHoaDon();
-            cboMaHD.DataSource = dtMaHD;
-            /*try
+            try
             {
-                
+                DataTable dtChiTietHD = new DataTable();
+                dtChiTietHD = ctbll.ShowChiTietHD();
+                dgvHienThiChiTietHD.DataSource = dtChiTietHD;
+
+                DataTable dtMaHH = new DataTable();
+                dtMaHH = hhbll.ShowHang();
+                cboMaHH.DataSource = dtMaHH;
+
+
+                DataTable dtMaNV = new DataTable();
+                dtMaNV = nvbll.ShowNhanVien();
+                cboMaNV.DataSource = dtMaNV;
+                cboMaNV.DisplayMember = "MaNV";
+                cboMaNV.ValueMember = "MaNV";
+
+                DataTable dtMaKH = new DataTable();
+                dtMaKH = khbll.ShowKhachHang();
+                cboMaKH.DataSource = dtMaKH;
+                cboMaKH.DisplayMember = "MaKH";
+                cboMaKH.ValueMember = "MaKH";
+
+                DataTable dtHoaDon = new DataTable();
+                dtHoaDon = hdbll.ShowHoaDon();
+                dgvHienThiHDon.DataSource = dtHoaDon;
+
+                DataTable dtMaHD = new DataTable();
+                dtMaHD = hdbll.onLoadHoaDon();
+                cboMaHD.DataSource = dtMaHD;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Lỗi SQL!", "Erorr", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
         }
 
         private void QL_HoaDon_Load(object sender, EventArgs e)
@@ -469,13 +468,9 @@ namespace QL_BanHang
 
         private void exitHyperLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DialogResult thoat = MessageBox.Show("Trở về trang chủ", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (thoat == DialogResult.OK)
-            {
-                TrangChu home = new TrangChu();
-                this.Close();
-                home.Show();
-            }
+            TrangChu home = new TrangChu();
+            this.Close();
+            home.Show();
         }
 
         private void btnSearchHDCT_Click(object sender, EventArgs e)
@@ -506,6 +501,7 @@ namespace QL_BanHang
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
@@ -537,6 +533,7 @@ namespace QL_BanHang
             workbook.SaveAs("E:\\QLBH2\\DanhSachHoaDon.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application  
             app.Quit();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
