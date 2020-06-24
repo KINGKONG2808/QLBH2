@@ -30,18 +30,30 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvHangTon = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvHangBan = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dgvHangTon = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dgvHangBan = new System.Windows.Forms.DataGridView();
+            this.MaHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHH1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangTon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangBan)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangBan)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -77,16 +89,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hàng tồn";
             // 
-            // dgvHangTon
-            // 
-            this.dgvHangTon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHangTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangTon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHangTon.Location = new System.Drawing.Point(3, 16);
-            this.dgvHangTon.Name = "dgvHangTon";
-            this.dgvHangTon.Size = new System.Drawing.Size(738, 254);
-            this.dgvHangTon.TabIndex = 0;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,29 +117,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgvHangBan
+            // dgvHangTon
             // 
-            this.dgvHangBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHangBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHangBan.Location = new System.Drawing.Point(3, 16);
-            this.dgvHangBan.Name = "dgvHangBan";
-            this.dgvHangBan.Size = new System.Drawing.Size(738, 210);
-            this.dgvHangBan.TabIndex = 0;
+            this.dgvHangTon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHangTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangTon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHH1,
+            this.TenHang1,
+            this.TenNCC,
+            this.DonGia1,
+            this.SoLuong1});
+            this.dgvHangTon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHangTon.Location = new System.Drawing.Point(3, 16);
+            this.dgvHangTon.Name = "dgvHangTon";
+            this.dgvHangTon.Size = new System.Drawing.Size(738, 254);
+            this.dgvHangTon.TabIndex = 0;
             // 
-            // button4
+            // groupBox1
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::QL_BanHang.Properties.Resources.Print;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(653, 198);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 28);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "In Excel";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.dgvHangBan);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(744, 229);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hàng đã bán";
             // 
             // button3
             // 
@@ -153,18 +160,109 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // groupBox1
+            // button4
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.dgvHangBan);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(744, 229);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hàng đã bán";
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::QL_BanHang.Properties.Resources.Print;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(653, 198);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(88, 28);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "In Excel";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // dgvHangBan
+            // 
+            this.dgvHangBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHangBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHH,
+            this.TenHang,
+            this.DonViTinh,
+            this.DonGia,
+            this.MaLoai,
+            this.MaNCC,
+            this.SoLuong});
+            this.dgvHangBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHangBan.Location = new System.Drawing.Point(3, 16);
+            this.dgvHangBan.Name = "dgvHangBan";
+            this.dgvHangBan.Size = new System.Drawing.Size(738, 210);
+            this.dgvHangBan.TabIndex = 0;
+            // 
+            // MaHH
+            // 
+            this.MaHH.DataPropertyName = "MaHH";
+            this.MaHH.HeaderText = "Mã Hàng Hóa";
+            this.MaHH.Name = "MaHH";
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.HeaderText = "Tên Hàng";
+            this.TenHang.Name = "TenHang";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // MaLoai
+            // 
+            this.MaLoai.DataPropertyName = "MaLoai";
+            this.MaLoai.HeaderText = "Mã Loại";
+            this.MaLoai.Name = "MaLoai";
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã Nhà Cung Cấp";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // MaHH1
+            // 
+            this.MaHH1.DataPropertyName = "MaHH";
+            this.MaHH1.HeaderText = "Mã Hàng Hóa";
+            this.MaHH1.Name = "MaHH1";
+            // 
+            // TenHang1
+            // 
+            this.TenHang1.DataPropertyName = "TenHang";
+            this.TenHang1.HeaderText = "Tên Hàng";
+            this.TenHang1.Name = "TenHang1";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên Nhà Cung Cấp";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // DonGia1
+            // 
+            this.DonGia1.DataPropertyName = "DonGia";
+            this.DonGia1.HeaderText = "Đơn Giá";
+            this.DonGia1.Name = "DonGia1";
+            // 
+            // SoLuong1
+            // 
+            this.SoLuong1.DataPropertyName = "SoLuong";
+            this.SoLuong1.HeaderText = "Số Lượng";
+            this.SoLuong1.Name = "SoLuong1";
             // 
             // QL_KhoHang
             // 
@@ -180,8 +278,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangTon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangBan)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangBan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +295,17 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dgvHangBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHH1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong1;
     }
 }

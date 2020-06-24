@@ -154,6 +154,7 @@ namespace QL_BanHang.GUI
                 if(DialogResult.OK == thoat)
             {
                 TrangChu a = new TrangChu();
+                this.Close();
                 a.Show();
                 
             }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows.Forms;
+using DGVPrinterHelper;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using QL_BanHang.BUS;
@@ -57,77 +58,24 @@ namespace QL_BanHang
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            if (dgvHangBan.Rows.Count > 0)
+            try
             {
-
-                StringWriter sw = new StringWriter();
-                HtmlTextWriter htw = new HtmlTextWriter(sw);
-                htw.WriteLine("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">");
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "DanhSachHangDaBan.pdf";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
-                        }
-                    }
-                    if (!fileError)
-                    {
-                        try
-                        {
-                            PdfPTable pdfTable = new PdfPTable(dgvHangBan.Columns.Count);
-                            pdfTable.DefaultCell.Padding = 3;
-                            pdfTable.WidthPercentage = 100;
-                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-
-                            foreach (DataGridViewColumn column in dgvHangBan.Columns)
-                            {
-                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                                pdfTable.AddCell(cell);
-                            }
-
-                            for (int i = 0; i < dgvHangBan.Rows.Count - 1; i++)
-                            {
-                                for (int j = 0; j < dgvHangBan.Columns.Count; j++)
-                                {
-                                    pdfTable.AddCell(dgvHangBan.Rows[i].Cells[j].Value.ToString());
-                                }
-                            }
-                            FontFactory.Register("C:\\Windows\\Fonts\\times.ttf", "arial unicode ms");
-                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                            {
-                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-                                PdfWriter.GetInstance(pdfDoc, stream);
-                                pdfDoc.Open();
-                                pdfDoc.HtmlStyleClass = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">";
-                                pdfDoc.Add(pdfTable);
-                                pdfDoc.Close();
-                                stream.Close();
-                            }
-
-                            MessageBox.Show("Data Exported Successfully !!!", "Info");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error :" + ex.Message);
-                        }
-                    }
-                }
+                DGVPrinter printer = new DGVPrinter();
+                printer.Title = "Danh sách hàng đã bán";
+                printer.SubTitle = string.Format("Date : {0}", DateTime.Now.Date);
+                printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "Danh Sách Hàng Bán";
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvHangBan);
             }
-            else
+            catch
             {
-                MessageBox.Show("No Record To Export !!!", "Info");
+                MessageBox.Show("In thất bại !!!", "Info");
+
             }
         }
 
@@ -171,76 +119,24 @@ namespace QL_BanHang
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dgvHangTon.Rows.Count > 0)
+            try
             {
-
-                StringWriter sw = new StringWriter();
-                HtmlTextWriter htw = new HtmlTextWriter(sw);
-                htw.WriteLine("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">");
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = "DanhSachHangTon.pdf";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
-                        }
-                    }
-                    if (!fileError)
-                    {
-                        try
-                        {
-                            PdfPTable pdfTable = new PdfPTable(dgvHangTon.Columns.Count);
-                            pdfTable.DefaultCell.Padding = 3;
-                            pdfTable.WidthPercentage = 100;
-                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-
-                            foreach (DataGridViewColumn column in dgvHangTon.Columns)
-                            {
-                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                                pdfTable.AddCell(cell);
-                            }
-
-                            for (int i = 0; i < dgvHangTon.Rows.Count - 1; i++)
-                            {
-                                for (int j = 0; j < dgvHangTon.Columns.Count; j++)
-                                {
-                                    pdfTable.AddCell(dgvHangTon.Rows[i].Cells[j].Value.ToString());
-                                }
-                            }
-                            FontFactory.Register("C:\\Windows\\Fonts\\times.ttf", "arial unicode ms");
-                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                            {
-                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-                                PdfWriter.GetInstance(pdfDoc, stream);
-                                pdfDoc.Open();
-                                pdfDoc.HtmlStyleClass = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">";
-                                pdfDoc.Add(pdfTable);
-                                pdfDoc.Close();
-                                stream.Close();
-                            }
-
-                            MessageBox.Show("Data Exported Successfully !!!", "Info");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error :" + ex.Message);
-                        }
-                    }
-                }
+                DGVPrinter printer = new DGVPrinter();
+                printer.Title = "Danh sách hàng tồn";
+                printer.SubTitle = string.Format("Date : {0}", DateTime.Now.Date);
+                printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "Danh Sách Hàng Tồn";
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvHangTon);
             }
-            else
+            catch
             {
-                MessageBox.Show("No Record To Export !!!", "Info");
+                MessageBox.Show("In thất bại !!!", "Info");
+
             }
         }
 

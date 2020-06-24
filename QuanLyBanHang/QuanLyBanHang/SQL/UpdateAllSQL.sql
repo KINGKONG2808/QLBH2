@@ -281,47 +281,9 @@ insert into LichSuGia2 values ('h001', '1/6/2020', '6/6/2020', 40000, '7/6/2020'
 insert into LichSuGia2 values ('h002', '2/6/2020', '7/6/2020', 50000, '6/6/2020')
 insert into LichSuGia2 values ('h003', '3/6/2020', '8/6/2020', 60000, '4/6/2020')
 
-/*-- create view BangLuong
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create view [dbo].[BangLuong2]
-as
-select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh, NhanVien2.DiaChi, CAST(NhanVien.RankNV AS int)as'Luong cung',Sum(HangHoa.HoaHong*ChiTietHoaDon.SoLuong)as'Hoa hong'
-from HangHoa inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join NhanVien on HoaDon.MaNV = NhanVien.MaNV
-group by NhanVien.MaNV,NhanVien.TenNV, NhanVien.GioiTinh,NhanVien.DiaChi,CAST(NhanVien.RankNV AS int)
-GO*/
-
-
--- create view InHoaDon
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create view [dbo].[InHoaDon]
-as
-select ChiTietHoaDon2.MaHD , ChiTietHoaDon2.MaHH , Hang2.TenHang, NhaCungCap2.TenNCC , KhachHang2.TenKH , KhachHang2.GioiTinh , KhachHang2.DiaChi ,KhachHang2.SDT ,NhanVien2.MaNV,NhanVien2.TenNV, ChiTietHoaDon2.DonGia , ChiTietHoaDon2.SoLuong
-from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV
-group by ChiTietHoaDon2.MaHD , ChiTietHoaDon2.MaHH , Hang2.TenHang, NhaCungCap2.TenNCC , KhachHang2.TenKH , KhachHang2.GioiTinh , KhachHang2.DiaChi ,KhachHang2.SDT , ChiTietHoaDon2.DonGia , ChiTietHoaDon2.SoLuong,NhanVien2.MaNV, NhanVien2.TenNV
-GO
-
-
--- create view HangBan
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create view [dbo].[HangBan2]
-as
-select ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang, KhachHang2.TenKH , ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
-from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH
-group by ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang,KhachHang2.TenKH,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
-GO
-
-
 -- create view DoanhThu
-using QL_BanHang2
+GO
+use QL_BanHang2
 go
 alter view [dbo].[DoanhThu2]
 as
@@ -498,3 +460,44 @@ as
 	group by cthd.MaHDCT, cthd.MaHH, h.TenHang, cthd.SoLuong, h.DonGia
 
 select * from ChiTietHoaDonView
+
+
+
+/*-- create view BangLuong
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create view [dbo].[BangLuong2]
+as
+select NhanVien2.MaNV,NhanVien2.TenNV, NhanVien2.GioiTinh, NhanVien2.DiaChi, CAST(NhanVien.RankNV AS int)as'Luong cung',Sum(HangHoa.HoaHong*ChiTietHoaDon.SoLuong)as'Hoa hong'
+from HangHoa inner join ChiTietHoaDon on HangHoa.MaHH = ChiTietHoaDon.MaHH inner join HoaDon on ChiTietHoaDon.MaHD = HoaDon.MaHD inner join NhanVien on HoaDon.MaNV = NhanVien.MaNV
+group by NhanVien.MaNV,NhanVien.TenNV, NhanVien.GioiTinh,NhanVien.DiaChi,CAST(NhanVien.RankNV AS int)
+GO*/
+
+
+-- create view InHoaDon
+/*SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create view [dbo].[InHoaDon]
+as
+select ChiTietHoaDon2.MaHD , ChiTietHoaDon2.MaHH , Hang2.TenHang, NhaCungCap2.TenNCC , KhachHang2.TenKH , KhachHang2.GioiTinh , KhachHang2.DiaChi ,KhachHang2.SDT ,NhanVien2.MaNV,NhanVien2.TenNV, ChiTietHoaDon2.DonGia , ChiTietHoaDon2.SoLuong
+from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH inner join NhanVien2 on KhachHang2.MaNV = NhanVien2.MaNV
+group by ChiTietHoaDon2.MaHD , ChiTietHoaDon2.MaHH , Hang2.TenHang, NhaCungCap2.TenNCC , KhachHang2.TenKH , KhachHang2.GioiTinh , KhachHang2.DiaChi ,KhachHang2.SDT , ChiTietHoaDon2.DonGia , ChiTietHoaDon2.SoLuong,NhanVien2.MaNV, NhanVien2.TenNV
+GO
+
+
+-- create view HangBan
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create view [dbo].[HangBan2]
+as
+select ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang, KhachHang2.TenKH , ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
+from NhaCungCap2 inner join Hang2 on NhaCungCap2.MaNCC = Hang2.MaNCC inner join ChiTietHoaDon2 on Hang2.MaHH = ChiTietHoaDon2.MaHH inner join HoaDon2 on ChiTietHoaDon2.MaHD = HoaDon2.MaHD inner join KhachHang2 on HoaDon2.MaKH = KhachHang2.MaKH
+group by ChiTietHoaDon2.MaHD, ChiTietHoaDon2.MaHH , Hang2.TenHang,KhachHang2.TenKH,ChiTietHoaDon2.DonGia,ChiTietHoaDon2.SoLuong
+
+*/
