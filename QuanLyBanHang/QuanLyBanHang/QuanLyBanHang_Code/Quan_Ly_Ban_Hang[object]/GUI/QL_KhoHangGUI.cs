@@ -62,7 +62,7 @@ namespace QL_BanHang
             {
                 DGVPrinter printer = new DGVPrinter();
                 printer.Title = "Danh sách hàng đã bán";
-                printer.SubTitle = string.Format("Date : {0}", DateTime.Now.Date);
+                printer.SubTitle = string.Format("Ngày : {0}", DateTime.Now);
                 printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
                 printer.PageNumbers = true;
                 printer.PageNumberInHeader = false;
@@ -81,7 +81,7 @@ namespace QL_BanHang
 
         private void button4_Click(object sender, EventArgs e)
         {
-            /*
+            
             // creating Excel Application
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
@@ -114,7 +114,7 @@ namespace QL_BanHang
             // Exit from the application 
             MessageBox.Show("Data Exported Successfully !!!", "Info");
             app.Quit();
-            */
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace QL_BanHang
             {
                 DGVPrinter printer = new DGVPrinter();
                 printer.Title = "Danh sách hàng tồn";
-                printer.SubTitle = string.Format("Date : {0}", DateTime.Now.Date);
+                printer.SubTitle = string.Format("Ngày : {0}", DateTime.Now);
                 printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
                 printer.PageNumbers = true;
                 printer.PageNumberInHeader = false;
@@ -142,7 +142,7 @@ namespace QL_BanHang
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
+            
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
@@ -175,7 +175,7 @@ namespace QL_BanHang
             // Exit from the application  
             MessageBox.Show("Data Exported Successfully !!!", "Info");
             app.Quit();
-            */
+            
         }
     }
 }

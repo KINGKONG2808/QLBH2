@@ -86,11 +86,11 @@ namespace QL_BanHang.GUI
             int row = e.RowIndex;
             if (dgvlichsugia.Rows[row].Cells[4].Value != null)
             {
-                cbmahang.Text = dgvlichsugia.Rows[row].Cells[4].Value.ToString();
-                dateBatDau.Text = dgvlichsugia.Rows[row].Cells[0].Value.ToString();
-                dateKetThuc.Text = dgvlichsugia.Rows[row].Cells[1].Value.ToString();
-                txtdg.Text = dgvlichsugia.Rows[row].Cells[2].Value.ToString();
-                ngaycapnhat.Text = dgvlichsugia.Rows[row].Cells[3].Value.ToString();
+                cbmahang.Text = dgvlichsugia.Rows[row].Cells[5].Value.ToString();
+                dateBatDau.Text = dgvlichsugia.Rows[row].Cells[1].Value.ToString();
+                dateKetThuc.Text = dgvlichsugia.Rows[row].Cells[2].Value.ToString();
+                txtdg.Text = dgvlichsugia.Rows[row].Cells[3].Value.ToString();
+                ngaycapnhat.Text = dgvlichsugia.Rows[row].Cells[4].Value.ToString();
 
             }
 

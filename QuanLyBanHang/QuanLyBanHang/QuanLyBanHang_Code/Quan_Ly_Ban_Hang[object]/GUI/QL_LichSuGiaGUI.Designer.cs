@@ -41,6 +41,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateBatDau = new System.Windows.Forms.DateTimePicker();
+            this.dateKetThuc = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtMaNCCSearch = new System.Windows.Forms.TextBox();
             this.rbAll = new System.Windows.Forms.RadioButton();
@@ -51,8 +53,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.dateKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.dateBatDau = new System.Windows.Forms.DateTimePicker();
+            this.MaHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +137,7 @@
             // 
             this.dgvlichsugia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlichsugia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHH,
             this.TenHang,
             this.NgayBatDau,
             this.NgayKetThuc,
@@ -185,6 +187,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lịch sử giá";
             // 
+            // dateBatDau
+            // 
+            this.dateBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateBatDau.Location = new System.Drawing.Point(90, 49);
+            this.dateBatDau.Name = "dateBatDau";
+            this.dateBatDau.Size = new System.Drawing.Size(344, 20);
+            this.dateBatDau.TabIndex = 13;
+            // 
+            // dateKetThuc
+            // 
+            this.dateKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateKetThuc.Location = new System.Drawing.Point(89, 79);
+            this.dateKetThuc.Name = "dateKetThuc";
+            this.dateKetThuc.Size = new System.Drawing.Size(345, 20);
+            this.dateKetThuc.TabIndex = 12;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtMaNCCSearch);
@@ -228,10 +246,10 @@
             this.rbMaNcc.Location = new System.Drawing.Point(4, 38);
             this.rbMaNcc.Margin = new System.Windows.Forms.Padding(2);
             this.rbMaNcc.Name = "rbMaNcc";
-            this.rbMaNcc.Size = new System.Drawing.Size(103, 20);
+            this.rbMaNcc.Size = new System.Drawing.Size(110, 20);
             this.rbMaNcc.TabIndex = 0;
             this.rbMaNcc.TabStop = true;
-            this.rbMaNcc.Text = "Mã loại hàng";
+            this.rbMaNcc.Text = "Mã hàng hóa :";
             this.rbMaNcc.UseVisualStyleBackColor = true;
             // 
             // btnTim
@@ -318,21 +336,11 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // dateKetThuc
+            // MaHH
             // 
-            this.dateKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateKetThuc.Location = new System.Drawing.Point(89, 79);
-            this.dateKetThuc.Name = "dateKetThuc";
-            this.dateKetThuc.Size = new System.Drawing.Size(345, 20);
-            this.dateKetThuc.TabIndex = 12;
-            // 
-            // dateBatDau
-            // 
-            this.dateBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateBatDau.Location = new System.Drawing.Point(90, 49);
-            this.dateBatDau.Name = "dateBatDau";
-            this.dateBatDau.Size = new System.Drawing.Size(344, 20);
-            this.dateBatDau.TabIndex = 13;
+            this.MaHH.DataPropertyName = "MaHH";
+            this.MaHH.HeaderText = "Mã Hàng Hóa";
+            this.MaHH.Name = "MaHH";
             // 
             // TenHang
             // 
@@ -419,6 +427,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DateTimePicker dateBatDau;
         private System.Windows.Forms.DateTimePicker dateKetThuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;

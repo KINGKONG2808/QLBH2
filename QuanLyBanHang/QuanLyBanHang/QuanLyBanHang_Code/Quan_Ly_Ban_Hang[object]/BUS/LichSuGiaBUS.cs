@@ -15,7 +15,7 @@ namespace QL_BanHang.BUS
 
         public DataTable ShowLichSuGia()
         {
-            string sql = "select ls.NgayBatDau, ls.NgayKetThuc, ls.DonGia, ls.NgayCapNhat , h.TenHang from LichSuGia2 ls , Hang2 h where ls.MaHH = h.MaHH";
+            string sql = "select ls.MaHH, ls.NgayBatDau, ls.NgayKetThuc, ls.DonGia, ls.NgayCapNhat , h.TenHang from LichSuGia2 ls , Hang2 h where ls.MaHH = h.MaHH";
             DataTable dt = new DataTable();
             dt = data.GetTable(sql);
             return dt;
