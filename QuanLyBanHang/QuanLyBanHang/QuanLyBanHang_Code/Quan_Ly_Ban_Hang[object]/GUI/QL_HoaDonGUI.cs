@@ -513,8 +513,8 @@ namespace QL_BanHang
             app.Visible = true;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["Sheet1"];
-            worksheet = workbook.ActiveSheet;
+            worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.Sheets["Sheet1"];
+            worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
             // changing the name of active sheet  
             worksheet.Name = "Danh Sach Hoa Don";
             // storing header part in Excel  
@@ -531,7 +531,7 @@ namespace QL_BanHang
                 }
             }
             // save the application  
-            workbook.SaveAs("E:\\QLBH2\\DanhSachHoaDon.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            workbook.SaveAs("C:\\QLBH2\\DanhSachHoaDon.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application  
             app.Quit();
             
