@@ -195,9 +195,9 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[HoaDon2](
-	[MaHD] [varchar](10) NOT NULL,
-	[MaKH] [varchar](10) NOT NULL,
-	[MaNV] [varchar](10) NOT NULL,
+	[MaHD] [varchar](100) NOT NULL,
+	[MaKH] [varchar](100) NOT NULL,
+	[MaNV] [varchar](100) NOT NULL,
 	[NgayLap] [date] NOT NULL,
  CONSTRAINT [PK_HoaDon] PRIMARY KEY CLUSTERED 
 (
@@ -254,6 +254,7 @@ insert into ChiTietHoaDon2 values (N'hd2', N'h003', 3000)
 insert into ChiTietHoaDon2 values (N'hd2', N'h004', 2000)
 
 
+drop table LichSuGia2
 -- create table LichSuGia
 SET ANSI_NULLS ON
 GO
@@ -261,8 +262,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[LichSuGia2](
-	[MaHH] [varchar](10) NOT NULL,
+create TABLE [dbo].[LichSuGia2](
+	[MaHH] [varchar](100) NOT NULL,
 	[NgayBatDau] [date] NOT NULL,
 	[NgayKetThuc] [date] NOT NULL,
 	[DonGia] [int] NOT NULL,
