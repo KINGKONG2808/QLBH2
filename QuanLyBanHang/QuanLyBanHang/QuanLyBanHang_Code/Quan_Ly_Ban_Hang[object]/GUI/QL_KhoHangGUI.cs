@@ -133,7 +133,8 @@ namespace QL_BanHang
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // creating Excel Application  
+            /*
+            // creating Excel Application
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
@@ -165,6 +166,7 @@ namespace QL_BanHang
             // Exit from the application 
             MessageBox.Show("Data Exported Successfully !!!", "Info");
             app.Quit();
+            */
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -244,6 +246,7 @@ namespace QL_BanHang
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
@@ -276,7 +279,7 @@ namespace QL_BanHang
             // Exit from the application  
             MessageBox.Show("Data Exported Successfully !!!", "Info");
             app.Quit();
-
+            */
         }
     }
 }

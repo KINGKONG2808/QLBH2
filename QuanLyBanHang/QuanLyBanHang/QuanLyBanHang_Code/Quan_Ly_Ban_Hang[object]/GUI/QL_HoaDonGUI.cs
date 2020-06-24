@@ -501,7 +501,7 @@ namespace QL_BanHang
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            /*
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
@@ -533,7 +533,7 @@ namespace QL_BanHang
             workbook.SaveAs("E:\\QLBH2\\DanhSachHoaDon.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application  
             app.Quit();
-            
+            */
         }
 
         private void button2_Click(object sender, EventArgs e)
